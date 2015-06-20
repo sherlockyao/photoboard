@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "PBWireframe.h"
+#import "CoreData+MagicalRecord.h"
 
 @interface AppDelegate ()
 
@@ -20,6 +21,10 @@
     if (isRunningTests()) {
         return YES;
     }
+    
+    // Core Data Setup
+    [MagicalRecord setShouldDeleteStoreOnModelMismatch:YES];
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"PhotoBoard.sqlite"];
     
     // Main Window Setup
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

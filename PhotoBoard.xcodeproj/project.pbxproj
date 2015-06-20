@@ -49,6 +49,12 @@
 		36B89D061B35447800EC78AB /* PBConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89D051B35447800EC78AB /* PBConstants.m */; };
 		36B89D101B3555D000EC78AB /* PBScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89D0D1B3555D000EC78AB /* PBScene.m */; };
 		36B89D111B3555D000EC78AB /* PBTale.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89D0F1B3555D000EC78AB /* PBTale.m */; };
+		36B89D711B355CE600EC78AB /* PBDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89D701B355CE600EC78AB /* PBDataManager.m */; };
+		36B89D751B355F5B00EC78AB /* PBTale+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89D741B355F5B00EC78AB /* PBTale+Utility.m */; };
+		36B89D781B355F6B00EC78AB /* PBScene+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89D771B355F6B00EC78AB /* PBScene+Utility.m */; };
+		36B89D7B1B3560D300EC78AB /* PBTale+DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89D7A1B3560D300EC78AB /* PBTale+DataManager.m */; };
+		36B89D7E1B35616400EC78AB /* PBTaleInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89D7D1B35616400EC78AB /* PBTaleInfo.m */; };
+		39999594F5D8C92FB4FF417B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8FE003769036AEB2E25705 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +154,19 @@
 		36B89D0D1B3555D000EC78AB /* PBScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBScene.m; path = Classes/Models/PBScene.m; sourceTree = "<group>"; };
 		36B89D0E1B3555D000EC78AB /* PBTale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBTale.h; path = Classes/Models/PBTale.h; sourceTree = "<group>"; };
 		36B89D0F1B3555D000EC78AB /* PBTale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBTale.m; path = Classes/Models/PBTale.m; sourceTree = "<group>"; };
+		36B89D6F1B355CE600EC78AB /* PBDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBDataManager.h; path = Classes/Models/PBDataManager.h; sourceTree = "<group>"; };
+		36B89D701B355CE600EC78AB /* PBDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBDataManager.m; path = Classes/Models/PBDataManager.m; sourceTree = "<group>"; };
+		36B89D731B355F5B00EC78AB /* PBTale+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PBTale+Utility.h"; path = "Classes/Models/PBTale+Utility.h"; sourceTree = "<group>"; };
+		36B89D741B355F5B00EC78AB /* PBTale+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PBTale+Utility.m"; path = "Classes/Models/PBTale+Utility.m"; sourceTree = "<group>"; };
+		36B89D761B355F6B00EC78AB /* PBScene+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PBScene+Utility.h"; path = "Classes/Models/PBScene+Utility.h"; sourceTree = "<group>"; };
+		36B89D771B355F6B00EC78AB /* PBScene+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PBScene+Utility.m"; path = "Classes/Models/PBScene+Utility.m"; sourceTree = "<group>"; };
+		36B89D791B3560D300EC78AB /* PBTale+DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PBTale+DataManager.h"; path = "Classes/Models/PBTale+DataManager.h"; sourceTree = "<group>"; };
+		36B89D7A1B3560D300EC78AB /* PBTale+DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PBTale+DataManager.m"; path = "Classes/Models/PBTale+DataManager.m"; sourceTree = "<group>"; };
+		36B89D7C1B35616400EC78AB /* PBTaleInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBTaleInfo.h; path = Classes/DTOs/PBTaleInfo.h; sourceTree = "<group>"; };
+		36B89D7D1B35616400EC78AB /* PBTaleInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBTaleInfo.m; path = Classes/DTOs/PBTaleInfo.m; sourceTree = "<group>"; };
+		3B36DF2B9E1E20B34001075A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		7B8FE003769036AEB2E25705 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2D5366B08B1DC22AE534C5C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39999594F5D8C92FB4FF417B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,12 +188,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C2EC361E2E4AE6C078A71BE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E2D5366B08B1DC22AE534C5C /* Pods.debug.xcconfig */,
+				3B36DF2B9E1E20B34001075A /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		36B89C4D1B351A3B00EC78AB = {
 			isa = PBXGroup;
 			children = (
 				36B89C581B351A3C00EC78AB /* PhotoBoard */,
 				36B89C721B351A3C00EC78AB /* PhotoBoardTests */,
 				36B89C571B351A3C00EC78AB /* Products */,
+				0C2EC361E2E4AE6C078A71BE /* Pods */,
+				DBA997023C2FB3B8D1D567D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -273,6 +304,7 @@
 				36B89C901B351E3C00EC78AB /* PhotoBoard.xcdatamodeld */,
 				36B89D0B1B35558B00EC78AB /* Managed Objects */,
 				36B89D121B35562800EC78AB /* Data Manager */,
+				36B89D721B355F3D00EC78AB /* Utility */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -393,6 +425,8 @@
 		36B89CD31B3535BD00EC78AB /* DTOs */ = {
 			isa = PBXGroup;
 			children = (
+				36B89D7C1B35616400EC78AB /* PBTaleInfo.h */,
+				36B89D7D1B35616400EC78AB /* PBTaleInfo.m */,
 				36B89CD41B35368400EC78AB /* PBSceneInfo.h */,
 				36B89CD51B35368400EC78AB /* PBSceneInfo.m */,
 			);
@@ -488,8 +522,31 @@
 		36B89D121B35562800EC78AB /* Data Manager */ = {
 			isa = PBXGroup;
 			children = (
+				36B89D6F1B355CE600EC78AB /* PBDataManager.h */,
+				36B89D701B355CE600EC78AB /* PBDataManager.m */,
+				36B89D791B3560D300EC78AB /* PBTale+DataManager.h */,
+				36B89D7A1B3560D300EC78AB /* PBTale+DataManager.m */,
 			);
 			name = "Data Manager";
+			sourceTree = "<group>";
+		};
+		36B89D721B355F3D00EC78AB /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				36B89D731B355F5B00EC78AB /* PBTale+Utility.h */,
+				36B89D741B355F5B00EC78AB /* PBTale+Utility.m */,
+				36B89D761B355F6B00EC78AB /* PBScene+Utility.h */,
+				36B89D771B355F6B00EC78AB /* PBScene+Utility.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		DBA997023C2FB3B8D1D567D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B8FE003769036AEB2E25705 /* libPods.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,9 +556,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36B89C791B351A3C00EC78AB /* Build configuration list for PBXNativeTarget "PhotoBoard" */;
 			buildPhases = (
+				25322072D14F7D3C2D3434D9 /* Check Pods Manifest.lock */,
 				36B89C521B351A3C00EC78AB /* Sources */,
 				36B89C531B351A3C00EC78AB /* Frameworks */,
 				36B89C541B351A3C00EC78AB /* Resources */,
+				5FF2CBB3438707029E6544CB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -594,6 +653,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		25322072D14F7D3C2D3434D9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5FF2CBB3438707029E6544CB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		36B89C521B351A3C00EC78AB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -616,7 +708,9 @@
 				36B89CF61B35407100EC78AB /* MASLayoutConstraint.m in Sources */,
 				36B89CC81B35305F00EC78AB /* PBSceneListView.m in Sources */,
 				36B89CAA1B351FB500EC78AB /* ELCConsole.m in Sources */,
+				36B89D711B355CE600EC78AB /* PBDataManager.m in Sources */,
 				36B89CA91B351FB500EC78AB /* ELCAssetTablePicker.m in Sources */,
+				36B89D7B1B3560D300EC78AB /* PBTale+DataManager.m in Sources */,
 				36B89D001B35437400EC78AB /* PBTaleGroupPresenter.m in Sources */,
 				36B89CC31B352F8300EC78AB /* PBTaleDetailViewController.m in Sources */,
 				36B89D031B35438300EC78AB /* PBSceneGroupPresenter.m in Sources */,
@@ -625,11 +719,14 @@
 				36B89CA71B351FB500EC78AB /* ELCAsset.m in Sources */,
 				36B89C881B351B8500EC78AB /* PBTaleListViewController.m in Sources */,
 				36B89CF91B35407100EC78AB /* NSArray+MASAdditions.m in Sources */,
+				36B89D751B355F5B00EC78AB /* PBTale+Utility.m in Sources */,
 				36B89C921B351E3C00EC78AB /* PhotoBoard.xcdatamodeld in Sources */,
 				36B89D111B3555D000EC78AB /* PBTale.m in Sources */,
 				36B89C8C1B351B9000EC78AB /* main.m in Sources */,
+				36B89D781B355F6B00EC78AB /* PBScene+Utility.m in Sources */,
 				36B89D101B3555D000EC78AB /* PBScene.m in Sources */,
 				36B89C851B351B7C00EC78AB /* AppDelegate.m in Sources */,
+				36B89D7E1B35616400EC78AB /* PBTaleInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -753,6 +850,7 @@
 		};
 		36B89C7A1B351A3C00EC78AB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2D5366B08B1DC22AE534C5C /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PhotoBoard/SupportingFiles/Info.plist;
@@ -763,6 +861,7 @@
 		};
 		36B89C7B1B351A3C00EC78AB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B36DF2B9E1E20B34001075A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PhotoBoard/SupportingFiles/Info.plist;
@@ -824,6 +923,7 @@
 				36B89C7B1B351A3C00EC78AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		36B89C7C1B351A3C00EC78AB /* Build configuration list for PBXNativeTarget "PhotoBoardTests" */ = {
 			isa = XCConfigurationList;
@@ -832,6 +932,7 @@
 				36B89C7E1B351A3C00EC78AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
