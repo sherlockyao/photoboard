@@ -1,0 +1,16 @@
+*.DS_Store
+ 
+./PhotoBoard/build/
+ 
+*.pbxuser
+*.perspective
+*.perspectivev3
+ 
+*.mode1v3
+*.mode2v3
+xcuserdata
+ 
+./PhotoBoard/Documentation/Generated
+
+#CocoaPods
+Pods
