@@ -21,6 +21,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // configure
+    [self configureProperties];
+    [self configureViewComponents];
 }
 
 - (IBAction)createButtonTouchUpInside:(id)sender {
@@ -38,6 +41,9 @@
 - (void)elcImagePickerController:(ELCImagePickerController *)picker didFinishPickingMediaWithInfo:(NSArray *)info {
     [self dismissViewControllerAnimated:YES completion:nil];
     
+    if (0 == [info count]) {
+        return; // quit if no photo is selected
+    }
     NSMutableArray* sceneInfos = [NSMutableArray arrayWithCapacity:[info count]];
     for (NSDictionary* map in info) {
         PBSceneInfo* sceneInfo = [PBSceneInfo new];
@@ -50,6 +56,15 @@
 
 - (void)elcImagePickerControllerDidCancel:(ELCImagePickerController *)picker {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - Configuration
+
+- (void)configureProperties {
+}
+
+- (void)configureViewComponents {
+    self.createButton.layer.cornerRadius = 30;
 }
 
 @end

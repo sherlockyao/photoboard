@@ -65,8 +65,85 @@
                     <view key="view" contentMode="scaleToFill" id="bp3-9u-ap2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Me-gI-ftb" userLabel="Mask View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DF1-kz-G13" userLabel="Edit View">
+                                <rect key="frame" x="0.0" y="450" width="600" height="150"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="efg-sc-Rf4" userLabel="Edit Text Field">
+                                        <rect key="frame" x="8" y="30" width="584" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="bZN-Fc-Uhc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o12-K7-Lsw" userLabel="Done Button">
+                                        <rect key="frame" x="540" y="100" width="60" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="KBU-xx-5Ba"/>
+                                            <constraint firstAttribute="height" constant="50" id="hzE-jA-CXB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="确定">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="editDoneButtonTouchUpInside:" destination="Hd3-gp-MeF" eventType="touchUpInside" id="YHX-Bz-8kB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3d-1t-ktq" userLabel="Cancel Button">
+                                        <rect key="frame" x="480" y="100" width="60" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="cik-qm-YoD"/>
+                                            <constraint firstAttribute="height" constant="50" id="s2P-f8-ms4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <state key="normal" title="取消">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="editCancelButtonTouchUpInside:" destination="Hd3-gp-MeF" eventType="touchUpInside" id="Tub-L9-gcZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="efg-sc-Rf4" firstAttribute="leading" secondItem="DF1-kz-G13" secondAttribute="leading" constant="8" id="0o7-fo-Shg"/>
+                                    <constraint firstAttribute="height" constant="150" id="28I-s4-mrX"/>
+                                    <constraint firstAttribute="trailing" secondItem="o12-K7-Lsw" secondAttribute="trailing" id="2EE-yg-g0h"/>
+                                    <constraint firstItem="o12-K7-Lsw" firstAttribute="leading" secondItem="r3d-1t-ktq" secondAttribute="trailing" id="M1q-yx-BXn"/>
+                                    <constraint firstAttribute="bottom" secondItem="o12-K7-Lsw" secondAttribute="bottom" id="X52-DR-Mlj"/>
+                                    <constraint firstAttribute="bottom" secondItem="r3d-1t-ktq" secondAttribute="bottom" id="bCw-G3-QjC"/>
+                                    <constraint firstItem="efg-sc-Rf4" firstAttribute="top" secondItem="DF1-kz-G13" secondAttribute="top" constant="30" id="cuY-Zt-28s"/>
+                                    <constraint firstAttribute="trailing" secondItem="efg-sc-Rf4" secondAttribute="trailing" constant="8" id="w6W-EI-vpr"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2Me-gI-ftb" firstAttribute="leading" secondItem="bp3-9u-ap2" secondAttribute="leading" id="3XS-JF-bA1"/>
+                            <constraint firstItem="DF1-kz-G13" firstAttribute="leading" secondItem="bp3-9u-ap2" secondAttribute="leading" id="Bh9-vV-9R3"/>
+                            <constraint firstItem="QQ3-Mr-Lf5" firstAttribute="top" secondItem="2Me-gI-ftb" secondAttribute="bottom" id="Gbr-3k-iXT"/>
+                            <constraint firstAttribute="trailing" secondItem="DF1-kz-G13" secondAttribute="trailing" id="N86-g2-iI4"/>
+                            <constraint firstItem="2Me-gI-ftb" firstAttribute="top" secondItem="bp3-9u-ap2" secondAttribute="top" id="TL7-fY-Zrz"/>
+                            <constraint firstAttribute="trailing" secondItem="2Me-gI-ftb" secondAttribute="trailing" id="b6y-uA-NRT"/>
+                            <constraint firstItem="QQ3-Mr-Lf5" firstAttribute="top" secondItem="DF1-kz-G13" secondAttribute="bottom" id="bvS-zH-AyZ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="editCancelButton" destination="r3d-1t-ktq" id="bee-gn-nm5"/>
+                        <outlet property="editDoneButton" destination="o12-K7-Lsw" id="V7W-nw-fyF"/>
+                        <outlet property="editTextField" destination="efg-sc-Rf4" id="Mka-t1-XiG"/>
+                        <outlet property="editView" destination="DF1-kz-G13" id="gzK-DQ-5Ye"/>
+                        <outlet property="editViewBottomConstraint" destination="bvS-zH-AyZ" id="EqY-Ni-a0t"/>
+                        <outlet property="maskView" destination="2Me-gI-ftb" id="eLK-dS-Yfn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aol-1v-qlB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
