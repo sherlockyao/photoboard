@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14D136" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="PBScene" syncable="YES"/>
-    <entity name="PBTale" syncable="YES"/>
+    <entity name="PBScene" representedClassName="PBScene" syncable="YES">
+        <attribute name="assetURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="word" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tale" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PBTale" inverseName="scenes" inverseEntity="PBTale" syncable="YES"/>
+    </entity>
+    <entity name="PBTale" representedClassName="PBTale" syncable="YES">
+        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="scenes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PBScene" inverseName="tale" inverseEntity="PBScene" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="PBTale" positionX="-63" positionY="-18" width="128" height="45"/>
-        <element name="PBScene" positionX="-54" positionY="-9" width="128" height="45"/>
+        <element name="PBTale" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="PBScene" positionX="-54" positionY="-9" width="128" height="120"/>
     </elements>
 </model>

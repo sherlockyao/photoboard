@@ -47,6 +47,8 @@
 		36B89D001B35437400EC78AB /* PBTaleGroupPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89CFF1B35437400EC78AB /* PBTaleGroupPresenter.m */; };
 		36B89D031B35438300EC78AB /* PBSceneGroupPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89D021B35438300EC78AB /* PBSceneGroupPresenter.m */; };
 		36B89D061B35447800EC78AB /* PBConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89D051B35447800EC78AB /* PBConstants.m */; };
+		36B89D101B3555D000EC78AB /* PBScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89D0D1B3555D000EC78AB /* PBScene.m */; };
+		36B89D111B3555D000EC78AB /* PBTale.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89D0F1B3555D000EC78AB /* PBTale.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +144,10 @@
 		36B89D051B35447800EC78AB /* PBConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBConstants.m; path = Classes/Application/PBConstants.m; sourceTree = "<group>"; };
 		36B89D091B35453900EC78AB /* PBTaleListInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBTaleListInterface.h; path = Classes/ViewInterfaces/PBTaleListInterface.h; sourceTree = "<group>"; };
 		36B89D0A1B35454C00EC78AB /* PBSceneListInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBSceneListInterface.h; path = Classes/ViewInterfaces/PBSceneListInterface.h; sourceTree = "<group>"; };
+		36B89D0C1B3555D000EC78AB /* PBScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBScene.h; path = Classes/Models/PBScene.h; sourceTree = "<group>"; };
+		36B89D0D1B3555D000EC78AB /* PBScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBScene.m; path = Classes/Models/PBScene.m; sourceTree = "<group>"; };
+		36B89D0E1B3555D000EC78AB /* PBTale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBTale.h; path = Classes/Models/PBTale.h; sourceTree = "<group>"; };
+		36B89D0F1B3555D000EC78AB /* PBTale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBTale.m; path = Classes/Models/PBTale.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +271,8 @@
 			isa = PBXGroup;
 			children = (
 				36B89C901B351E3C00EC78AB /* PhotoBoard.xcdatamodeld */,
+				36B89D0B1B35558B00EC78AB /* Managed Objects */,
+				36B89D121B35562800EC78AB /* Data Manager */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -466,6 +474,24 @@
 			name = Tale;
 			sourceTree = "<group>";
 		};
+		36B89D0B1B35558B00EC78AB /* Managed Objects */ = {
+			isa = PBXGroup;
+			children = (
+				36B89D0C1B3555D000EC78AB /* PBScene.h */,
+				36B89D0D1B3555D000EC78AB /* PBScene.m */,
+				36B89D0E1B3555D000EC78AB /* PBTale.h */,
+				36B89D0F1B3555D000EC78AB /* PBTale.m */,
+			);
+			name = "Managed Objects";
+			sourceTree = "<group>";
+		};
+		36B89D121B35562800EC78AB /* Data Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Data Manager";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -600,7 +626,9 @@
 				36B89C881B351B8500EC78AB /* PBTaleListViewController.m in Sources */,
 				36B89CF91B35407100EC78AB /* NSArray+MASAdditions.m in Sources */,
 				36B89C921B351E3C00EC78AB /* PhotoBoard.xcdatamodeld in Sources */,
+				36B89D111B3555D000EC78AB /* PBTale.m in Sources */,
 				36B89C8C1B351B9000EC78AB /* main.m in Sources */,
+				36B89D101B3555D000EC78AB /* PBScene.m in Sources */,
 				36B89C851B351B7C00EC78AB /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
