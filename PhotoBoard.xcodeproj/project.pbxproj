@@ -28,6 +28,13 @@
 		36B89CB61B351FCF00EC78AB /* Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 36B89CB11B351FCF00EC78AB /* Overlay.png */; };
 		36B89CB71B351FCF00EC78AB /* Overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36B89CB21B351FCF00EC78AB /* Overlay@2x.png */; };
 		36B89CC01B3525F200EC78AB /* PBWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89CBF1B3525F200EC78AB /* PBWireframe.m */; };
+		36B89CC31B352F8300EC78AB /* PBTaleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89CC21B352F8300EC78AB /* PBTaleDetailViewController.m */; };
+		36B89CC81B35305F00EC78AB /* PBSceneListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89CC71B35305F00EC78AB /* PBSceneListView.m */; };
+		36B89CCA1B35308600EC78AB /* PBSceneListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B89CC91B35308600EC78AB /* PBSceneListView.xib */; };
+		36B89CCF1B3531C900EC78AB /* PBSceneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89CCD1B3531C900EC78AB /* PBSceneCell.m */; };
+		36B89CD21B3531DE00EC78AB /* PBSceneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B89CD11B3531DE00EC78AB /* PBSceneCell.xib */; };
+		36B89CD61B35368400EC78AB /* PBSceneInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89CD51B35368400EC78AB /* PBSceneInfo.m */; };
+		36B89CDA1B35388B00EC78AB /* PBAssetsLibraryUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89CD91B35388B00EC78AB /* PBAssetsLibraryUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +87,18 @@
 		36B89CB21B351FCF00EC78AB /* Overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Overlay@2x.png"; path = "Classes/ELCImagePicker/Resources/Overlay@2x.png"; sourceTree = "<group>"; };
 		36B89CBE1B3525F200EC78AB /* PBWireframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBWireframe.h; path = Classes/Routing/PBWireframe.h; sourceTree = "<group>"; };
 		36B89CBF1B3525F200EC78AB /* PBWireframe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBWireframe.m; path = Classes/Routing/PBWireframe.m; sourceTree = "<group>"; };
+		36B89CC11B352F8300EC78AB /* PBTaleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBTaleDetailViewController.h; path = Classes/Views/PBTaleDetailViewController.h; sourceTree = "<group>"; };
+		36B89CC21B352F8300EC78AB /* PBTaleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBTaleDetailViewController.m; path = Classes/Views/PBTaleDetailViewController.m; sourceTree = "<group>"; };
+		36B89CC61B35305F00EC78AB /* PBSceneListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBSceneListView.h; path = Classes/Views/PBSceneListView.h; sourceTree = "<group>"; };
+		36B89CC71B35305F00EC78AB /* PBSceneListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBSceneListView.m; path = Classes/Views/PBSceneListView.m; sourceTree = "<group>"; };
+		36B89CC91B35308600EC78AB /* PBSceneListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PBSceneListView.xib; path = XIBs/PBSceneListView.xib; sourceTree = "<group>"; };
+		36B89CCC1B3531C900EC78AB /* PBSceneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBSceneCell.h; path = Classes/Views/PBSceneCell.h; sourceTree = "<group>"; };
+		36B89CCD1B3531C900EC78AB /* PBSceneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBSceneCell.m; path = Classes/Views/PBSceneCell.m; sourceTree = "<group>"; };
+		36B89CD11B3531DE00EC78AB /* PBSceneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PBSceneCell.xib; path = XIBs/PBSceneCell.xib; sourceTree = "<group>"; };
+		36B89CD41B35368400EC78AB /* PBSceneInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBSceneInfo.h; path = Classes/DTOs/PBSceneInfo.h; sourceTree = "<group>"; };
+		36B89CD51B35368400EC78AB /* PBSceneInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBSceneInfo.m; path = Classes/DTOs/PBSceneInfo.m; sourceTree = "<group>"; };
+		36B89CD81B35388B00EC78AB /* PBAssetsLibraryUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBAssetsLibraryUtil.h; path = Classes/Utilities/PBAssetsLibraryUtil.h; sourceTree = "<group>"; };
+		36B89CD91B35388B00EC78AB /* PBAssetsLibraryUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBAssetsLibraryUtil.m; path = Classes/Utilities/PBAssetsLibraryUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +190,8 @@
 				36B89C8F1B351DEE00EC78AB /* Models */,
 				36B89C811B351A8300EC78AB /* Views */,
 				36B89CBD1B3525CD00EC78AB /* Routing */,
+				36B89CD31B3535BD00EC78AB /* DTOs */,
+				36B89CD71B3537F200EC78AB /* Utilities */,
 				36B89CB91B351FEE00EC78AB /* Libraries */,
 			);
 			name = Classes;
@@ -252,6 +273,7 @@
 				36B89C631B351A3C00EC78AB /* PBTale.storyboard */,
 				36B89CBB1B35211F00EC78AB /* List */,
 				36B89CBC1B35217700EC78AB /* Detail */,
+				36B89CC41B352FF400EC78AB /* Components */,
 			);
 			name = Tale;
 			sourceTree = "<group>";
@@ -268,6 +290,8 @@
 		36B89CBC1B35217700EC78AB /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				36B89CC11B352F8300EC78AB /* PBTaleDetailViewController.h */,
+				36B89CC21B352F8300EC78AB /* PBTaleDetailViewController.m */,
 			);
 			name = Detail;
 			sourceTree = "<group>";
@@ -279,6 +303,53 @@
 				36B89CBF1B3525F200EC78AB /* PBWireframe.m */,
 			);
 			name = Routing;
+			sourceTree = "<group>";
+		};
+		36B89CC41B352FF400EC78AB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				36B89CC51B352FFD00EC78AB /* Scene List */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		36B89CC51B352FFD00EC78AB /* Scene List */ = {
+			isa = PBXGroup;
+			children = (
+				36B89CC91B35308600EC78AB /* PBSceneListView.xib */,
+				36B89CC61B35305F00EC78AB /* PBSceneListView.h */,
+				36B89CC71B35305F00EC78AB /* PBSceneListView.m */,
+				36B89CCB1B35318300EC78AB /* Scene Cell */,
+			);
+			name = "Scene List";
+			sourceTree = "<group>";
+		};
+		36B89CCB1B35318300EC78AB /* Scene Cell */ = {
+			isa = PBXGroup;
+			children = (
+				36B89CD11B3531DE00EC78AB /* PBSceneCell.xib */,
+				36B89CCC1B3531C900EC78AB /* PBSceneCell.h */,
+				36B89CCD1B3531C900EC78AB /* PBSceneCell.m */,
+			);
+			name = "Scene Cell";
+			sourceTree = "<group>";
+		};
+		36B89CD31B3535BD00EC78AB /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				36B89CD41B35368400EC78AB /* PBSceneInfo.h */,
+				36B89CD51B35368400EC78AB /* PBSceneInfo.m */,
+			);
+			name = DTOs;
+			sourceTree = "<group>";
+		};
+		36B89CD71B3537F200EC78AB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				36B89CD81B35388B00EC78AB /* PBAssetsLibraryUtil.h */,
+				36B89CD91B35388B00EC78AB /* PBAssetsLibraryUtil.m */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +433,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				36B89CB51B351FCF00EC78AB /* ELCAssetTablePicker.xib in Resources */,
+				36B89CCA1B35308600EC78AB /* PBSceneListView.xib in Resources */,
+				36B89CD21B3531DE00EC78AB /* PBSceneCell.xib in Resources */,
 				36B89CB31B351FCF00EC78AB /* ELCAlbumPickerController.xib in Resources */,
 				36B89CB61B351FCF00EC78AB /* Overlay.png in Resources */,
 				36B89C651B351A3C00EC78AB /* PBTale.storyboard in Resources */,
@@ -389,10 +462,15 @@
 				36B89CA81B351FB500EC78AB /* ELCAssetCell.m in Sources */,
 				36B89CAC1B351FB500EC78AB /* ELCOverlayImageView.m in Sources */,
 				36B89CA61B351FB500EC78AB /* ELCAlbumPickerController.m in Sources */,
+				36B89CDA1B35388B00EC78AB /* PBAssetsLibraryUtil.m in Sources */,
 				36B89CAB1B351FB500EC78AB /* ELCImagePickerController.m in Sources */,
+				36B89CD61B35368400EC78AB /* PBSceneInfo.m in Sources */,
 				36B89CC01B3525F200EC78AB /* PBWireframe.m in Sources */,
+				36B89CC81B35305F00EC78AB /* PBSceneListView.m in Sources */,
 				36B89CAA1B351FB500EC78AB /* ELCConsole.m in Sources */,
 				36B89CA91B351FB500EC78AB /* ELCAssetTablePicker.m in Sources */,
+				36B89CC31B352F8300EC78AB /* PBTaleDetailViewController.m in Sources */,
+				36B89CCF1B3531C900EC78AB /* PBSceneCell.m in Sources */,
 				36B89CA71B351FB500EC78AB /* ELCAsset.m in Sources */,
 				36B89C881B351B8500EC78AB /* PBTaleListViewController.m in Sources */,
 				36B89C921B351E3C00EC78AB /* PhotoBoard.xcdatamodeld in Sources */,
