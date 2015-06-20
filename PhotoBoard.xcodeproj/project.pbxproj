@@ -40,6 +40,7 @@
 		36B89C871B351B8500EC78AB /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Classes/Views/ViewController.m; sourceTree = "<group>"; };
 		36B89C891B351B9000EC78AB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SupportingFiles/Info.plist; sourceTree = "<group>"; };
 		36B89C8A1B351B9000EC78AB /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SupportingFiles/main.m; sourceTree = "<group>"; };
+		36B89C8D1B351D9200EC78AB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +85,7 @@
 				36B89C801B351A7700EC78AB /* Classes */,
 				36B89C821B351A9800EC78AB /* Resources */,
 				36B89C591B351A3C00EC78AB /* Supporting Files */,
+				36B89C8D1B351D9200EC78AB /* README.md */,
 			);
 			path = PhotoBoard;
 			sourceTree = "<group>";
