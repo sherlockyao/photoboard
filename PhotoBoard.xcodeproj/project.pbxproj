@@ -54,6 +54,7 @@
 		36B89D781B355F6B00EC78AB /* PBScene+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89D771B355F6B00EC78AB /* PBScene+Utility.m */; };
 		36B89D7B1B3560D300EC78AB /* PBTale+DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89D7A1B3560D300EC78AB /* PBTale+DataManager.m */; };
 		36B89D7E1B35616400EC78AB /* PBTaleInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89D7D1B35616400EC78AB /* PBTaleInfo.m */; };
+		36B89D811B35662D00EC78AB /* PBTaleMaintainPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89D801B35662D00EC78AB /* PBTaleMaintainPresenter.m */; };
 		39999594F5D8C92FB4FF417B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8FE003769036AEB2E25705 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -164,6 +165,8 @@
 		36B89D7A1B3560D300EC78AB /* PBTale+DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PBTale+DataManager.m"; path = "Classes/Models/PBTale+DataManager.m"; sourceTree = "<group>"; };
 		36B89D7C1B35616400EC78AB /* PBTaleInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBTaleInfo.h; path = Classes/DTOs/PBTaleInfo.h; sourceTree = "<group>"; };
 		36B89D7D1B35616400EC78AB /* PBTaleInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBTaleInfo.m; path = Classes/DTOs/PBTaleInfo.m; sourceTree = "<group>"; };
+		36B89D7F1B35662D00EC78AB /* PBTaleMaintainPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBTaleMaintainPresenter.h; path = Classes/Presenters/PBTaleMaintainPresenter.h; sourceTree = "<group>"; };
+		36B89D801B35662D00EC78AB /* PBTaleMaintainPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBTaleMaintainPresenter.m; path = Classes/Presenters/PBTaleMaintainPresenter.m; sourceTree = "<group>"; };
 		3B36DF2B9E1E20B34001075A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7B8FE003769036AEB2E25705 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D5366B08B1DC22AE534C5C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -487,6 +490,8 @@
 				36B89CFF1B35437400EC78AB /* PBTaleGroupPresenter.m */,
 				36B89D011B35438300EC78AB /* PBSceneGroupPresenter.h */,
 				36B89D021B35438300EC78AB /* PBSceneGroupPresenter.m */,
+				36B89D7F1B35662D00EC78AB /* PBTaleMaintainPresenter.h */,
+				36B89D801B35662D00EC78AB /* PBTaleMaintainPresenter.m */,
 			);
 			name = Tale;
 			sourceTree = "<group>";
@@ -718,6 +723,7 @@
 				36B89CFA1B35407100EC78AB /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				36B89CA71B351FB500EC78AB /* ELCAsset.m in Sources */,
 				36B89C881B351B8500EC78AB /* PBTaleListViewController.m in Sources */,
+				36B89D811B35662D00EC78AB /* PBTaleMaintainPresenter.m in Sources */,
 				36B89CF91B35407100EC78AB /* NSArray+MASAdditions.m in Sources */,
 				36B89D751B355F5B00EC78AB /* PBTale+Utility.m in Sources */,
 				36B89C921B351E3C00EC78AB /* PhotoBoard.xcdatamodeld in Sources */,

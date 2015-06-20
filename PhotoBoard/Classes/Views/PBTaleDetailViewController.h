@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PBSceneListView.h"
 #import "PBSceneGroupPresenter.h"
+#import "PBTaleMaintainPresenter.h"
 
 @interface PBTaleDetailViewController : UIViewController
 
@@ -21,5 +22,6 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *editViewBottomConstraint;
 
 @property (nonatomic, strong) PBSceneGroupPresenter* sceneGroupPresenter;
+@property (nonatomic, strong) PBTaleMaintainPresenter* taleMaintainPresenter;
 
 @end

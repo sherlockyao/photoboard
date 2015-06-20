@@ -7,7 +7,12 @@
 //
 
 #import "PBTaleGroupPresenter.h"
+#import "PBTale+DataManager.h"
 
 @implementation PBTaleGroupPresenter
+
+- (void)loadTaleInfos {
+    [self.taleList displayTaleInfos:[PBTale findAllTaleInfos]];
+}
 
 @end

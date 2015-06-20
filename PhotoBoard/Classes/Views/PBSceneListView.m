@@ -14,7 +14,7 @@ static NSString *const SceneCellReuseIdentifier = @"SceneCell";
 
 @interface PBSceneListView () <UITableViewDataSource, UITableViewDelegate, PBSceneCellDelegate>
 
-@property (nonatomic, strong) NSArray* sceneInfos;
+@property (readwrite, nonatomic, strong) NSArray* sceneInfos;
 
 @end
 

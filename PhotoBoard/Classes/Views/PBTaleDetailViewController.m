@@ -108,6 +108,12 @@
     [self.editTextField resignFirstResponder];
 }
 
+- (IBAction)createButtonTouchUpInside:(id)sender {
+    [self.taleMaintainPresenter createTaleWithSceneInfos:self.sceneListView.sceneInfos completion:^{
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+}
+
 #pragma mark - Animations
 
 - (void)animateShowEditViewWithKeyboardHeight:(CGFloat)keyboardHeight {
@@ -161,7 +167,13 @@
 }
 
 - (void)configureViewComponents {
-    
+    // navigation
+    UIButton* createButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [createButton setTitle:@"创建" forState:UIControlStateNormal];
+    createButton.bounds = CGRectMake(0, 0, 40, 40);
+    [createButton addTarget:self action:@selector(createButtonTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *createItem = [[UIBarButtonItem alloc] initWithCustomView:createButton];
+    self.navigationItem.rightBarButtonItems = @[createItem];
 }
 
 @end

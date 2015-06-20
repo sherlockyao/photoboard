@@ -13,7 +13,9 @@
 #import "PBConstants.h"
 #import "PBWireFrame.h"
 
-@interface PBTaleListViewController () <ELCImagePickerControllerDelegate>
+@interface PBTaleListViewController () <ELCImagePickerControllerDelegate, PBTaleListInterface>
+
+@property (nonatomic, strong) NSArray* taleInfos;
 
 @end
 
@@ -26,6 +28,13 @@
     [self configureViewComponents];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.taleGroupPresenter loadTaleInfos];
+}
+
+#pragma mark - IB Actions
+
 - (IBAction)createButtonTouchUpInside:(id)sender {
     ELCImagePickerController *imagePicker = [[ELCImagePickerController alloc] initImagePicker];
     imagePicker.imagePickerDelegate = self;
@@ -34,6 +43,13 @@
     imagePicker.onOrder = YES;
     imagePicker.mediaTypes = @[(NSString *)kUTTypeImage];
     [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+#pragma mark - PBTaleListInterface
+
+- (void)displayTaleInfos:(NSArray *)taleInfos {
+    self.taleInfos = taleInfos;
+    [self.taleTableView reloadData];
 }
 
 #pragma mark - ELCImagePickerControllerDelegate
@@ -61,10 +77,12 @@
 #pragma mark - Configuration
 
 - (void)configureProperties {
+    self.taleInfos = @[];
 }
 
 - (void)configureViewComponents {
     self.createButton.layer.cornerRadius = 30;
+    self.taleGroupPresenter.taleList = self;
 }
 
 @end

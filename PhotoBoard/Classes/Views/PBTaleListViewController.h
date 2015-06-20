@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PBTaleGroupPresenter.h"
 
 @interface PBTaleListViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITableView *taleTableView;
 @property (weak, nonatomic) IBOutlet UIButton *createButton;
+
+@property (nonatomic, strong) PBTaleGroupPresenter* taleGroupPresenter;
 
 @end
 

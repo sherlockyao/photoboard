@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PBTaleListInterface.h"
 
 @interface PBTaleGroupPresenter : NSObject
+
+@property (nonatomic, weak) id<PBTaleListInterface> taleList;
+
+- (void)loadTaleInfos;
 
 @end
