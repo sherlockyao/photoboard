@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "PBWireframe.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    if (isRunningTests()) {
+        return YES;
+    }
+    
+    // Main Window Setup
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window setRootViewController:[PBWireframe rootViewController]];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
@@ -40,6 +49,18 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Helper Methods
+
+static BOOL isRunningTests(void) __attribute__((const));
+
+static BOOL isRunningTests(void) {
+    NSDictionary* environment = [[NSProcessInfo processInfo] environment];
+    NSString* injectBundle = environment[@"XCInjectBundle"];
+    NSString* pathExtension = [injectBundle pathExtension];
+    
+    return ([pathExtension isEqualToString:@"octest"] || [pathExtension isEqualToString:@"xctest"]);
 }
 
 @end

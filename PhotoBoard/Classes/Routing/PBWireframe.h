@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PBWireframe.h
 //  PhotoBoard
 //
 //  Created by Sherlock Yao on 6/20/15.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface PBWireframe : NSObject
 
++ (UIViewController *)rootViewController;
 
 @end
-

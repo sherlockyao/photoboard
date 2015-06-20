@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		36B89C651B351A3C00EC78AB /* Tale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C631B351A3C00EC78AB /* Tale.storyboard */; };
+		36B89C651B351A3C00EC78AB /* PBTale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C631B351A3C00EC78AB /* PBTale.storyboard */; };
 		36B89C671B351A3C00EC78AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C661B351A3C00EC78AB /* Images.xcassets */; };
 		36B89C6A1B351A3C00EC78AB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C681B351A3C00EC78AB /* LaunchScreen.xib */; };
 		36B89C761B351A3C00EC78AB /* PhotoBoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89C751B351A3C00EC78AB /* PhotoBoardTests.m */; };
 		36B89C851B351B7C00EC78AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89C841B351B7C00EC78AB /* AppDelegate.m */; };
-		36B89C881B351B8500EC78AB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89C871B351B8500EC78AB /* ViewController.m */; };
+		36B89C881B351B8500EC78AB /* PBTaleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89C871B351B8500EC78AB /* PBTaleListViewController.m */; };
 		36B89C8C1B351B9000EC78AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89C8A1B351B9000EC78AB /* main.m */; };
 		36B89C921B351E3C00EC78AB /* PhotoBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36B89C901B351E3C00EC78AB /* PhotoBoard.xcdatamodeld */; };
 		36B89CA61B351FB500EC78AB /* ELCAlbumPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89C951B351FB500EC78AB /* ELCAlbumPickerController.m */; };
@@ -27,6 +27,7 @@
 		36B89CB51B351FCF00EC78AB /* ELCAssetTablePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B89CB01B351FCF00EC78AB /* ELCAssetTablePicker.xib */; };
 		36B89CB61B351FCF00EC78AB /* Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 36B89CB11B351FCF00EC78AB /* Overlay.png */; };
 		36B89CB71B351FCF00EC78AB /* Overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 36B89CB21B351FCF00EC78AB /* Overlay@2x.png */; };
+		36B89CC01B3525F200EC78AB /* PBWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89CBF1B3525F200EC78AB /* PBWireframe.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +42,7 @@
 
 /* Begin PBXFileReference section */
 		36B89C561B351A3C00EC78AB /* PhotoBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		36B89C641B351A3C00EC78AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Tale.storyboard; sourceTree = "<group>"; };
+		36B89C641B351A3C00EC78AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PBTale.storyboard; sourceTree = "<group>"; };
 		36B89C661B351A3C00EC78AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		36B89C691B351A3C00EC78AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		36B89C6F1B351A3C00EC78AB /* PhotoBoardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoBoardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,8 +50,8 @@
 		36B89C751B351A3C00EC78AB /* PhotoBoardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoBoardTests.m; sourceTree = "<group>"; };
 		36B89C831B351B7C00EC78AB /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/Application/AppDelegate.h; sourceTree = "<group>"; };
 		36B89C841B351B7C00EC78AB /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/Application/AppDelegate.m; sourceTree = "<group>"; };
-		36B89C861B351B8500EC78AB /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Classes/Views/ViewController.h; sourceTree = "<group>"; };
-		36B89C871B351B8500EC78AB /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Classes/Views/ViewController.m; sourceTree = "<group>"; };
+		36B89C861B351B8500EC78AB /* PBTaleListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBTaleListViewController.h; path = Classes/Views/PBTaleListViewController.h; sourceTree = "<group>"; };
+		36B89C871B351B8500EC78AB /* PBTaleListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBTaleListViewController.m; path = Classes/Views/PBTaleListViewController.m; sourceTree = "<group>"; };
 		36B89C891B351B9000EC78AB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SupportingFiles/Info.plist; sourceTree = "<group>"; };
 		36B89C8A1B351B9000EC78AB /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SupportingFiles/main.m; sourceTree = "<group>"; };
 		36B89C8D1B351D9200EC78AB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
@@ -77,6 +78,8 @@
 		36B89CB01B351FCF00EC78AB /* ELCAssetTablePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ELCAssetTablePicker.xib; path = Classes/ELCImagePicker/Resources/ELCAssetTablePicker.xib; sourceTree = "<group>"; };
 		36B89CB11B351FCF00EC78AB /* Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Overlay.png; path = Classes/ELCImagePicker/Resources/Overlay.png; sourceTree = "<group>"; };
 		36B89CB21B351FCF00EC78AB /* Overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Overlay@2x.png"; path = "Classes/ELCImagePicker/Resources/Overlay@2x.png"; sourceTree = "<group>"; };
+		36B89CBE1B3525F200EC78AB /* PBWireframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBWireframe.h; path = Classes/Routing/PBWireframe.h; sourceTree = "<group>"; };
+		36B89CBF1B3525F200EC78AB /* PBWireframe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBWireframe.m; path = Classes/Routing/PBWireframe.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +170,7 @@
 				36B89C7F1B351A6600EC78AB /* Application */,
 				36B89C8F1B351DEE00EC78AB /* Models */,
 				36B89C811B351A8300EC78AB /* Views */,
+				36B89CBD1B3525CD00EC78AB /* Routing */,
 				36B89CB91B351FEE00EC78AB /* Libraries */,
 			);
 			name = Classes;
@@ -175,9 +179,7 @@
 		36B89C811B351A8300EC78AB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				36B89C861B351B8500EC78AB /* ViewController.h */,
-				36B89C871B351B8500EC78AB /* ViewController.m */,
-				36B89C631B351A3C00EC78AB /* Tale.storyboard */,
+				36B89CBA1B35211300EC78AB /* Tale */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -242,6 +244,41 @@
 				36B89C931B351FA000EC78AB /* ELCImagePicker */,
 			);
 			name = Libraries;
+			sourceTree = "<group>";
+		};
+		36B89CBA1B35211300EC78AB /* Tale */ = {
+			isa = PBXGroup;
+			children = (
+				36B89C631B351A3C00EC78AB /* PBTale.storyboard */,
+				36B89CBB1B35211F00EC78AB /* List */,
+				36B89CBC1B35217700EC78AB /* Detail */,
+			);
+			name = Tale;
+			sourceTree = "<group>";
+		};
+		36B89CBB1B35211F00EC78AB /* List */ = {
+			isa = PBXGroup;
+			children = (
+				36B89C861B351B8500EC78AB /* PBTaleListViewController.h */,
+				36B89C871B351B8500EC78AB /* PBTaleListViewController.m */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		36B89CBC1B35217700EC78AB /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
+		36B89CBD1B3525CD00EC78AB /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				36B89CBE1B3525F200EC78AB /* PBWireframe.h */,
+				36B89CBF1B3525F200EC78AB /* PBWireframe.m */,
+			);
+			name = Routing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,7 +364,7 @@
 				36B89CB51B351FCF00EC78AB /* ELCAssetTablePicker.xib in Resources */,
 				36B89CB31B351FCF00EC78AB /* ELCAlbumPickerController.xib in Resources */,
 				36B89CB61B351FCF00EC78AB /* Overlay.png in Resources */,
-				36B89C651B351A3C00EC78AB /* Tale.storyboard in Resources */,
+				36B89C651B351A3C00EC78AB /* PBTale.storyboard in Resources */,
 				36B89C6A1B351A3C00EC78AB /* LaunchScreen.xib in Resources */,
 				36B89CB71B351FCF00EC78AB /* Overlay@2x.png in Resources */,
 				36B89C671B351A3C00EC78AB /* Images.xcassets in Resources */,
@@ -353,10 +390,11 @@
 				36B89CAC1B351FB500EC78AB /* ELCOverlayImageView.m in Sources */,
 				36B89CA61B351FB500EC78AB /* ELCAlbumPickerController.m in Sources */,
 				36B89CAB1B351FB500EC78AB /* ELCImagePickerController.m in Sources */,
+				36B89CC01B3525F200EC78AB /* PBWireframe.m in Sources */,
 				36B89CAA1B351FB500EC78AB /* ELCConsole.m in Sources */,
 				36B89CA91B351FB500EC78AB /* ELCAssetTablePicker.m in Sources */,
 				36B89CA71B351FB500EC78AB /* ELCAsset.m in Sources */,
-				36B89C881B351B8500EC78AB /* ViewController.m in Sources */,
+				36B89C881B351B8500EC78AB /* PBTaleListViewController.m in Sources */,
 				36B89C921B351E3C00EC78AB /* PhotoBoard.xcdatamodeld in Sources */,
 				36B89C8C1B351B9000EC78AB /* main.m in Sources */,
 				36B89C851B351B7C00EC78AB /* AppDelegate.m in Sources */,
@@ -382,12 +420,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		36B89C631B351A3C00EC78AB /* Tale.storyboard */ = {
+		36B89C631B351A3C00EC78AB /* PBTale.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				36B89C641B351A3C00EC78AB /* Base */,
 			);
-			name = Tale.storyboard;
+			name = PBTale.storyboard;
 			sourceTree = "<group>";
 		};
 		36B89C681B351A3C00EC78AB /* LaunchScreen.xib */ = {
