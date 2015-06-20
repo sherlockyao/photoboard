@@ -14,6 +14,7 @@
 		36B89C851B351B7C00EC78AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89C841B351B7C00EC78AB /* AppDelegate.m */; };
 		36B89C881B351B8500EC78AB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89C871B351B8500EC78AB /* ViewController.m */; };
 		36B89C8C1B351B9000EC78AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89C8A1B351B9000EC78AB /* main.m */; };
+		36B89C921B351E3C00EC78AB /* PhotoBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 36B89C901B351E3C00EC78AB /* PhotoBoard.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		36B89C891B351B9000EC78AB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SupportingFiles/Info.plist; sourceTree = "<group>"; };
 		36B89C8A1B351B9000EC78AB /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SupportingFiles/main.m; sourceTree = "<group>"; };
 		36B89C8D1B351D9200EC78AB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		36B89C911B351E3C00EC78AB /* PhotoBoard.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PhotoBoard.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				36B89C7F1B351A6600EC78AB /* Application */,
+				36B89C8F1B351DEE00EC78AB /* Models */,
 				36B89C811B351A8300EC78AB /* Views */,
 			);
 			name = Classes;
@@ -151,6 +154,14 @@
 				36B89C681B351A3C00EC78AB /* LaunchScreen.xib */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		36B89C8F1B351DEE00EC78AB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				36B89C901B351E3C00EC78AB /* PhotoBoard.xcdatamodeld */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36B89C881B351B8500EC78AB /* ViewController.m in Sources */,
+				36B89C921B351E3C00EC78AB /* PhotoBoard.xcdatamodeld in Sources */,
 				36B89C8C1B351B9000EC78AB /* main.m in Sources */,
 				36B89C851B351B7C00EC78AB /* AppDelegate.m in Sources */,
 			);
@@ -460,6 +472,20 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		36B89C901B351E3C00EC78AB /* PhotoBoard.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				36B89C911B351E3C00EC78AB /* PhotoBoard.xcdatamodel */,
+			);
+			currentVersion = 36B89C911B351E3C00EC78AB /* PhotoBoard.xcdatamodel */;
+			name = PhotoBoard.xcdatamodeld;
+			path = SupportingFiles/PhotoBoard.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 36B89C4E1B351A3B00EC78AB /* Project object */;
 }
