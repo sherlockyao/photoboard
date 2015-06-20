@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PBSceneListView.h"
+#import "PBSceneGroupPresenter.h"
 
 @interface PBTaleDetailViewController : UIViewController
+
+@property (nonatomic, strong) PBSceneListView* sceneListView;
+
+@property (nonatomic, strong) PBSceneGroupPresenter* sceneGroupPresenter;
 
 @end

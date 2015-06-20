@@ -40,6 +40,13 @@ static NSString *const SceneCellReuseIdentifier = @"SceneCell";
     [cell displaySceneInfo:sceneInfo];
 }
 
+#pragma mark - PBSceneListInterface
+
+- (void)displaySceneInfos:(NSArray *)sceneInfos {
+    self.sceneInfos = sceneInfos;
+    [self.sceneTableView reloadData];
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -80,5 +87,7 @@ static NSString *const SceneCellReuseIdentifier = @"SceneCell";
     self.sceneTableView.delegate = self;
     self.sceneTableView.dataSource = self;
     [self.sceneTableView registerNib:[UINib nibWithNibName:@"PBSceneCell" bundle:nil] forCellReuseIdentifier:SceneCellReuseIdentifier];
+    self.sceneTableView.rowHeight = 212;
+    self.sceneTableView.contentInset = UIEdgeInsetsMake(8, 0, 16, 0);
 }
 @end

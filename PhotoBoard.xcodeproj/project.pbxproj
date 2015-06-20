@@ -44,6 +44,9 @@
 		36B89CF91B35407100EC78AB /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89CEC1B35407100EC78AB /* NSArray+MASAdditions.m */; };
 		36B89CFA1B35407100EC78AB /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89CEF1B35407100EC78AB /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		36B89CFB1B35407100EC78AB /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89CF11B35407100EC78AB /* View+MASAdditions.m */; };
+		36B89D001B35437400EC78AB /* PBTaleGroupPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89CFF1B35437400EC78AB /* PBTaleGroupPresenter.m */; };
+		36B89D031B35438300EC78AB /* PBSceneGroupPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89D021B35438300EC78AB /* PBSceneGroupPresenter.m */; };
+		36B89D061B35447800EC78AB /* PBConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89D051B35447800EC78AB /* PBConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +134,14 @@
 		36B89CF01B35407100EC78AB /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Classes/Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
 		36B89CF11B35407100EC78AB /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Classes/Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
 		36B89CF21B35407100EC78AB /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Classes/Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		36B89CFE1B35437400EC78AB /* PBTaleGroupPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBTaleGroupPresenter.h; path = Classes/Presenters/PBTaleGroupPresenter.h; sourceTree = "<group>"; };
+		36B89CFF1B35437400EC78AB /* PBTaleGroupPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBTaleGroupPresenter.m; path = Classes/Presenters/PBTaleGroupPresenter.m; sourceTree = "<group>"; };
+		36B89D011B35438300EC78AB /* PBSceneGroupPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBSceneGroupPresenter.h; path = Classes/Presenters/PBSceneGroupPresenter.h; sourceTree = "<group>"; };
+		36B89D021B35438300EC78AB /* PBSceneGroupPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBSceneGroupPresenter.m; path = Classes/Presenters/PBSceneGroupPresenter.m; sourceTree = "<group>"; };
+		36B89D041B35447800EC78AB /* PBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBConstants.h; path = Classes/Application/PBConstants.h; sourceTree = "<group>"; };
+		36B89D051B35447800EC78AB /* PBConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBConstants.m; path = Classes/Application/PBConstants.m; sourceTree = "<group>"; };
+		36B89D091B35453900EC78AB /* PBTaleListInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBTaleListInterface.h; path = Classes/ViewInterfaces/PBTaleListInterface.h; sourceTree = "<group>"; };
+		36B89D0A1B35454C00EC78AB /* PBSceneListInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBSceneListInterface.h; path = Classes/ViewInterfaces/PBSceneListInterface.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +222,8 @@
 			children = (
 				36B89C831B351B7C00EC78AB /* AppDelegate.h */,
 				36B89C841B351B7C00EC78AB /* AppDelegate.m */,
+				36B89D041B35447800EC78AB /* PBConstants.h */,
+				36B89D051B35447800EC78AB /* PBConstants.m */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -221,6 +234,8 @@
 				36B89C7F1B351A6600EC78AB /* Application */,
 				36B89C8F1B351DEE00EC78AB /* Models */,
 				36B89C811B351A8300EC78AB /* Views */,
+				36B89D071B35450800EC78AB /* View Interfaces */,
+				36B89CFC1B35428E00EC78AB /* Presenters */,
 				36B89CBD1B3525CD00EC78AB /* Routing */,
 				36B89CD31B3535BD00EC78AB /* DTOs */,
 				36B89CD71B3537F200EC78AB /* Utilities */,
@@ -415,6 +430,42 @@
 			name = Masonry;
 			sourceTree = "<group>";
 		};
+		36B89CFC1B35428E00EC78AB /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				36B89CFD1B35435100EC78AB /* Tale */,
+			);
+			name = Presenters;
+			sourceTree = "<group>";
+		};
+		36B89CFD1B35435100EC78AB /* Tale */ = {
+			isa = PBXGroup;
+			children = (
+				36B89CFE1B35437400EC78AB /* PBTaleGroupPresenter.h */,
+				36B89CFF1B35437400EC78AB /* PBTaleGroupPresenter.m */,
+				36B89D011B35438300EC78AB /* PBSceneGroupPresenter.h */,
+				36B89D021B35438300EC78AB /* PBSceneGroupPresenter.m */,
+			);
+			name = Tale;
+			sourceTree = "<group>";
+		};
+		36B89D071B35450800EC78AB /* View Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				36B89D081B35450F00EC78AB /* Tale */,
+			);
+			name = "View Interfaces";
+			sourceTree = "<group>";
+		};
+		36B89D081B35450F00EC78AB /* Tale */ = {
+			isa = PBXGroup;
+			children = (
+				36B89D091B35453900EC78AB /* PBTaleListInterface.h */,
+				36B89D0A1B35454C00EC78AB /* PBSceneListInterface.h */,
+			);
+			name = Tale;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -529,6 +580,7 @@
 				36B89CAC1B351FB500EC78AB /* ELCOverlayImageView.m in Sources */,
 				36B89CA61B351FB500EC78AB /* ELCAlbumPickerController.m in Sources */,
 				36B89CDA1B35388B00EC78AB /* PBAssetsLibraryUtil.m in Sources */,
+				36B89D061B35447800EC78AB /* PBConstants.m in Sources */,
 				36B89CF81B35407100EC78AB /* MASViewConstraint.m in Sources */,
 				36B89CFB1B35407100EC78AB /* View+MASAdditions.m in Sources */,
 				36B89CF31B35407100EC78AB /* MASCompositeConstraint.m in Sources */,
@@ -539,7 +591,9 @@
 				36B89CC81B35305F00EC78AB /* PBSceneListView.m in Sources */,
 				36B89CAA1B351FB500EC78AB /* ELCConsole.m in Sources */,
 				36B89CA91B351FB500EC78AB /* ELCAssetTablePicker.m in Sources */,
+				36B89D001B35437400EC78AB /* PBTaleGroupPresenter.m in Sources */,
 				36B89CC31B352F8300EC78AB /* PBTaleDetailViewController.m in Sources */,
+				36B89D031B35438300EC78AB /* PBSceneGroupPresenter.m in Sources */,
 				36B89CCF1B3531C900EC78AB /* PBSceneCell.m in Sources */,
 				36B89CFA1B35407100EC78AB /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				36B89CA71B351FB500EC78AB /* ELCAsset.m in Sources */,

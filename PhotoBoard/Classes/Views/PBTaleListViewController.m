@@ -9,6 +9,9 @@
 #import "PBTaleListViewController.h"
 #import "ELCImagePickerController.h"
 #import <MobileCoreServices/UTCoreTypes.h>
+#import "PBSceneInfo.h"
+#import "PBConstants.h"
+#import "PBWireFrame.h"
 
 @interface PBTaleListViewController () <ELCImagePickerControllerDelegate>
 
@@ -33,9 +36,16 @@
 #pragma mark - ELCImagePickerControllerDelegate
 
 - (void)elcImagePickerController:(ELCImagePickerController *)picker didFinishPickingMediaWithInfo:(NSArray *)info {
-    NSLog(@"---> %@", info);
-    //UIImagePickerControllerReferenceURL
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    NSMutableArray* sceneInfos = [NSMutableArray arrayWithCapacity:[info count]];
+    for (NSDictionary* map in info) {
+        PBSceneInfo* sceneInfo = [PBSceneInfo new];
+        sceneInfo.assetURL = [map objectForKey:UIImagePickerControllerReferenceURL];
+        [sceneInfos addObject:sceneInfo];
+    }
+    NSDictionary* params = @{ ParamKeySceneInfos : sceneInfos };
+    [PBWireframe moveToTaleDetailViewControllerFrom:self withParams:params];
 }
 
 - (void)elcImagePickerControllerDidCancel:(ELCImagePickerController *)picker {

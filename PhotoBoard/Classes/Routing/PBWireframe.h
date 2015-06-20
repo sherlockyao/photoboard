@@ -12,4 +12,6 @@
 
 + (UIViewController *)rootViewController;
 
++ (void)moveToTaleDetailViewControllerFrom:(UIViewController *)sourceViewController withParams:(NSDictionary *)params;
+
 @end

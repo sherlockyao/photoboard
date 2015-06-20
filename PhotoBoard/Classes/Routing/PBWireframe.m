@@ -7,11 +7,22 @@
 //
 
 #import "PBWireframe.h"
+#import "PBTaleDetailViewController.h"
 
 @implementation PBWireframe
 
 + (UIViewController *)rootViewController {
-    return [[UIStoryboard storyboardWithName:@"PBTale" bundle:nil] instantiateViewControllerWithIdentifier:@"TaleList"];
+    UIViewController* viewController = [[UIStoryboard storyboardWithName:@"PBTale" bundle:nil] instantiateViewControllerWithIdentifier:@"TaleList"];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    return navigationController;
+}
+
++ (void)moveToTaleDetailViewControllerFrom:(UIViewController *)sourceViewController withParams:(NSDictionary *)params {
+    PBTaleDetailViewController* viewController = [[UIStoryboard storyboardWithName:@"PBTale" bundle:nil] instantiateViewControllerWithIdentifier:@"TaleDetail"];
+    PBSceneGroupPresenter* sceneGroupPresenter = [PBSceneGroupPresenter new];
+    sceneGroupPresenter.params = params;
+    viewController.sceneGroupPresenter = sceneGroupPresenter;
+    [sourceViewController.navigationController pushViewController:viewController animated:YES];
 }
 
 @end

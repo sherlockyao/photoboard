@@ -59,7 +59,7 @@
                             <action selector="noteButtonTouchUpInside:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NLm-XR-AtP"/>
                         </connections>
                     </button>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cop-U2-7xL" userLabel="Photo Image View">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cop-U2-7xL" userLabel="Photo Image View">
                         <rect key="frame" x="8" y="72" width="304" height="158"/>
                     </imageView>
                 </subviews>

@@ -57,7 +57,7 @@
         <!--Tale Detail View Controller-->
         <scene sceneID="5ul-6n-Urn">
             <objects>
-                <viewController id="Hd3-gp-MeF" customClass="PBTaleDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TaleDetail" id="Hd3-gp-MeF" customClass="PBTaleDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vdB-xF-srZ"/>
                         <viewControllerLayoutGuide type="bottom" id="QQ3-Mr-Lf5"/>

@@ -18,8 +18,8 @@
 }
 
 - (void)displaySceneInfo:(PBSceneInfo *)sceneInfo {
-    self.wordLabel.text = sceneInfo.word;
-    self.noteLabel.text = sceneInfo.note;
+    self.wordLabel.text = sceneInfo.word ?: @"本来";
+    self.noteLabel.text = sceneInfo.note ?: @"...";
     [[PBAssetsLibraryUtil assetsLibrary] assetForURL:sceneInfo.assetURL resultBlock:^(ALAsset *asset) {
         self.photoImageView.image = [[UIImage alloc] initWithCGImage:[asset thumbnail]];
     } failureBlock:nil];

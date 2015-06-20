@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PBSceneListInterface.h"
 
 @protocol PBSceneListViewDelegate;
 
-@interface PBSceneListView : UIView
+@interface PBSceneListView : UIView <PBSceneListInterface>
 
 @property (weak, nonatomic) IBOutlet UITableView *sceneTableView;
 
