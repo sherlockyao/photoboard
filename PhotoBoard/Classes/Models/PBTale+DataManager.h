@@ -12,4 +12,6 @@
 
 + (NSArray *)findAllTaleInfos;
 
++ (void)deleteByObjectId:(NSManagedObjectID *)objectId completion:(void(^)(BOOL success, NSError *error))completion;
+
 @end

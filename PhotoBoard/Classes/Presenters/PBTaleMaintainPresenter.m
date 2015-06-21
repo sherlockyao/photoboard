@@ -8,6 +8,7 @@
 
 #import "PBTaleMaintainPresenter.h"
 #import "PBDataManager.h"
+#import "PBTale+DataManager.h"
 
 @implementation PBTaleMaintainPresenter
 
@@ -16,6 +17,12 @@
         if (completion) {
             completion();
         }
+    }];
+}
+
+- (void)deleteTaleOfTaleInfo:(PBTaleInfo *)taleInfo completion:(void(^)())completion {
+    [PBTale deleteByObjectId:taleInfo.objectId completion:^(BOOL success, NSError *error) {
+        completion();
     }];
 }
 

@@ -19,7 +19,7 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
 
 @interface PBTaleListViewController () <UITableViewDataSource, UITableViewDelegate, PBTaleCellDelegate, ELCImagePickerControllerDelegate, PBTaleListInterface>
 
-@property (nonatomic, strong) NSArray* taleInfos;
+@property (nonatomic, strong) NSMutableArray* taleInfos;
 
 @end
 
@@ -52,7 +52,7 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
 #pragma mark - PBTaleListInterface
 
 - (void)displayTaleInfos:(NSArray *)taleInfos {
-    self.taleInfos = taleInfos;
+    self.taleInfos = [NSMutableArray arrayWithArray:taleInfos];
     [self.taleTableView reloadData];
 }
 
@@ -78,7 +78,21 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
 #pragma mark - PBTaleCellDelegate
 
 - (void)taleCellDidClickDeleteButton:(PBTaleCell *)taleCell {
-    //TODO: handle deletion
+    NSIndexPath* indexPath = [self.taleTableView indexPathForCell:taleCell];
+    PBTaleInfo* taleInfo = self.taleInfos[indexPath.row];
+    
+    // show alert controller
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"是否要删除故事？" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *otherAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self.taleMaintainPresenter deleteTaleOfTaleInfo:taleInfo completion:^{
+            [self.taleInfos removeObjectAtIndex:indexPath.row];
+            [self.taleTableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        }];
+    }];
+    [alertController addAction:cancelAction];
+    [alertController addAction:otherAction];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 #pragma mark - ELCImagePickerControllerDelegate
@@ -106,7 +120,7 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
 #pragma mark - Configuration
 
 - (void)configureProperties {
-    self.taleInfos = @[];
+    self.taleInfos = [NSMutableArray array];
 }
 
 - (void)configureViewComponents {

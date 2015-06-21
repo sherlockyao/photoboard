@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
 @interface PBTaleInfo : NSObject
 
+@property (nonatomic, strong) NSManagedObjectID* objectId;
 @property (nonatomic, strong) NSDate* timestamp;
 @property (nonatomic, strong) NSArray* sceneInfos;
 

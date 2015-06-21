@@ -17,4 +17,12 @@
     return [self taleInfosForTales:tales];
 }
 
++ (void)deleteByObjectId:(NSManagedObjectID *)objectId completion:(void(^)(BOOL success, NSError *error))completion {
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *context) {
+        NSError* error = nil;
+        PBTale* tale = (PBTale *)[context existingObjectWithID:objectId error:&error];
+        [tale MR_deleteInContext:context];
+    } completion:completion];
+}
+
 @end

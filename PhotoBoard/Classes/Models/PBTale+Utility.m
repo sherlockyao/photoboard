@@ -21,6 +21,7 @@
 
 - (PBTaleInfo *)taleInfo {
     PBTaleInfo* info = [PBTaleInfo new];
+    info.objectId = self.objectID;
     info.timestamp = self.timestamp;
     NSMutableArray* sceneInfos = [NSMutableArray arrayWithCapacity:[self.scenes count]];
     NSArray* scenes = [[self.scenes allObjects] sortedArrayUsingDescriptors:@[[[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES]]];
