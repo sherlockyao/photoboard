@@ -15,6 +15,10 @@
 		36008A1C1B365A10005FCCA4 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36008A1B1B365A10005FCCA4 /* libsqlite3.0.dylib */; };
 		36008A1E1B365A19005FCCA4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36008A1D1B365A19005FCCA4 /* libz.dylib */; };
 		36008A201B365AAD005FCCA4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36008A1F1B365AAD005FCCA4 /* SystemConfiguration.framework */; };
+		36008A241B365E40005FCCA4 /* PBSharePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 36008A231B365E40005FCCA4 /* PBSharePresenter.m */; };
+		36008A281B365F6F005FCCA4 /* PBWeChatActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 36008A271B365F6F005FCCA4 /* PBWeChatActivity.m */; };
+		36008A2B1B365FC7005FCCA4 /* PBWeChatMessageActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 36008A2A1B365FC7005FCCA4 /* PBWeChatMessageActivity.m */; };
+		36008A2E1B365FDA005FCCA4 /* PBWeChatMomentActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 36008A2D1B365FDA005FCCA4 /* PBWeChatMomentActivity.m */; };
 		36B89C651B351A3C00EC78AB /* PBTale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C631B351A3C00EC78AB /* PBTale.storyboard */; };
 		36B89C671B351A3C00EC78AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C661B351A3C00EC78AB /* Images.xcassets */; };
 		36B89C6A1B351A3C00EC78AB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C681B351A3C00EC78AB /* LaunchScreen.xib */; };
@@ -89,6 +93,14 @@
 		36008A1B1B365A10005FCCA4 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		36008A1D1B365A19005FCCA4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		36008A1F1B365AAD005FCCA4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		36008A221B365E40005FCCA4 /* PBSharePresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBSharePresenter.h; path = Classes/Presenters/PBSharePresenter.h; sourceTree = "<group>"; };
+		36008A231B365E40005FCCA4 /* PBSharePresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBSharePresenter.m; path = Classes/Presenters/PBSharePresenter.m; sourceTree = "<group>"; };
+		36008A261B365F6F005FCCA4 /* PBWeChatActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBWeChatActivity.h; path = Classes/Presenters/PBWeChatActivity.h; sourceTree = "<group>"; };
+		36008A271B365F6F005FCCA4 /* PBWeChatActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBWeChatActivity.m; path = Classes/Presenters/PBWeChatActivity.m; sourceTree = "<group>"; };
+		36008A291B365FC7005FCCA4 /* PBWeChatMessageActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBWeChatMessageActivity.h; path = Classes/Presenters/PBWeChatMessageActivity.h; sourceTree = "<group>"; };
+		36008A2A1B365FC7005FCCA4 /* PBWeChatMessageActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBWeChatMessageActivity.m; path = Classes/Presenters/PBWeChatMessageActivity.m; sourceTree = "<group>"; };
+		36008A2C1B365FDA005FCCA4 /* PBWeChatMomentActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBWeChatMomentActivity.h; path = Classes/Presenters/PBWeChatMomentActivity.h; sourceTree = "<group>"; };
+		36008A2D1B365FDA005FCCA4 /* PBWeChatMomentActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBWeChatMomentActivity.m; path = Classes/Presenters/PBWeChatMomentActivity.m; sourceTree = "<group>"; };
 		36B89C561B351A3C00EC78AB /* PhotoBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B89C641B351A3C00EC78AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PBTale.storyboard; sourceTree = "<group>"; };
 		36B89C661B351A3C00EC78AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -253,6 +265,29 @@
 			);
 			name = WeChat;
 			path = Classes/WeChat;
+			sourceTree = "<group>";
+		};
+		36008A211B365E1A005FCCA4 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				36008A221B365E40005FCCA4 /* PBSharePresenter.h */,
+				36008A231B365E40005FCCA4 /* PBSharePresenter.m */,
+				36008A251B365F4B005FCCA4 /* WeChat Activities */,
+			);
+			name = General;
+			sourceTree = "<group>";
+		};
+		36008A251B365F4B005FCCA4 /* WeChat Activities */ = {
+			isa = PBXGroup;
+			children = (
+				36008A261B365F6F005FCCA4 /* PBWeChatActivity.h */,
+				36008A271B365F6F005FCCA4 /* PBWeChatActivity.m */,
+				36008A291B365FC7005FCCA4 /* PBWeChatMessageActivity.h */,
+				36008A2A1B365FC7005FCCA4 /* PBWeChatMessageActivity.m */,
+				36008A2C1B365FDA005FCCA4 /* PBWeChatMomentActivity.h */,
+				36008A2D1B365FDA005FCCA4 /* PBWeChatMomentActivity.m */,
+			);
+			name = "WeChat Activities";
 			sourceTree = "<group>";
 		};
 		36B89C4D1B351A3B00EC78AB = {
@@ -536,6 +571,7 @@
 		36B89CFC1B35428E00EC78AB /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				36008A211B365E1A005FCCA4 /* General */,
 				36B89CFD1B35435100EC78AB /* Tale */,
 			);
 			name = Presenters;
@@ -771,15 +807,19 @@
 				36B89CF81B35407100EC78AB /* MASViewConstraint.m in Sources */,
 				36B89CFB1B35407100EC78AB /* View+MASAdditions.m in Sources */,
 				36B89CF31B35407100EC78AB /* MASCompositeConstraint.m in Sources */,
+				36008A2B1B365FC7005FCCA4 /* PBWeChatMessageActivity.m in Sources */,
 				36B89CAB1B351FB500EC78AB /* ELCImagePickerController.m in Sources */,
 				36B89CD61B35368400EC78AB /* PBSceneInfo.m in Sources */,
 				36008A131B3654C6005FCCA4 /* UIBarButtonItem+PBUtil.m in Sources */,
 				36B89CC01B3525F200EC78AB /* PBWireframe.m in Sources */,
 				36B89CF61B35407100EC78AB /* MASLayoutConstraint.m in Sources */,
 				36B89CC81B35305F00EC78AB /* PBSceneListView.m in Sources */,
+				36008A241B365E40005FCCA4 /* PBSharePresenter.m in Sources */,
+				36008A281B365F6F005FCCA4 /* PBWeChatActivity.m in Sources */,
 				36B89CAA1B351FB500EC78AB /* ELCConsole.m in Sources */,
 				36B89D711B355CE600EC78AB /* PBDataManager.m in Sources */,
 				36B89CA91B351FB500EC78AB /* ELCAssetTablePicker.m in Sources */,
+				36008A2E1B365FDA005FCCA4 /* PBWeChatMomentActivity.m in Sources */,
 				36B89D7B1B3560D300EC78AB /* PBTale+DataManager.m in Sources */,
 				36B89D001B35437400EC78AB /* PBTaleGroupPresenter.m in Sources */,
 				36B89CC31B352F8300EC78AB /* PBTaleDetailViewController.m in Sources */,
