@@ -293,6 +293,7 @@
 		36B89C4D1B351A3B00EC78AB = {
 			isa = PBXGroup;
 			children = (
+				36B89C8D1B351D9200EC78AB /* README.md */,
 				36B89C581B351A3C00EC78AB /* PhotoBoard */,
 				36B89C721B351A3C00EC78AB /* PhotoBoardTests */,
 				36B89C571B351A3C00EC78AB /* Products */,
@@ -316,7 +317,6 @@
 				36B89C801B351A7700EC78AB /* Classes */,
 				36B89C821B351A9800EC78AB /* Resources */,
 				36B89C591B351A3C00EC78AB /* Supporting Files */,
-				36B89C8D1B351D9200EC78AB /* README.md */,
 			);
 			path = PhotoBoard;
 			sourceTree = "<group>";
