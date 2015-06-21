@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		36008A091B363171005FCCA4 /* PBTaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36008A071B363171005FCCA4 /* PBTaleCell.m */; };
 		36008A0C1B36318D005FCCA4 /* PBTaleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36008A0B1B36318D005FCCA4 /* PBTaleCell.xib */; };
+		36008A131B3654C6005FCCA4 /* UIBarButtonItem+PBUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36008A121B3654C6005FCCA4 /* UIBarButtonItem+PBUtil.m */; };
 		36B89C651B351A3C00EC78AB /* PBTale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C631B351A3C00EC78AB /* PBTale.storyboard */; };
 		36B89C671B351A3C00EC78AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C661B351A3C00EC78AB /* Images.xcassets */; };
 		36B89C6A1B351A3C00EC78AB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C681B351A3C00EC78AB /* LaunchScreen.xib */; };
@@ -74,6 +75,8 @@
 		36008A061B363171005FCCA4 /* PBTaleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBTaleCell.h; path = Classes/Views/PBTaleCell.h; sourceTree = "<group>"; };
 		36008A071B363171005FCCA4 /* PBTaleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBTaleCell.m; path = Classes/Views/PBTaleCell.m; sourceTree = "<group>"; };
 		36008A0B1B36318D005FCCA4 /* PBTaleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PBTaleCell.xib; path = XIBs/PBTaleCell.xib; sourceTree = "<group>"; };
+		36008A111B3654C6005FCCA4 /* UIBarButtonItem+PBUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+PBUtil.h"; path = "Classes/Utilities/UIBarButtonItem+PBUtil.h"; sourceTree = "<group>"; };
+		36008A121B3654C6005FCCA4 /* UIBarButtonItem+PBUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+PBUtil.m"; path = "Classes/Utilities/UIBarButtonItem+PBUtil.m"; sourceTree = "<group>"; };
 		36B89C561B351A3C00EC78AB /* PhotoBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B89C641B351A3C00EC78AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PBTale.storyboard; sourceTree = "<group>"; };
 		36B89C661B351A3C00EC78AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -218,6 +221,8 @@
 		36008A0D1B36355A005FCCA4 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				36008A111B3654C6005FCCA4 /* UIBarButtonItem+PBUtil.h */,
+				36008A121B3654C6005FCCA4 /* UIBarButtonItem+PBUtil.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -735,6 +740,7 @@
 				36B89CF31B35407100EC78AB /* MASCompositeConstraint.m in Sources */,
 				36B89CAB1B351FB500EC78AB /* ELCImagePickerController.m in Sources */,
 				36B89CD61B35368400EC78AB /* PBSceneInfo.m in Sources */,
+				36008A131B3654C6005FCCA4 /* UIBarButtonItem+PBUtil.m in Sources */,
 				36B89CC01B3525F200EC78AB /* PBWireframe.m in Sources */,
 				36B89CF61B35407100EC78AB /* MASLayoutConstraint.m in Sources */,
 				36B89CC81B35305F00EC78AB /* PBSceneListView.m in Sources */,

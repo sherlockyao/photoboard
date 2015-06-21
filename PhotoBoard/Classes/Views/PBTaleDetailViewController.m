@@ -7,10 +7,12 @@
 //
 
 #import "PBTaleDetailViewController.h"
+#import "UIBarButtonItem+PBUtil.h"
 #import "Masonry.h"
 
 @interface PBTaleDetailViewController () <PBSceneListViewDelegate>
 
+@property (nonatomic, assign) BOOL isEditable;
 @property (nonatomic, assign) NSUInteger currentEditIndex;
 @property (nonatomic, assign) NSUInteger currentEditMode; // 0: edit word, 1: edit note
 
@@ -50,15 +52,19 @@
 #pragma mark - PBSceneListViewDelegate
 
 - (void)sceneListView:(PBSceneListView *)sceneListView didSelectEditWordAtRowIndex:(NSUInteger)index {
-    self.currentEditIndex = index;
-    self.currentEditMode = 0;
-    [self startEditingText];
+    if (self.isEditable) {
+        self.currentEditIndex = index;
+        self.currentEditMode = 0;
+        [self startEditingText];
+    }
 }
 
 - (void)sceneListView:(PBSceneListView *)sceneListView didSelectEditNoteAtRowIndex:(NSUInteger)index {
-    self.currentEditIndex = index;
-    self.currentEditMode = 1;
-    [self startEditingText];
+    if (self.isEditable) {
+        self.currentEditIndex = index;
+        self.currentEditMode = 1;
+        [self startEditingText];
+    }
 }
 
 #pragma mark - Logic
@@ -114,6 +120,10 @@
     }];
 }
 
+- (IBAction)shareButtonTouchUpInside:(id)sender {
+    //TODO: share
+}
+
 #pragma mark - Animations
 
 - (void)animateShowEditViewWithKeyboardHeight:(CGFloat)keyboardHeight {
@@ -164,12 +174,20 @@
 }
 
 - (void)configureProperties {
+    [self.taleMaintainPresenter checkMaintainState:^(BOOL isMaintainable) {
+        self.isEditable = isMaintainable;
+    }];
 }
 
 - (void)configureViewComponents {
     // navigation
-    UIBarButtonItem *createItem = [[UIBarButtonItem alloc] initWithTitle:@"创建" style:UIBarButtonItemStylePlain target:self action:@selector(createButtonTouchUpInside:)];
-    self.navigationItem.rightBarButtonItems = @[createItem];
+    if (self.isEditable) {
+        UIBarButtonItem* createItem = [[UIBarButtonItem alloc] initWithTitle:@"创建" style:UIBarButtonItemStylePlain target:self action:@selector(createButtonTouchUpInside:)];
+        self.navigationItem.rightBarButtonItems = @[createItem];
+    } else {
+        UIBarButtonItem* shareItem = [[UIBarButtonItem alloc] initWithTitle:@"分享" style:UIBarButtonItemStylePlain target:self action:@selector(shareButtonTouchUpInside:)];
+        self.navigationItem.rightBarButtonItems = @[shareItem];
+    }
 }
 
 @end

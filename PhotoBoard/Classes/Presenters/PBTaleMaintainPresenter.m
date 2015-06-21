@@ -7,10 +7,18 @@
 //
 
 #import "PBTaleMaintainPresenter.h"
+#import "PBConstants.h"
 #import "PBDataManager.h"
 #import "PBTale+DataManager.h"
 
 @implementation PBTaleMaintainPresenter
+
+- (void)checkMaintainState:(void(^)(BOOL isMaintainable))result {
+    PBTaleInfo* taleInfo = [self.params objectForKey:ParamKeyTaleInfo];
+    if (result) {
+        result((nil == taleInfo));
+    }
+}
 
 - (void)createTaleWithSceneInfos:(NSArray *)sceneInfos completion:(void(^)())completion {
     [PBDataManager createTaleWithSceneInfos:sceneInfos completion:^(BOOL success, NSError *error) {

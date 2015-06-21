@@ -8,4 +8,8 @@
 
 #import "PBConstants.h"
 
+NSString *const ParamKeySceneInfo = @"ParamKeySceneInfo";
 NSString *const ParamKeySceneInfos = @"ParamKeySceneInfos";
+
+NSString *const ParamKeyTaleInfo = @"ParamKeyTaleInfo";
+NSString *const ParamKeyTaleInfos = @"ParamKeyTaleInfos";

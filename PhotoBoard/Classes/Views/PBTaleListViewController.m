@@ -72,7 +72,9 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //TODO: handle selection
+    PBTaleInfo* taleInfo = self.taleInfos[indexPath.row];
+    NSDictionary* params = @{ ParamKeyTaleInfo : taleInfo };
+    [PBWireframe moveToTaleDetailViewControllerFrom:self withParams:params];
 }
 
 #pragma mark - PBTaleCellDelegate
