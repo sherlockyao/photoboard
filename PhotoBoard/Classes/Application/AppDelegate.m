@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "PBWireframe.h"
 #import "CoreData+MagicalRecord.h"
+#import "WXApi.h"
 
 @interface AppDelegate ()
 
@@ -30,6 +31,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window setRootViewController:[PBWireframe rootViewController]];
     [self.window makeKeyAndVisible];
+    
+    // Register WeChat API
+    [WXApi registerApp:@"wx7530441918c1cc44" withDescription:@"Photo Board"];
     
     return YES;
 }

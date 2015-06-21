@@ -10,6 +10,11 @@
 		36008A091B363171005FCCA4 /* PBTaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36008A071B363171005FCCA4 /* PBTaleCell.m */; };
 		36008A0C1B36318D005FCCA4 /* PBTaleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36008A0B1B36318D005FCCA4 /* PBTaleCell.xib */; };
 		36008A131B3654C6005FCCA4 /* UIBarButtonItem+PBUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 36008A121B3654C6005FCCA4 /* UIBarButtonItem+PBUtil.m */; };
+		36008A181B3659E3005FCCA4 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36008A151B3659E3005FCCA4 /* libWeChatSDK.a */; };
+		36008A1A1B365A03005FCCA4 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36008A191B365A03005FCCA4 /* libc++.dylib */; };
+		36008A1C1B365A10005FCCA4 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36008A1B1B365A10005FCCA4 /* libsqlite3.0.dylib */; };
+		36008A1E1B365A19005FCCA4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36008A1D1B365A19005FCCA4 /* libz.dylib */; };
+		36008A201B365AAD005FCCA4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36008A1F1B365AAD005FCCA4 /* SystemConfiguration.framework */; };
 		36B89C651B351A3C00EC78AB /* PBTale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C631B351A3C00EC78AB /* PBTale.storyboard */; };
 		36B89C671B351A3C00EC78AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C661B351A3C00EC78AB /* Images.xcassets */; };
 		36B89C6A1B351A3C00EC78AB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C681B351A3C00EC78AB /* LaunchScreen.xib */; };
@@ -77,6 +82,13 @@
 		36008A0B1B36318D005FCCA4 /* PBTaleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PBTaleCell.xib; path = XIBs/PBTaleCell.xib; sourceTree = "<group>"; };
 		36008A111B3654C6005FCCA4 /* UIBarButtonItem+PBUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+PBUtil.h"; path = "Classes/Utilities/UIBarButtonItem+PBUtil.h"; sourceTree = "<group>"; };
 		36008A121B3654C6005FCCA4 /* UIBarButtonItem+PBUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+PBUtil.m"; path = "Classes/Utilities/UIBarButtonItem+PBUtil.m"; sourceTree = "<group>"; };
+		36008A151B3659E3005FCCA4 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		36008A161B3659E3005FCCA4 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		36008A171B3659E3005FCCA4 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		36008A191B365A03005FCCA4 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		36008A1B1B365A10005FCCA4 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		36008A1D1B365A19005FCCA4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		36008A1F1B365AAD005FCCA4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		36B89C561B351A3C00EC78AB /* PhotoBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B89C641B351A3C00EC78AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PBTale.storyboard; sourceTree = "<group>"; };
 		36B89C661B351A3C00EC78AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -185,6 +197,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36008A201B365AAD005FCCA4 /* SystemConfiguration.framework in Frameworks */,
+				36008A1E1B365A19005FCCA4 /* libz.dylib in Frameworks */,
+				36008A1C1B365A10005FCCA4 /* libsqlite3.0.dylib in Frameworks */,
+				36008A1A1B365A03005FCCA4 /* libc++.dylib in Frameworks */,
+				36008A181B3659E3005FCCA4 /* libWeChatSDK.a in Frameworks */,
 				39999594F5D8C92FB4FF417B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,6 +242,17 @@
 				36008A121B3654C6005FCCA4 /* UIBarButtonItem+PBUtil.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		36008A141B3659E3005FCCA4 /* WeChat */ = {
+			isa = PBXGroup;
+			children = (
+				36008A151B3659E3005FCCA4 /* libWeChatSDK.a */,
+				36008A161B3659E3005FCCA4 /* WXApi.h */,
+				36008A171B3659E3005FCCA4 /* WXApiObject.h */,
+			);
+			name = WeChat;
+			path = Classes/WeChat;
 			sourceTree = "<group>";
 		};
 		36B89C4D1B351A3B00EC78AB = {
@@ -379,6 +407,7 @@
 		36B89CB91B351FEE00EC78AB /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				36008A141B3659E3005FCCA4 /* WeChat */,
 				36B89CDB1B35406100EC78AB /* Masonry */,
 				36B89C931B351FA000EC78AB /* ELCImagePicker */,
 			);
@@ -578,6 +607,10 @@
 		DBA997023C2FB3B8D1D567D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				36008A1F1B365AAD005FCCA4 /* SystemConfiguration.framework */,
+				36008A1D1B365A19005FCCA4 /* libz.dylib */,
+				36008A1B1B365A10005FCCA4 /* libsqlite3.0.dylib */,
+				36008A191B365A03005FCCA4 /* libc++.dylib */,
 				7B8FE003769036AEB2E25705 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -893,6 +926,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PhotoBoard/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PhotoBoard/Classes/WeChat",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -904,6 +941,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PhotoBoard/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PhotoBoard/Classes/WeChat",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
