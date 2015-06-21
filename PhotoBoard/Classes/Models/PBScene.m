@@ -7,7 +7,6 @@
 //
 
 #import "PBScene.h"
-#import "PBTale.h"
 
 
 @implementation PBScene

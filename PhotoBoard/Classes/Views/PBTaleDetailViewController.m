@@ -168,11 +168,7 @@
 
 - (void)configureViewComponents {
     // navigation
-    UIButton* createButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [createButton setTitle:@"创建" forState:UIControlStateNormal];
-    createButton.bounds = CGRectMake(0, 0, 40, 40);
-    [createButton addTarget:self action:@selector(createButtonTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *createItem = [[UIBarButtonItem alloc] initWithCustomView:createButton];
+    UIBarButtonItem *createItem = [[UIBarButtonItem alloc] initWithTitle:@"创建" style:UIBarButtonItemStylePlain target:self action:@selector(createButtonTouchUpInside:)];
     self.navigationItem.rightBarButtonItems = @[createItem];
 }
 

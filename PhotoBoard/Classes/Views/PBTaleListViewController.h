@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PBTaleGroupPresenter.h"
+#import "PBTaleMaintainPresenter.h"
 
 @interface PBTaleListViewController : UIViewController
 
@@ -15,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *createButton;
 
 @property (nonatomic, strong) PBTaleGroupPresenter* taleGroupPresenter;
+@property (nonatomic, strong) PBTaleMaintainPresenter* taleMaintainPresenter;
 
 @end
 

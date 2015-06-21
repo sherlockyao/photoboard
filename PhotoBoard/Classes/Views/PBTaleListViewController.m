@@ -9,11 +9,15 @@
 #import "PBTaleListViewController.h"
 #import "ELCImagePickerController.h"
 #import <MobileCoreServices/UTCoreTypes.h>
+#import "PBTaleCell.h"
 #import "PBSceneInfo.h"
 #import "PBConstants.h"
 #import "PBWireFrame.h"
 
-@interface PBTaleListViewController () <ELCImagePickerControllerDelegate, PBTaleListInterface>
+static NSString *const TaleCellReuseIdentifier = @"TaleCell";
+
+
+@interface PBTaleListViewController () <UITableViewDataSource, UITableViewDelegate, PBTaleCellDelegate, ELCImagePickerControllerDelegate, PBTaleListInterface>
 
 @property (nonatomic, strong) NSArray* taleInfos;
 
@@ -52,6 +56,31 @@
     [self.taleTableView reloadData];
 }
 
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.taleInfos count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    PBTaleCell* cell = [tableView dequeueReusableCellWithIdentifier:TaleCellReuseIdentifier forIndexPath:indexPath];
+    [cell displayTaleInfo:self.taleInfos[indexPath.row]];
+    cell.delegate = self;
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //TODO: handle selection
+}
+
+#pragma mark - PBTaleCellDelegate
+
+- (void)taleCellDidClickDeleteButton:(PBTaleCell *)taleCell {
+    //TODO: handle deletion
+}
+
 #pragma mark - ELCImagePickerControllerDelegate
 
 - (void)elcImagePickerController:(ELCImagePickerController *)picker didFinishPickingMediaWithInfo:(NSArray *)info {
@@ -81,7 +110,21 @@
 }
 
 - (void)configureViewComponents {
+    // navigation
+    self.navigationItem.title = @"PhotoBoard";
+    
+    // create button
     self.createButton.layer.cornerRadius = 30;
+    
+    // table view
+    [self.taleTableView registerNib:[UINib nibWithNibName:@"PBTaleCell" bundle:nil] forCellReuseIdentifier:TaleCellReuseIdentifier];
+    self.taleTableView.rowHeight = 150;
+    self.taleTableView.contentInset = UIEdgeInsetsMake(4, 0, 12, 0);
+    self.taleTableView.delegate = self;
+    self.taleTableView.dataSource = self;
+    [self.taleTableView setNeedsLayout];
+    
+    // wire up interfaces
     self.taleGroupPresenter.taleList = self;
 }
 

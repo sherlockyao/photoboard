@@ -7,7 +7,6 @@
 //
 
 #import "PBTale.h"
-#import "NSManagedObject.h"
 
 
 @implementation PBTale

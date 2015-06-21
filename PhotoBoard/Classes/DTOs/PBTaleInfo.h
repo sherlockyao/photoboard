@@ -13,4 +13,6 @@
 @property (nonatomic, strong) NSDate* timestamp;
 @property (nonatomic, strong) NSArray* sceneInfos;
 
+- (NSURL *)coverAssetURL;
+
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36008A091B363171005FCCA4 /* PBTaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 36008A071B363171005FCCA4 /* PBTaleCell.m */; };
+		36008A0C1B36318D005FCCA4 /* PBTaleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36008A0B1B36318D005FCCA4 /* PBTaleCell.xib */; };
 		36B89C651B351A3C00EC78AB /* PBTale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C631B351A3C00EC78AB /* PBTale.storyboard */; };
 		36B89C671B351A3C00EC78AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C661B351A3C00EC78AB /* Images.xcassets */; };
 		36B89C6A1B351A3C00EC78AB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C681B351A3C00EC78AB /* LaunchScreen.xib */; };
@@ -69,6 +71,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		36008A061B363171005FCCA4 /* PBTaleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBTaleCell.h; path = Classes/Views/PBTaleCell.h; sourceTree = "<group>"; };
+		36008A071B363171005FCCA4 /* PBTaleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBTaleCell.m; path = Classes/Views/PBTaleCell.m; sourceTree = "<group>"; };
+		36008A0B1B36318D005FCCA4 /* PBTaleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PBTaleCell.xib; path = XIBs/PBTaleCell.xib; sourceTree = "<group>"; };
 		36B89C561B351A3C00EC78AB /* PhotoBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B89C641B351A3C00EC78AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PBTale.storyboard; sourceTree = "<group>"; };
 		36B89C661B351A3C00EC78AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -198,6 +203,23 @@
 				3B36DF2B9E1E20B34001075A /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		36008A051B36313F005FCCA4 /* Tale Cell */ = {
+			isa = PBXGroup;
+			children = (
+				36008A0B1B36318D005FCCA4 /* PBTaleCell.xib */,
+				36008A061B363171005FCCA4 /* PBTaleCell.h */,
+				36008A071B363171005FCCA4 /* PBTaleCell.m */,
+			);
+			name = "Tale Cell";
+			sourceTree = "<group>";
+		};
+		36008A0D1B36355A005FCCA4 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		36B89C4D1B351A3B00EC78AB = {
@@ -374,6 +396,7 @@
 			children = (
 				36B89C861B351B8500EC78AB /* PBTaleListViewController.h */,
 				36B89C871B351B8500EC78AB /* PBTaleListViewController.m */,
+				36008A051B36313F005FCCA4 /* Tale Cell */,
 			);
 			name = List;
 			sourceTree = "<group>";
@@ -441,6 +464,7 @@
 			children = (
 				36B89CD81B35388B00EC78AB /* PBAssetsLibraryUtil.h */,
 				36B89CD91B35388B00EC78AB /* PBAssetsLibraryUtil.m */,
+				36008A0D1B36355A005FCCA4 /* Categories */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -638,6 +662,7 @@
 			files = (
 				36B89CB51B351FCF00EC78AB /* ELCAssetTablePicker.xib in Resources */,
 				36B89CCA1B35308600EC78AB /* PBSceneListView.xib in Resources */,
+				36008A0C1B36318D005FCCA4 /* PBTaleCell.xib in Resources */,
 				36B89CD21B3531DE00EC78AB /* PBSceneCell.xib in Resources */,
 				36B89CB31B351FCF00EC78AB /* ELCAlbumPickerController.xib in Resources */,
 				36B89CB61B351FCF00EC78AB /* Overlay.png in Resources */,
@@ -703,6 +728,7 @@
 				36B89CAC1B351FB500EC78AB /* ELCOverlayImageView.m in Sources */,
 				36B89CA61B351FB500EC78AB /* ELCAlbumPickerController.m in Sources */,
 				36B89CDA1B35388B00EC78AB /* PBAssetsLibraryUtil.m in Sources */,
+				36008A091B363171005FCCA4 /* PBTaleCell.m in Sources */,
 				36B89D061B35447800EC78AB /* PBConstants.m in Sources */,
 				36B89CF81B35407100EC78AB /* MASViewConstraint.m in Sources */,
 				36B89CFB1B35407100EC78AB /* View+MASAdditions.m in Sources */,
