@@ -10,6 +10,7 @@
 #import "PBSceneListView.h"
 #import "PBSceneGroupPresenter.h"
 #import "PBTaleMaintainPresenter.h"
+#import "PBSharePresenter.h"
 
 @interface PBTaleDetailViewController : UIViewController
 
@@ -23,5 +24,6 @@
 
 @property (nonatomic, strong) PBSceneGroupPresenter* sceneGroupPresenter;
 @property (nonatomic, strong) PBTaleMaintainPresenter* taleMaintainPresenter;
+@property (nonatomic, strong) PBSharePresenter* sharePresenter;
 
 @end

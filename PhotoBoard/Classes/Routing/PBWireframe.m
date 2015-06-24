@@ -35,6 +35,8 @@
     taleMaintainPresenter.params = params;
     viewController.taleMaintainPresenter = taleMaintainPresenter;
     
+    viewController.sharePresenter = [PBSharePresenter new];
+    
     [sourceViewController.navigationController pushViewController:viewController animated:YES];
 }
 

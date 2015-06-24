@@ -121,7 +121,7 @@
 }
 
 - (IBAction)shareButtonTouchUpInside:(id)sender {
-    //TODO: share
+    [self.sharePresenter shareSceneInfos:self.sceneListView.sceneInfos from:self];
 }
 
 #pragma mark - Animations
@@ -169,8 +169,6 @@
         make.left.equalTo(self.view.mas_left);
         make.right.equalTo(self.view.mas_right);
     }];
-    
-    self.sceneGroupPresenter.sceneList = self.sceneListView;
 }
 
 - (void)configureProperties {
@@ -188,6 +186,9 @@
         UIBarButtonItem* shareItem = [[UIBarButtonItem alloc] initWithTitle:@"分享" style:UIBarButtonItemStylePlain target:self action:@selector(shareButtonTouchUpInside:)];
         self.navigationItem.rightBarButtonItems = @[shareItem];
     }
+    
+    // wire up view interfaces
+    self.sceneGroupPresenter.sceneList = self.sceneListView;
 }
 
 @end

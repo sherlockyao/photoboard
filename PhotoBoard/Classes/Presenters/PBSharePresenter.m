@@ -9,13 +9,19 @@
 #import "PBSharePresenter.h"
 #import "PBWeChatMessageActivity.h"
 #import "PBWeChatMomentActivity.h"
+#import "PBTaleShareTemplateView.h"
+
+@interface PBSharePresenter ()
+
+@property (nonatomic, strong) PBTaleShareTemplateView* templateView;
+
+@end
 
 @implementation PBSharePresenter
 
-- (void)shareTaleInfo:(PBTaleInfo *)taleInfo from:(UIViewController *)viewController {
-    //TODO: generate image for tale info
-    
-    UIActivityViewController* activityViewController = [self activityViewControllerForActivityItems:@[] thumbnail:nil];
+- (void)shareSceneInfos:(NSArray *)sceneInfos from:(UIViewController *)viewController {
+    UIImage* snapshot = [self.templateView generateSnapshotForSceneInfos:sceneInfos];
+    UIActivityViewController* activityViewController = [self activityViewControllerForActivityItems:@[snapshot] thumbnail:nil];
     [viewController presentViewController:activityViewController animated:YES completion:nil];
 }
 
@@ -32,6 +38,16 @@
     activityViewController.excludedActivityTypes = @[UIActivityTypeCopyToPasteboard, UIActivityTypeSaveToCameraRoll];
     
     return activityViewController;
+}
+
+#pragma mark - Getts & Setts
+
+- (PBTaleShareTemplateView *)templateView {
+    if (!_templateView) {
+        _templateView = [[[NSBundle mainBundle] loadNibNamed:@"PBTaleShareTemplateView" owner:nil options:nil] lastObject];
+        _templateView.translatesAutoresizingMaskIntoConstraints = NO;
+    }
+    return _templateView;
 }
 
 @end

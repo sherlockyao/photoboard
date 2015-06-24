@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PBTaleInfo.h"
 
 @interface PBSharePresenter : NSObject
 
-- (void)shareTaleInfo:(PBTaleInfo *)taleInfo from:(UIViewController *)viewController;
+- (void)shareSceneInfos:(NSArray *)sceneInfos from:(UIViewController *)viewController;
 
 @end

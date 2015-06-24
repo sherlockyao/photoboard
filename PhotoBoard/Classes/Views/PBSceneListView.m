@@ -40,6 +40,12 @@ static NSString *const SceneCellReuseIdentifier = @"SceneCell";
     [cell displaySceneInfo:sceneInfo];
 }
 
+- (CGFloat)preferredHeigh {
+    CGFloat contentHeight = self.sceneTableView.contentSize.height;
+    CGFloat verticalPadding = self.sceneTableView.contentInset.top + self.sceneTableView.contentInset.bottom;
+    return  verticalPadding + contentHeight;
+}
+
 #pragma mark - PBSceneListInterface
 
 - (void)displaySceneInfos:(NSArray *)sceneInfos {

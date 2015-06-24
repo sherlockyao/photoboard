@@ -21,6 +21,8 @@
 - (void)displayUpdatedWord:(NSString *)word forRowIndex:(NSUInteger)index;
 - (void)displayUpdatedNote:(NSString *)note forRowIndex:(NSUInteger)index;
 
+- (CGFloat)preferredHeigh;
+
 @end
 
 
