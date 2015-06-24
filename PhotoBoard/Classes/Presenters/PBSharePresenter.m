@@ -20,9 +20,10 @@
 @implementation PBSharePresenter
 
 - (void)shareSceneInfos:(NSArray *)sceneInfos from:(UIViewController *)viewController {
-    UIImage* snapshot = [self.templateView generateSnapshotForSceneInfos:sceneInfos];
-    UIActivityViewController* activityViewController = [self activityViewControllerForActivityItems:@[snapshot] thumbnail:nil];
-    [viewController presentViewController:activityViewController animated:YES completion:nil];
+    [self.templateView generateSnapshotForSceneInfos:sceneInfos result:^(UIImage *snapshot) {
+        UIActivityViewController* activityViewController = [self activityViewControllerForActivityItems:@[snapshot] thumbnail:nil];
+        [viewController presentViewController:activityViewController animated:YES completion:nil];
+    }];
 }
 
 #pragma mark - Share Methods

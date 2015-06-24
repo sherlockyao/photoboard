@@ -10,6 +10,6 @@
 
 @interface PBTaleShareTemplateView : UIView
 
-- (UIImage *)generateSnapshotForSceneInfos:(NSArray *)sceneInfos;
+- (void)generateSnapshotForSceneInfos:(NSArray *)sceneInfos result:(void(^)(UIImage* snapshot))result;
 
 @end

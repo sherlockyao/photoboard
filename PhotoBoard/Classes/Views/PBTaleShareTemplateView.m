@@ -24,10 +24,14 @@
     [self configureViewComponents];
 }
 
-- (UIImage *)generateSnapshotForSceneInfos:(NSArray *)sceneInfos {
+- (void)generateSnapshotForSceneInfos:(NSArray *)sceneInfos result:(void(^)(UIImage* snapshot))result {
     [self.sceneListView displaySceneInfos:sceneInfos];
     [self updateLayoutToProperSize];
-    return [self snapshotTemplateView];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (result) {
+            result([self snapshotTemplateView]);
+        }
+    });
 }
 
 #pragma mark - 
