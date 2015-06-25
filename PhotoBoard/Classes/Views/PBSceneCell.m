@@ -18,8 +18,9 @@
 }
 
 - (void)displaySceneInfo:(PBSceneInfo *)sceneInfo {
-    self.wordLabel.text = sceneInfo.word ?: @"本来";
+    self.wordLabel.text = sceneInfo.word ?: @"连接词";
     self.noteLabel.text = sceneInfo.note ?: @"...";
+    [self updateWordLabelForProperFont];
     [[PBAssetsLibraryUtil assetsLibrary] assetForURL:sceneInfo.assetURL resultBlock:^(ALAsset *asset) {
         self.photoImageView.image = [[UIImage alloc] initWithCGImage:[asset thumbnail]];
     } failureBlock:nil];
@@ -37,6 +38,13 @@
     if ([self.delegate respondsToSelector:@selector(sceneCellDidClickNoteButton:)]) {
         [self.delegate sceneCellDidClickNoteButton:self];
     }
+}
+
+#pragma mark - Layout
+
+- (void)updateWordLabelForProperFont {
+    BOOL useBigFont = (3 > [self.wordLabel.text length]);
+    self.wordLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:(useBigFont ? 14 : 12)];
 }
 
 @end
