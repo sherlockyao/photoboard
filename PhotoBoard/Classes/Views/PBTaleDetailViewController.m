@@ -10,7 +10,7 @@
 #import "UIBarButtonItem+PBUtil.h"
 #import "Masonry.h"
 
-@interface PBTaleDetailViewController () <PBSceneListViewDelegate>
+@interface PBTaleDetailViewController () <PBSceneListViewDelegate, PBWordSelectorViewDelegate>
 
 @property (nonatomic, assign) BOOL isEditable;
 @property (nonatomic, assign) NSUInteger currentEditIndex;
@@ -24,11 +24,13 @@
     [super viewDidLoad];
     // add other views
     [self loadSceneListView];
+    [self loadWordSelectorView];
     // configure
     [self configureProperties];
     [self configureViewComponents];
     // load data
     [self loadSceneInfos];
+    [self loadWords];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -67,10 +69,34 @@
     }
 }
 
+#pragma mark - PBWordSelectorViewDelegate
+
+- (void)wordSelectorView:(PBWordSelectorView *)wordSelectorView didSelectWord:(PBWord *)word {
+    [self.wordSelectorView animateHideSelectorWithCompletion:^{
+        self.wordSelectorView.hidden = YES;
+    }];
+}
+
+- (void)wordSelectorViewDidClickCustomize:(PBWordSelectorView *)wordSelectorView {
+    [self.wordSelectorView animateHideSelectorWithCompletion:^{
+        [self startEditingText];
+    }];
+}
+
+- (void)wordSelectorViewDidClickCancel:(PBWordSelectorView *)wordSelectorView {
+    [self.wordSelectorView animateHideSelectorWithCompletion:^{
+        self.wordSelectorView.hidden = YES;
+    }];
+}
+
 #pragma mark - Logic
 
 - (void)loadSceneInfos {
     [self.sceneGroupPresenter loadSceneInfos];
+}
+
+- (void)loadWords {
+    [self.wordGroupPresenter loadWords];
 }
 
 - (void)startEditingText {
@@ -171,6 +197,21 @@
     }];
 }
 
+- (void)loadWordSelectorView {
+    self.wordSelectorView = [[[NSBundle mainBundle] loadNibNamed:@"PBWordSelectorView" owner:nil options:nil] lastObject];
+    self.wordSelectorView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.wordSelectorView.delegate = self;
+    [self.view addSubview:self.wordSelectorView];
+    self.wordSelectorView.hidden = YES;
+    
+    [self.wordSelectorView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view.mas_top);
+        make.bottom.equalTo(self.view.mas_bottom);
+        make.left.equalTo(self.view.mas_left);
+        make.right.equalTo(self.view.mas_right);
+    }];
+}
+
 - (void)configureProperties {
     [self.taleMaintainPresenter checkMaintainState:^(BOOL isMaintainable) {
         self.isEditable = isMaintainable;
@@ -189,6 +230,7 @@
     
     // wire up view interfaces
     self.sceneGroupPresenter.sceneList = self.sceneListView;
+    self.wordGroupPresenter.wordList = self.wordSelectorView;
 }
 
 @end

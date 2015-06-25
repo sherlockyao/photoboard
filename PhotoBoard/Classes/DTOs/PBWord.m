@@ -10,4 +10,11 @@
 
 @implementation PBWord
 
++ (instancetype)wordWithText:(NSString *)text color:(UIColor *)color {
+    PBWord* word = [PBWord new];
+    word.text = text;
+    word.color = color;
+    return word;
+}
+
 @end

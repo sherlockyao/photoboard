@@ -26,6 +26,8 @@
 		3637B8991B3B8ED600B1A538 /* PBWordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3637B8971B3B8ED600B1A538 /* PBWordCell.m */; };
 		3637B89C1B3B8EEC00B1A538 /* PBWordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3637B89B1B3B8EEC00B1A538 /* PBWordCell.xib */; };
 		3637B89F1B3B8FCF00B1A538 /* PBWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 3637B89E1B3B8FCF00B1A538 /* PBWord.m */; };
+		3637B8A31B3B961800B1A538 /* PBWordGroupPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3637B8A21B3B961800B1A538 /* PBWordGroupPresenter.m */; };
+		3637B8A61B3B975700B1A538 /* UIColor+PBUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3637B8A51B3B975700B1A538 /* UIColor+PBUtil.m */; };
 		36B89C651B351A3C00EC78AB /* PBTale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C631B351A3C00EC78AB /* PBTale.storyboard */; };
 		36B89C671B351A3C00EC78AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C661B351A3C00EC78AB /* Images.xcassets */; };
 		36B89C6A1B351A3C00EC78AB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C681B351A3C00EC78AB /* LaunchScreen.xib */; };
@@ -120,6 +122,10 @@
 		3637B89D1B3B8FCF00B1A538 /* PBWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBWord.h; path = Classes/DTOs/PBWord.h; sourceTree = "<group>"; };
 		3637B89E1B3B8FCF00B1A538 /* PBWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBWord.m; path = Classes/DTOs/PBWord.m; sourceTree = "<group>"; };
 		3637B8A01B3B941D00B1A538 /* PBWordListInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBWordListInterface.h; path = Classes/ViewInterfaces/PBWordListInterface.h; sourceTree = "<group>"; };
+		3637B8A11B3B961800B1A538 /* PBWordGroupPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBWordGroupPresenter.h; path = Classes/Presenters/PBWordGroupPresenter.h; sourceTree = "<group>"; };
+		3637B8A21B3B961800B1A538 /* PBWordGroupPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBWordGroupPresenter.m; path = Classes/Presenters/PBWordGroupPresenter.m; sourceTree = "<group>"; };
+		3637B8A41B3B975700B1A538 /* UIColor+PBUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+PBUtil.h"; path = "Classes/Utilities/UIColor+PBUtil.h"; sourceTree = "<group>"; };
+		3637B8A51B3B975700B1A538 /* UIColor+PBUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+PBUtil.m"; path = "Classes/Utilities/UIColor+PBUtil.m"; sourceTree = "<group>"; };
 		36B89C561B351A3C00EC78AB /* PhotoBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B89C641B351A3C00EC78AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PBTale.storyboard; sourceTree = "<group>"; };
 		36B89C661B351A3C00EC78AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -271,6 +277,8 @@
 			children = (
 				36008A111B3654C6005FCCA4 /* UIBarButtonItem+PBUtil.h */,
 				36008A121B3654C6005FCCA4 /* UIBarButtonItem+PBUtil.m */,
+				3637B8A41B3B975700B1A538 /* UIColor+PBUtil.h */,
+				3637B8A51B3B975700B1A538 /* UIColor+PBUtil.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -638,6 +646,8 @@
 				36B89CFF1B35437400EC78AB /* PBTaleGroupPresenter.m */,
 				36B89D011B35438300EC78AB /* PBSceneGroupPresenter.h */,
 				36B89D021B35438300EC78AB /* PBSceneGroupPresenter.m */,
+				3637B8A11B3B961800B1A538 /* PBWordGroupPresenter.h */,
+				3637B8A21B3B961800B1A538 /* PBWordGroupPresenter.m */,
 				36B89D7F1B35662D00EC78AB /* PBTaleMaintainPresenter.h */,
 				36B89D801B35662D00EC78AB /* PBTaleMaintainPresenter.m */,
 			);
@@ -857,6 +867,7 @@
 				36B89CF71B35407100EC78AB /* MASViewAttribute.m in Sources */,
 				36B89CF51B35407100EC78AB /* MASConstraintMaker.m in Sources */,
 				36B89CA81B351FB500EC78AB /* ELCAssetCell.m in Sources */,
+				3637B8A31B3B961800B1A538 /* PBWordGroupPresenter.m in Sources */,
 				36B89CAC1B351FB500EC78AB /* ELCOverlayImageView.m in Sources */,
 				36B89CA61B351FB500EC78AB /* ELCAlbumPickerController.m in Sources */,
 				36B89CDA1B35388B00EC78AB /* PBAssetsLibraryUtil.m in Sources */,
@@ -890,6 +901,7 @@
 				36B89CA71B351FB500EC78AB /* ELCAsset.m in Sources */,
 				36B89C881B351B8500EC78AB /* PBTaleListViewController.m in Sources */,
 				3637B89F1B3B8FCF00B1A538 /* PBWord.m in Sources */,
+				3637B8A61B3B975700B1A538 /* UIColor+PBUtil.m in Sources */,
 				36B89D811B35662D00EC78AB /* PBTaleMaintainPresenter.m in Sources */,
 				36B89CF91B35407100EC78AB /* NSArray+MASAdditions.m in Sources */,
 				36B89D751B355F5B00EC78AB /* PBTale+Utility.m in Sources */,

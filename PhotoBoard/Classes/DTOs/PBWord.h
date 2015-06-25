@@ -13,4 +13,6 @@
 @property (nonatomic, strong) NSString* text;
 @property (nonatomic, strong) UIColor* color;
 
++ (instancetype)wordWithText:(NSString *)text color:(UIColor *)color;
+
 @end
