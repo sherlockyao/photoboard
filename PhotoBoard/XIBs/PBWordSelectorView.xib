@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PBWordSelectorView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KSP-rn-puU" userLabel="Mask View">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q8o-DL-MJF" userLabel="Panel View">
+                    <rect key="frame" x="0.0" y="200" width="600" height="400"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qBv-Rq-Cmd" userLabel="Action View">
+                            <rect key="frame" x="0.0" y="354" width="600" height="46"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QCo-YI-N9t" userLabel="Separator View">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
+                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="5uj-va-mcG"/>
+                                    </constraints>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glv-VC-aq1" userLabel="Customize Button">
+                                    <rect key="frame" x="510" y="0.0" width="90" height="46"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="90" id="rUc-SN-RnH"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                    <state key="normal" title="自定义">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="customizeButtonTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="wdB-NB-LkI"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xa4-CM-pkZ" userLabel="Cancel Button">
+                                    <rect key="frame" x="412" y="0.0" width="90" height="46"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="90" id="1oz-Uj-v2g"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                    <state key="normal" title="取消">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="cancelButtonTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="ebh-Si-DxY"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="glv-VC-aq1" firstAttribute="top" secondItem="qBv-Rq-Cmd" secondAttribute="top" id="Gq0-YH-aVC"/>
+                                <constraint firstItem="QCo-YI-N9t" firstAttribute="top" secondItem="qBv-Rq-Cmd" secondAttribute="top" id="IfG-1L-sJm"/>
+                                <constraint firstAttribute="height" constant="46" id="NrZ-fS-2j4"/>
+                                <constraint firstAttribute="bottom" secondItem="glv-VC-aq1" secondAttribute="bottom" id="Nt8-Io-PqS"/>
+                                <constraint firstItem="QCo-YI-N9t" firstAttribute="leading" secondItem="qBv-Rq-Cmd" secondAttribute="leading" id="Ogg-en-jMu"/>
+                                <constraint firstItem="Xa4-CM-pkZ" firstAttribute="top" secondItem="qBv-Rq-Cmd" secondAttribute="top" id="R9v-hu-3gu"/>
+                                <constraint firstAttribute="trailing" secondItem="QCo-YI-N9t" secondAttribute="trailing" id="Vf9-YF-gIs"/>
+                                <constraint firstAttribute="bottom" secondItem="Xa4-CM-pkZ" secondAttribute="bottom" id="oaS-1C-co4"/>
+                                <constraint firstItem="glv-VC-aq1" firstAttribute="leading" secondItem="Xa4-CM-pkZ" secondAttribute="trailing" constant="8" id="vAg-gv-Eb3"/>
+                                <constraint firstAttribute="trailing" secondItem="glv-VC-aq1" secondAttribute="trailing" id="ysu-ba-R6F"/>
+                            </constraints>
+                        </view>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yIJ-rQ-nAi" userLabel="Word Table View">
+                            <rect key="frame" x="0.0" y="8" width="600" height="338"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="qBv-Rq-Cmd" secondAttribute="trailing" id="HfJ-I7-9WE"/>
+                        <constraint firstAttribute="bottom" secondItem="qBv-Rq-Cmd" secondAttribute="bottom" id="N1L-V7-EdL"/>
+                        <constraint firstItem="qBv-Rq-Cmd" firstAttribute="leading" secondItem="Q8o-DL-MJF" secondAttribute="leading" id="U3e-yb-ghn"/>
+                        <constraint firstAttribute="height" constant="400" id="hVO-HH-NBw"/>
+                        <constraint firstItem="yIJ-rQ-nAi" firstAttribute="leading" secondItem="Q8o-DL-MJF" secondAttribute="leading" id="lqN-li-j0X"/>
+                        <constraint firstItem="yIJ-rQ-nAi" firstAttribute="top" secondItem="Q8o-DL-MJF" secondAttribute="top" constant="8" id="ofy-OO-15G"/>
+                        <constraint firstItem="qBv-Rq-Cmd" firstAttribute="top" secondItem="yIJ-rQ-nAi" secondAttribute="bottom" constant="8" id="qDd-qa-KjM"/>
+                        <constraint firstAttribute="trailing" secondItem="yIJ-rQ-nAi" secondAttribute="trailing" id="vhv-Od-9yE"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="KSP-rn-puU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="L92-i3-hfS"/>
+                <constraint firstItem="Q8o-DL-MJF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Lht-8f-lEb"/>
+                <constraint firstAttribute="bottom" secondItem="KSP-rn-puU" secondAttribute="bottom" id="P5A-k0-JZv"/>
+                <constraint firstAttribute="trailing" secondItem="Q8o-DL-MJF" secondAttribute="trailing" id="X4g-3A-zXw"/>
+                <constraint firstAttribute="bottom" secondItem="Q8o-DL-MJF" secondAttribute="bottom" id="Ymm-H9-lit"/>
+                <constraint firstItem="KSP-rn-puU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="lL2-C3-Jej"/>
+                <constraint firstAttribute="trailing" secondItem="KSP-rn-puU" secondAttribute="trailing" id="utd-Qn-4ug"/>
+            </constraints>
+            <connections>
+                <outlet property="maskView" destination="KSP-rn-puU" id="Ddr-6B-IPY"/>
+                <outlet property="panelViewBottomConstraint" destination="Ymm-H9-lit" id="VcZ-6q-IFo"/>
+                <outlet property="wordTableView" destination="yIJ-rQ-nAi" id="tSf-iZ-nPS"/>
+            </connections>
+            <point key="canvasLocation" x="416" y="351"/>
+        </view>
+    </objects>
+</document>

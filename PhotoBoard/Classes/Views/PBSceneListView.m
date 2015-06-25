@@ -96,4 +96,5 @@ static NSString *const SceneCellReuseIdentifier = @"SceneCell";
     self.sceneTableView.rowHeight = 212;
     self.sceneTableView.contentInset = UIEdgeInsetsMake(8, 0, 16, 0);
 }
+
 @end

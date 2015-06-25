@@ -21,6 +21,11 @@
 		36008A2E1B365FDA005FCCA4 /* PBWeChatMomentActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 36008A2D1B365FDA005FCCA4 /* PBWeChatMomentActivity.m */; };
 		36306F891B3A367B00DEDBCE /* PBTaleShareTemplateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36306F881B3A367B00DEDBCE /* PBTaleShareTemplateView.m */; };
 		36306F8B1B3A368E00DEDBCE /* PBTaleShareTemplateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36306F8A1B3A368D00DEDBCE /* PBTaleShareTemplateView.xib */; };
+		3637B8921B3B8B0300B1A538 /* PBWordSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3637B8911B3B8B0300B1A538 /* PBWordSelectorView.m */; };
+		3637B8941B3B8B1200B1A538 /* PBWordSelectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3637B8931B3B8B1200B1A538 /* PBWordSelectorView.xib */; };
+		3637B8991B3B8ED600B1A538 /* PBWordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3637B8971B3B8ED600B1A538 /* PBWordCell.m */; };
+		3637B89C1B3B8EEC00B1A538 /* PBWordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3637B89B1B3B8EEC00B1A538 /* PBWordCell.xib */; };
+		3637B89F1B3B8FCF00B1A538 /* PBWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 3637B89E1B3B8FCF00B1A538 /* PBWord.m */; };
 		36B89C651B351A3C00EC78AB /* PBTale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C631B351A3C00EC78AB /* PBTale.storyboard */; };
 		36B89C671B351A3C00EC78AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C661B351A3C00EC78AB /* Images.xcassets */; };
 		36B89C6A1B351A3C00EC78AB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C681B351A3C00EC78AB /* LaunchScreen.xib */; };
@@ -106,6 +111,15 @@
 		36306F871B3A367B00DEDBCE /* PBTaleShareTemplateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBTaleShareTemplateView.h; path = Classes/Views/PBTaleShareTemplateView.h; sourceTree = "<group>"; };
 		36306F881B3A367B00DEDBCE /* PBTaleShareTemplateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBTaleShareTemplateView.m; path = Classes/Views/PBTaleShareTemplateView.m; sourceTree = "<group>"; };
 		36306F8A1B3A368D00DEDBCE /* PBTaleShareTemplateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PBTaleShareTemplateView.xib; path = XIBs/PBTaleShareTemplateView.xib; sourceTree = "<group>"; };
+		3637B8901B3B8B0300B1A538 /* PBWordSelectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBWordSelectorView.h; path = Classes/Views/PBWordSelectorView.h; sourceTree = "<group>"; };
+		3637B8911B3B8B0300B1A538 /* PBWordSelectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBWordSelectorView.m; path = Classes/Views/PBWordSelectorView.m; sourceTree = "<group>"; };
+		3637B8931B3B8B1200B1A538 /* PBWordSelectorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PBWordSelectorView.xib; path = XIBs/PBWordSelectorView.xib; sourceTree = "<group>"; };
+		3637B8961B3B8ED600B1A538 /* PBWordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBWordCell.h; path = Classes/Views/PBWordCell.h; sourceTree = "<group>"; };
+		3637B8971B3B8ED600B1A538 /* PBWordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBWordCell.m; path = Classes/Views/PBWordCell.m; sourceTree = "<group>"; };
+		3637B89B1B3B8EEC00B1A538 /* PBWordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PBWordCell.xib; path = XIBs/PBWordCell.xib; sourceTree = "<group>"; };
+		3637B89D1B3B8FCF00B1A538 /* PBWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBWord.h; path = Classes/DTOs/PBWord.h; sourceTree = "<group>"; };
+		3637B89E1B3B8FCF00B1A538 /* PBWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBWord.m; path = Classes/DTOs/PBWord.m; sourceTree = "<group>"; };
+		3637B8A01B3B941D00B1A538 /* PBWordListInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBWordListInterface.h; path = Classes/ViewInterfaces/PBWordListInterface.h; sourceTree = "<group>"; };
 		36B89C561B351A3C00EC78AB /* PhotoBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B89C641B351A3C00EC78AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PBTale.storyboard; sourceTree = "<group>"; };
 		36B89C661B351A3C00EC78AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -303,6 +317,27 @@
 				36306F881B3A367B00DEDBCE /* PBTaleShareTemplateView.m */,
 			);
 			name = "Share Template";
+			sourceTree = "<group>";
+		};
+		3637B88F1B3B8AD900B1A538 /* Word Selector */ = {
+			isa = PBXGroup;
+			children = (
+				3637B8931B3B8B1200B1A538 /* PBWordSelectorView.xib */,
+				3637B8901B3B8B0300B1A538 /* PBWordSelectorView.h */,
+				3637B8911B3B8B0300B1A538 /* PBWordSelectorView.m */,
+				3637B8951B3B8E5700B1A538 /* Word Cell */,
+			);
+			name = "Word Selector";
+			sourceTree = "<group>";
+		};
+		3637B8951B3B8E5700B1A538 /* Word Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3637B89B1B3B8EEC00B1A538 /* PBWordCell.xib */,
+				3637B8961B3B8ED600B1A538 /* PBWordCell.h */,
+				3637B8971B3B8ED600B1A538 /* PBWordCell.m */,
+			);
+			name = "Word Cell";
 			sourceTree = "<group>";
 		};
 		36B89C4D1B351A3B00EC78AB = {
@@ -507,6 +542,7 @@
 			isa = PBXGroup;
 			children = (
 				36B89CC51B352FFD00EC78AB /* Scene List */,
+				3637B88F1B3B8AD900B1A538 /* Word Selector */,
 				36306F861B3A360900DEDBCE /* Share Template */,
 			);
 			name = Components;
@@ -540,6 +576,8 @@
 				36B89D7D1B35616400EC78AB /* PBTaleInfo.m */,
 				36B89CD41B35368400EC78AB /* PBSceneInfo.h */,
 				36B89CD51B35368400EC78AB /* PBSceneInfo.m */,
+				3637B89D1B3B8FCF00B1A538 /* PBWord.h */,
+				3637B89E1B3B8FCF00B1A538 /* PBWord.m */,
 			);
 			name = DTOs;
 			sourceTree = "<group>";
@@ -619,6 +657,7 @@
 			children = (
 				36B89D091B35453900EC78AB /* PBTaleListInterface.h */,
 				36B89D0A1B35454C00EC78AB /* PBSceneListInterface.h */,
+				3637B8A01B3B941D00B1A538 /* PBWordListInterface.h */,
 			);
 			name = Tale;
 			sourceTree = "<group>";
@@ -751,6 +790,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36B89CB51B351FCF00EC78AB /* ELCAssetTablePicker.xib in Resources */,
+				3637B89C1B3B8EEC00B1A538 /* PBWordCell.xib in Resources */,
 				36B89CCA1B35308600EC78AB /* PBSceneListView.xib in Resources */,
 				36008A0C1B36318D005FCCA4 /* PBTaleCell.xib in Resources */,
 				36B89CD21B3531DE00EC78AB /* PBSceneCell.xib in Resources */,
@@ -761,6 +801,7 @@
 				36B89C6A1B351A3C00EC78AB /* LaunchScreen.xib in Resources */,
 				36B89CB71B351FCF00EC78AB /* Overlay@2x.png in Resources */,
 				36B89C671B351A3C00EC78AB /* Images.xcassets in Resources */,
+				3637B8941B3B8B1200B1A538 /* PBWordSelectorView.xib in Resources */,
 				36B89CB41B351FCF00EC78AB /* ELCAssetPicker.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -821,6 +862,7 @@
 				36B89CDA1B35388B00EC78AB /* PBAssetsLibraryUtil.m in Sources */,
 				36008A091B363171005FCCA4 /* PBTaleCell.m in Sources */,
 				36B89D061B35447800EC78AB /* PBConstants.m in Sources */,
+				3637B8991B3B8ED600B1A538 /* PBWordCell.m in Sources */,
 				36B89CF81B35407100EC78AB /* MASViewConstraint.m in Sources */,
 				36B89CFB1B35407100EC78AB /* View+MASAdditions.m in Sources */,
 				36B89CF31B35407100EC78AB /* MASCompositeConstraint.m in Sources */,
@@ -842,10 +884,12 @@
 				36B89CC31B352F8300EC78AB /* PBTaleDetailViewController.m in Sources */,
 				36B89D031B35438300EC78AB /* PBSceneGroupPresenter.m in Sources */,
 				36B89CCF1B3531C900EC78AB /* PBSceneCell.m in Sources */,
+				3637B8921B3B8B0300B1A538 /* PBWordSelectorView.m in Sources */,
 				36306F891B3A367B00DEDBCE /* PBTaleShareTemplateView.m in Sources */,
 				36B89CFA1B35407100EC78AB /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				36B89CA71B351FB500EC78AB /* ELCAsset.m in Sources */,
 				36B89C881B351B8500EC78AB /* PBTaleListViewController.m in Sources */,
+				3637B89F1B3B8FCF00B1A538 /* PBWord.m in Sources */,
 				36B89D811B35662D00EC78AB /* PBTaleMaintainPresenter.m in Sources */,
 				36B89CF91B35407100EC78AB /* NSArray+MASAdditions.m in Sources */,
 				36B89D751B355F5B00EC78AB /* PBTale+Utility.m in Sources */,
