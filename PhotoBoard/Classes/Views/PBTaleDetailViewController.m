@@ -57,6 +57,8 @@
     if (self.isEditable) {
         self.currentEditIndex = index;
         self.currentEditMode = 0;
+//        self.wordSelectorView.hidden = NO;
+//        [self.wordSelectorView animateShowSelectorWithCompletion:nil];
         [self startEditingText];
     }
 }
@@ -72,6 +74,7 @@
 #pragma mark - PBWordSelectorViewDelegate
 
 - (void)wordSelectorView:(PBWordSelectorView *)wordSelectorView didSelectWord:(PBWord *)word {
+    [self finishEditingWithText:word.text];
     [self.wordSelectorView animateHideSelectorWithCompletion:^{
         self.wordSelectorView.hidden = YES;
     }];
@@ -79,6 +82,7 @@
 
 - (void)wordSelectorViewDidClickCustomize:(PBWordSelectorView *)wordSelectorView {
     [self.wordSelectorView animateHideSelectorWithCompletion:^{
+        self.wordSelectorView.hidden = YES;
         [self startEditingText];
     }];
 }
@@ -111,6 +115,14 @@
     [self.editTextField becomeFirstResponder];
 }
 
+- (void)finishEditingWithText:(NSString *)text {
+    if (0 == self.currentEditMode) {
+        [self.sceneListView displayUpdatedWord:text forRowIndex:self.currentEditIndex];
+    } else {
+        [self.sceneListView displayUpdatedNote:text forRowIndex:self.currentEditIndex];
+    }
+}
+
 #pragma mark - Keyboard
 
 - (void)keyboardWillShow:(NSNotification *)notification {
@@ -128,11 +140,7 @@
 
 - (IBAction)editDoneButtonTouchUpInside:(id)sender {
     NSString* text = self.editTextField.text;
-    if (0 == self.currentEditMode) {
-        [self.sceneListView displayUpdatedWord:text forRowIndex:self.currentEditIndex];
-    } else {
-        [self.sceneListView displayUpdatedNote:text forRowIndex:self.currentEditIndex];
-    }
+    [self finishEditingWithText:text];
     [self.editTextField resignFirstResponder];
 }
 

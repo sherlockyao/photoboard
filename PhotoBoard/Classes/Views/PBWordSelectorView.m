@@ -70,7 +70,7 @@ static NSString *const WordCellReuseIdentifier = @"WordCell";
 - (void)animateHideSelectorWithCompletion:(void (^)(void))completion {
     [UIView animateWithDuration:0.2 animations:^{
         self.maskView.alpha = 0;
-        self.panelViewBottomConstraint.constant = 400;
+        self.panelViewBottomConstraint.constant = -400;
         [self layoutIfNeeded];
     } completion:^(BOOL finished) {
         if (completion) {
@@ -100,6 +100,9 @@ static NSString *const WordCellReuseIdentifier = @"WordCell";
 }
 
 - (void)configureViewComponents {
+    // panel view
+    self.panelViewBottomConstraint.constant = -400;
+    
     // table view
     self.wordTableView.delegate = self;
     self.wordTableView.dataSource = self;
