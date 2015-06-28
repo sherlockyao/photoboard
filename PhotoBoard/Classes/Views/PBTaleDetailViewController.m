@@ -57,9 +57,8 @@
     if (self.isEditable) {
         self.currentEditIndex = index;
         self.currentEditMode = 0;
-//        self.wordSelectorView.hidden = NO;
-//        [self.wordSelectorView animateShowSelectorWithCompletion:nil];
-        [self startEditingText];
+        self.wordSelectorView.hidden = NO;
+        [self.wordSelectorView animateShowSelectorWithCompletion:nil];
     }
 }
 
