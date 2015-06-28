@@ -21,7 +21,7 @@
     return UIActivityCategoryShare;
 }
 
-- (NSInteger)scene {
+- (int)scene {
     return WXSceneSession;
 }
 
