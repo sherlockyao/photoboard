@@ -14,7 +14,7 @@ static NSString *const WordCellReuseIdentifier = @"WordCell";
 
 @interface PBWordSelectorView () <UITableViewDataSource, UITableViewDelegate>
 
-@property (readwrite, nonatomic, strong) NSArray* words;
+@property (readwrite, nonatomic, strong) NSArray* sectionedWords;
 
 @end
 
@@ -27,13 +27,26 @@ static NSString *const WordCellReuseIdentifier = @"WordCell";
 
 #pragma mark - UITableViewDataSource
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [[[UILocalizedIndexedCollation currentCollation] sectionTitles] count];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.words count];
+    return [self.sectionedWords[section] count];
+}
+
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    return [[UILocalizedIndexedCollation currentCollation] sectionIndexTitles];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index {
+    return [[UILocalizedIndexedCollation currentCollation] sectionForSectionIndexTitleAtIndex:index];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    PBWord* word = self.sectionedWords[indexPath.section][indexPath.row];
     PBWordCell* cell = [tableView dequeueReusableCellWithIdentifier:WordCellReuseIdentifier forIndexPath:indexPath];
-    [cell displayWord:self.words[indexPath.row]];
+    [cell displayWord:word];
     return cell;
 }
 
@@ -41,14 +54,15 @@ static NSString *const WordCellReuseIdentifier = @"WordCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([self.delegate respondsToSelector:@selector(wordSelectorView:didSelectWord:)]) {
-        [self.delegate wordSelectorView:self didSelectWord:self.words[indexPath.row]];
+        PBWord* word = self.sectionedWords[indexPath.section][indexPath.row];
+        [self.delegate wordSelectorView:self didSelectWord:word];
     }
 }
 
 #pragma mark - PBWordListInterface
 
 - (void)displayWords:(NSArray *)words {
-    self.words = words;
+    self.sectionedWords = [self localizedSectionedArrayForWords:words];
     [self.wordTableView reloadData];
 }
 
@@ -93,10 +107,33 @@ static NSString *const WordCellReuseIdentifier = @"WordCell";
     }
 }
 
+#pragma mark - Helper Methods
+
+- (NSArray *)localizedSectionedArrayForWords:(NSArray *)words {
+    UILocalizedIndexedCollation* collation = [UILocalizedIndexedCollation currentCollation];
+    NSInteger sectionCount = [[collation sectionTitles] count];
+    NSMutableArray* sections = [NSMutableArray arrayWithCapacity:sectionCount];
+    // init
+    for (NSInteger i = 0; i < sectionCount; i++) {
+        [sections addObject:[NSMutableArray array]];
+    }
+    // add word
+    for (PBWord* word in words) {
+        NSInteger index = [collation sectionForObject:word collationStringSelector:@selector(text)];
+        [sections[index] addObject:word];
+    }
+    // sort
+    for (NSInteger i = 0; i < sectionCount; i++) {
+        NSArray* sortedWords = [collation sortedArrayFromArray:sections[i] collationStringSelector:@selector(text)];
+        [sections replaceObjectAtIndex:i withObject:sortedWords];
+    }
+    return sections;
+}
+
 #pragma mark - Configuration
 
 - (void)configureProperties {
-    self.words = @[];
+    self.sectionedWords = [self localizedSectionedArrayForWords:@[]];
 }
 
 - (void)configureViewComponents {
