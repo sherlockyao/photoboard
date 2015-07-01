@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Jaret. All rights reserved.
 //
 
-#import "PBScene.h"
+#import "PBSceneModel.h"
 #import "PBSceneInfo.h"
 
-@interface PBScene (Utility)
+@interface PBSceneModel (Utility)
 
 - (PBSceneInfo *)sceneInfo;
 - (void)updateFromSceneInfo:(PBSceneInfo *)sceneInfo;

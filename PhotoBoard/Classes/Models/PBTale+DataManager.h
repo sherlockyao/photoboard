@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Jaret. All rights reserved.
 //
 
-#import "PBTale.h"
+#import "PBTaleModel.h"
 
-@interface PBTale (DataManager)
+@interface PBTaleModel (DataManager)
 
 + (NSArray *)findAllTaleInfos;
 

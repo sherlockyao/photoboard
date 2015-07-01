@@ -6,10 +6,10 @@
 //
 //
 
-#import "PBTale.h"
+#import "PBTaleModel.h"
 
 
-@implementation PBTale
+@implementation PBTaleModel
 
 @dynamic timestamp;
 @dynamic scenes;

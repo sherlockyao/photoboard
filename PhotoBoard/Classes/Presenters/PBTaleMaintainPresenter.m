@@ -29,7 +29,7 @@
 }
 
 - (void)deleteTaleOfTaleInfo:(PBTaleInfo *)taleInfo completion:(void(^)())completion {
-    [PBTale deleteByObjectId:taleInfo.objectId completion:^(BOOL success, NSError *error) {
+    [PBTaleModel deleteByObjectId:taleInfo.objectId completion:^(BOOL success, NSError *error) {
         completion();
     }];
 }

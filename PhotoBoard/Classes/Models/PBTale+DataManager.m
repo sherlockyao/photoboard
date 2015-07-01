@@ -10,17 +10,17 @@
 #import "PBTale+Utility.h"
 #import "CoreData+MagicalRecord.h"
 
-@implementation PBTale (DataManager)
+@implementation PBTaleModel (DataManager)
 
 + (NSArray *)findAllTaleInfos {
-    NSArray* tales = [self MR_findAllSortedBy:@"timestamp" ascending:NO];
-    return [self taleInfosForTales:tales];
+    NSArray* taleModels = [self MR_findAllSortedBy:@"timestamp" ascending:NO];
+    return [self taleInfosForTales:taleModels];
 }
 
 + (void)deleteByObjectId:(NSManagedObjectID *)objectId completion:(void(^)(BOOL success, NSError *error))completion {
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *context) {
         NSError* error = nil;
-        PBTale* tale = (PBTale *)[context existingObjectWithID:objectId error:&error];
+        PBTaleModel* tale = (PBTaleModel *)[context existingObjectWithID:objectId error:&error];
         [tale MR_deleteInContext:context];
     } completion:completion];
 }

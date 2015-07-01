@@ -8,7 +8,7 @@
 
 #import "PBScene+Utility.h"
 
-@implementation PBScene (Utility)
+@implementation PBSceneModel (Utility)
 
 - (PBSceneInfo *)sceneInfo {
     PBSceneInfo* info = [PBSceneInfo new];

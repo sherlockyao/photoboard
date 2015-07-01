@@ -15,14 +15,14 @@
 
 + (void)createTaleWithSceneInfos:(NSArray *)sceneInfos completion:(void(^)(BOOL success, NSError *error))completion {
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *context) {
-        PBTale* tale = [PBTale MR_createInContext:context];
-        tale.timestamp = [NSDate date];
+        PBTaleModel* taleModel = [PBTaleModel MR_createInContext:context];
+        taleModel.timestamp = [NSDate date];
         NSInteger order = 0;
         for (PBSceneInfo* sceneInfo in sceneInfos) {
-            PBScene* scene = [PBScene MR_createInContext:context];
-            [scene updateFromSceneInfo:sceneInfo];
-            scene.order = @(order++);
-            scene.tale = tale;
+            PBSceneModel* sceneModel = [PBSceneModel MR_createInContext:context];
+            [sceneModel updateFromSceneInfo:sceneInfo];
+            sceneModel.order = @(order++);
+            sceneModel.tale = taleModel;
         }
     } completion:completion];
 }

@@ -6,10 +6,10 @@
 //
 //
 
-#import "PBScene.h"
+#import "PBSceneModel.h"
 
 
-@implementation PBScene
+@implementation PBSceneModel
 
 @dynamic word;
 @dynamic note;

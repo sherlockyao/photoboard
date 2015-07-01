@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Jaret. All rights reserved.
 //
 
-#import "PBTale.h"
+#import "PBTaleModel.h"
 #import "PBTaleInfo.h"
 
-@interface PBTale (Utility)
+@interface PBTaleModel (Utility)
 
 + (NSArray *)taleInfosForTales:(NSArray *)tales;
 

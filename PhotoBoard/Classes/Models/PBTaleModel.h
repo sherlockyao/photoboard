@@ -11,13 +11,13 @@
 
 @class NSManagedObject;
 
-@interface PBTale : NSManagedObject
+@interface PBTaleModel : NSManagedObject
 
 @property (nonatomic, retain) NSDate * timestamp;
 @property (nonatomic, retain) NSSet *scenes;
 @end
 
-@interface PBTale (CoreDataGeneratedAccessors)
+@interface PBTaleModel (CoreDataGeneratedAccessors)
 
 - (void)addScenesObject:(NSManagedObject *)value;
 - (void)removeScenesObject:(NSManagedObject *)value;

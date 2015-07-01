@@ -9,11 +9,11 @@
 #import "PBTale+Utility.h"
 #import "PBScene+Utility.h"
 
-@implementation PBTale (Utility)
+@implementation PBTaleModel (Utility)
 
 + (NSArray *)taleInfosForTales:(NSArray *)tales {
     NSMutableArray* taleInfos = [NSMutableArray arrayWithCapacity:[tales count]];
-    for (PBTale* tale in tales) {
+    for (PBTaleModel* tale in tales) {
         [taleInfos addObject:[tale taleInfo]];
     }
     return [NSArray arrayWithArray:taleInfos];
@@ -25,7 +25,7 @@
     info.timestamp = self.timestamp;
     NSMutableArray* sceneInfos = [NSMutableArray arrayWithCapacity:[self.scenes count]];
     NSArray* scenes = [[self.scenes allObjects] sortedArrayUsingDescriptors:@[[[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES]]];
-    for (PBScene* scene in scenes) {
+    for (PBSceneModel* scene in scenes) {
         [sceneInfos addObject:[scene sceneInfo]];
     }
     info.sceneInfos = [NSArray arrayWithArray:sceneInfos];
