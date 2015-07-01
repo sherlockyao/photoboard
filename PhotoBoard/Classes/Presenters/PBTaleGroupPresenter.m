@@ -11,7 +11,7 @@
 
 @implementation PBTaleGroupPresenter
 
-- (void)loadTaleInfos {
+- (void)loadTales {
     [self.taleList displayTales:[PBTaleModel findAllTales]];
 }
 

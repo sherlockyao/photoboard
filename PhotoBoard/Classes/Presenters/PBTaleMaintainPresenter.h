@@ -15,7 +15,7 @@
 
 - (void)checkMaintainState:(void(^)(BOOL isMaintainable))result;
 
-- (void)createTaleWithSceneInfos:(NSArray *)sceneInfos completion:(void(^)())completion;
-- (void)deleteTaleOfTaleInfo:(PBTale *)taleInfo completion:(void(^)())completion;
+- (void)createTaleWithScenes:(NSArray *)scenes completion:(void(^)())completion;
+- (void)deleteTale:(PBTale *)tale completion:(void(^)())completion;
 
 @end

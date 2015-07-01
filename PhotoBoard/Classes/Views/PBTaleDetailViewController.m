@@ -95,7 +95,7 @@
 #pragma mark - Logic
 
 - (void)loadSceneInfos {
-    [self.sceneGroupPresenter loadSceneInfos];
+    [self.sceneGroupPresenter loadScenes];
 }
 
 - (void)loadWords {
@@ -148,7 +148,7 @@
 }
 
 - (IBAction)createButtonTouchUpInside:(id)sender {
-    [self.taleMaintainPresenter createTaleWithSceneInfos:self.sceneListView.scenes completion:^{
+    [self.taleMaintainPresenter createTaleWithScenes:self.sceneListView.scenes completion:^{
         [self.navigationController popViewControllerAnimated:YES];
     }];
 }

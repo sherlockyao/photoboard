@@ -13,6 +13,6 @@
 
 @property (nonatomic, weak) id<PBTaleListInterface> taleList;
 
-- (void)loadTaleInfos;
+- (void)loadTales;
 
 @end

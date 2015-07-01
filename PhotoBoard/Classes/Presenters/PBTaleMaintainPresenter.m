@@ -14,22 +14,22 @@
 @implementation PBTaleMaintainPresenter
 
 - (void)checkMaintainState:(void(^)(BOOL isMaintainable))result {
-    PBTale* taleInfo = [self.params objectForKey:ParamKeyTaleInfo];
+    PBTale* taleInfo = [self.params objectForKey:ParamKeyTale];
     if (result) {
         result((nil == taleInfo));
     }
 }
 
-- (void)createTaleWithSceneInfos:(NSArray *)sceneInfos completion:(void(^)())completion {
-    [PBDataManager createTaleModelWithScenes:sceneInfos completion:^(BOOL success, NSError *error) {
+- (void)createTaleWithScenes:(NSArray *)scenes completion:(void(^)())completion {
+    [PBDataManager createTaleModelWithScenes:scenes completion:^(BOOL success, NSError *error) {
         if (completion) {
             completion();
         }
     }];
 }
 
-- (void)deleteTaleOfTaleInfo:(PBTale *)taleInfo completion:(void(^)())completion {
-    [PBTaleModel deleteByObjectId:taleInfo.objectId completion:^(BOOL success, NSError *error) {
+- (void)deleteTale:(PBTale *)tale completion:(void(^)())completion {
+    [PBTaleModel deleteByObjectId:tale.objectId completion:^(BOOL success, NSError *error) {
         completion();
     }];
 }

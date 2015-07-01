@@ -14,6 +14,6 @@
 @property (nonatomic, strong) NSDictionary* params;
 @property (nonatomic, weak) id<PBSceneListInterface> sceneList;
 
-- (void)loadSceneInfos;
+- (void)loadScenes;
 
 @end

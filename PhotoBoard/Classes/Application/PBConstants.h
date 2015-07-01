@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString *const ParamKeySceneInfo;
-extern NSString *const ParamKeySceneInfos;
+extern NSString *const ParamKeyScene;
+extern NSString *const ParamKeySceneList;
 
-extern NSString *const ParamKeyTaleInfo;
-extern NSString *const ParamKeyTaleInfos;
+extern NSString *const ParamKeyTale;
+extern NSString *const ParamKeyTaleList;

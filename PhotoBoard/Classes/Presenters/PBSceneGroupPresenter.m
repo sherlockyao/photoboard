@@ -12,10 +12,10 @@
 
 @implementation PBSceneGroupPresenter
 
-- (void)loadSceneInfos {
-    NSArray* scenes = [self.params objectForKey:ParamKeySceneInfos];
+- (void)loadScenes {
+    NSArray* scenes = [self.params objectForKey:ParamKeySceneList];
     if (!scenes) {
-        PBTale* tale = [self.params objectForKey:ParamKeyTaleInfo];
+        PBTale* tale = [self.params objectForKey:ParamKeyTale];
         scenes = tale ? tale.scenes : @[];
     }
     [self.sceneList displayScenes:scenes];

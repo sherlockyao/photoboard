@@ -34,7 +34,7 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.taleGroupPresenter loadTaleInfos];
+    [self.taleGroupPresenter loadTales];
 }
 
 #pragma mark - IB Actions
@@ -73,7 +73,7 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PBTale* tale = self.tales[indexPath.row];
-    NSDictionary* params = @{ ParamKeyTaleInfo : tale };
+    NSDictionary* params = @{ ParamKeyTale : tale };
     [PBWireframe moveToTaleDetailViewControllerFrom:self withParams:params];
 }
 
@@ -87,7 +87,7 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"是否要删除故事？" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
     UIAlertAction *otherAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [self.taleMaintainPresenter deleteTaleOfTaleInfo:tale completion:^{
+        [self.taleMaintainPresenter deleteTale:tale completion:^{
             [self.tales removeObjectAtIndex:indexPath.row];
             [self.taleTableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         }];
@@ -111,7 +111,7 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
         sceneInfo.assetURL = [map objectForKey:UIImagePickerControllerReferenceURL];
         [sceneInfos addObject:sceneInfo];
     }
-    NSDictionary* params = @{ ParamKeySceneInfos : sceneInfos };
+    NSDictionary* params = @{ ParamKeySceneList : sceneInfos };
     [PBWireframe moveToTaleDetailViewControllerFrom:self withParams:params];
 }
 
