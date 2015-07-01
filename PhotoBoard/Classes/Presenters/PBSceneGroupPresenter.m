@@ -8,17 +8,17 @@
 
 #import "PBSceneGroupPresenter.h"
 #import "PBConstants.h"
-#import "PBTaleInfo.h"
+#import "PBTale.h"
 
 @implementation PBSceneGroupPresenter
 
 - (void)loadSceneInfos {
-    NSArray* sceneInfos = [self.params objectForKey:ParamKeySceneInfos];
-    if (!sceneInfos) {
-        PBTaleInfo* taleInfo = [self.params objectForKey:ParamKeyTaleInfo];
-        sceneInfos = taleInfo ? taleInfo.sceneInfos : @[];
+    NSArray* scenes = [self.params objectForKey:ParamKeySceneInfos];
+    if (!scenes) {
+        PBTale* tale = [self.params objectForKey:ParamKeyTaleInfo];
+        scenes = tale ? tale.scenes : @[];
     }
-    [self.sceneList displaySceneInfos:sceneInfos];
+    [self.sceneList displayScenes:scenes];
 }
 
 @end

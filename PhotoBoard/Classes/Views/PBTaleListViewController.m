@@ -10,7 +10,7 @@
 #import "ELCImagePickerController.h"
 #import <MobileCoreServices/UTCoreTypes.h>
 #import "PBTaleCell.h"
-#import "PBSceneInfo.h"
+#import "PBScene.h"
 #import "PBConstants.h"
 #import "PBWireFrame.h"
 
@@ -19,7 +19,7 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
 
 @interface PBTaleListViewController () <UITableViewDataSource, UITableViewDelegate, PBTaleCellDelegate, ELCImagePickerControllerDelegate, PBTaleListInterface>
 
-@property (nonatomic, strong) NSMutableArray* taleInfos;
+@property (nonatomic, strong) NSMutableArray* tales;
 
 @end
 
@@ -51,20 +51,20 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
 
 #pragma mark - PBTaleListInterface
 
-- (void)displayTaleInfos:(NSArray *)taleInfos {
-    self.taleInfos = [NSMutableArray arrayWithArray:taleInfos];
+- (void)displayTales:(NSArray *)tales {
+    self.tales = [NSMutableArray arrayWithArray:tales];
     [self.taleTableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.taleInfos count];
+    return [self.tales count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PBTaleCell* cell = [tableView dequeueReusableCellWithIdentifier:TaleCellReuseIdentifier forIndexPath:indexPath];
-    [cell displayTaleInfo:self.taleInfos[indexPath.row]];
+    [cell displayTaleInfo:self.tales[indexPath.row]];
     cell.delegate = self;
     return cell;
 }
@@ -72,8 +72,8 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    PBTaleInfo* taleInfo = self.taleInfos[indexPath.row];
-    NSDictionary* params = @{ ParamKeyTaleInfo : taleInfo };
+    PBTale* tale = self.tales[indexPath.row];
+    NSDictionary* params = @{ ParamKeyTaleInfo : tale };
     [PBWireframe moveToTaleDetailViewControllerFrom:self withParams:params];
 }
 
@@ -81,14 +81,14 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
 
 - (void)taleCellDidClickDeleteButton:(PBTaleCell *)taleCell {
     NSIndexPath* indexPath = [self.taleTableView indexPathForCell:taleCell];
-    PBTaleInfo* taleInfo = self.taleInfos[indexPath.row];
+    PBTale* tale = self.tales[indexPath.row];
     
     // show alert controller
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"是否要删除故事？" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
     UIAlertAction *otherAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [self.taleMaintainPresenter deleteTaleOfTaleInfo:taleInfo completion:^{
-            [self.taleInfos removeObjectAtIndex:indexPath.row];
+        [self.taleMaintainPresenter deleteTaleOfTaleInfo:tale completion:^{
+            [self.tales removeObjectAtIndex:indexPath.row];
             [self.taleTableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         }];
     }];
@@ -107,7 +107,7 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
     }
     NSMutableArray* sceneInfos = [NSMutableArray arrayWithCapacity:[info count]];
     for (NSDictionary* map in info) {
-        PBSceneInfo* sceneInfo = [PBSceneInfo new];
+        PBScene* sceneInfo = [PBScene new];
         sceneInfo.assetURL = [map objectForKey:UIImagePickerControllerReferenceURL];
         [sceneInfos addObject:sceneInfo];
     }
@@ -122,7 +122,7 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
 #pragma mark - Configuration
 
 - (void)configureProperties {
-    self.taleInfos = [NSMutableArray array];
+    self.tales = [NSMutableArray array];
 }
 
 - (void)configureViewComponents {

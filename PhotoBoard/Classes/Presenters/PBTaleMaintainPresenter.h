@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PBTaleInfo.h"
+#import "PBTale.h"
 
 @interface PBTaleMaintainPresenter : NSObject
 
@@ -16,6 +16,6 @@
 - (void)checkMaintainState:(void(^)(BOOL isMaintainable))result;
 
 - (void)createTaleWithSceneInfos:(NSArray *)sceneInfos completion:(void(^)())completion;
-- (void)deleteTaleOfTaleInfo:(PBTaleInfo *)taleInfo completion:(void(^)())completion;
+- (void)deleteTaleOfTaleInfo:(PBTale *)taleInfo completion:(void(^)())completion;
 
 @end

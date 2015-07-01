@@ -148,13 +148,13 @@
 }
 
 - (IBAction)createButtonTouchUpInside:(id)sender {
-    [self.taleMaintainPresenter createTaleWithSceneInfos:self.sceneListView.sceneInfos completion:^{
+    [self.taleMaintainPresenter createTaleWithSceneInfos:self.sceneListView.scenes completion:^{
         [self.navigationController popViewControllerAnimated:YES];
     }];
 }
 
 - (IBAction)shareButtonTouchUpInside:(id)sender {
-    [self.sharePresenter shareSceneInfos:self.sceneListView.sceneInfos from:self];
+    [self.sharePresenter shareSceneInfos:self.sceneListView.scenes from:self];
 }
 
 #pragma mark - Animations

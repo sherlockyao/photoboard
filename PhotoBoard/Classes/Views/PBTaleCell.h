@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PBTaleInfo.h"
+#import "PBTale.h"
 
 @protocol PBTaleCellDelegate;
 
@@ -19,7 +19,7 @@
 
 @property (nonatomic, weak) id<PBTaleCellDelegate> delegate;
 
-- (void)displayTaleInfo:(PBTaleInfo *)taleInfo;
+- (void)displayTaleInfo:(PBTale *)taleInfo;
 
 @end
 

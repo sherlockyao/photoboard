@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Jaret. All rights reserved.
 //
 
-#import "PBSceneInfo.h"
+#import "PBScene.h"
 
-@implementation PBSceneInfo
+@implementation PBScene
 
 @end

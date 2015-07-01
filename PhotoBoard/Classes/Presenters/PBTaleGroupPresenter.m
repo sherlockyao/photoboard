@@ -12,7 +12,7 @@
 @implementation PBTaleGroupPresenter
 
 - (void)loadTaleInfos {
-    [self.taleList displayTaleInfos:[PBTaleModel findAllTaleInfos]];
+    [self.taleList displayTales:[PBTaleModel findAllTales]];
 }
 
 @end

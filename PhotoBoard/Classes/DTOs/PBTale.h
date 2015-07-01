@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@interface PBTaleInfo : NSObject
+@interface PBTale : NSObject
 
 @property (nonatomic, strong) NSManagedObjectID* objectId;
 @property (nonatomic, strong) NSDate* timestamp;
-@property (nonatomic, strong) NSArray* sceneInfos;
+@property (nonatomic, strong) NSArray* scenes;
 
 - (NSURL *)coverAssetURL;
 

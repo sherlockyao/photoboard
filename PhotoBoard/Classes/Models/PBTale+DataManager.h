@@ -10,7 +10,7 @@
 
 @interface PBTaleModel (DataManager)
 
-+ (NSArray *)findAllTaleInfos;
++ (NSArray *)findAllTales;
 
 + (void)deleteByObjectId:(NSManagedObjectID *)objectId completion:(void(^)(BOOL success, NSError *error))completion;
 

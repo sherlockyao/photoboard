@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PBSceneInfo : NSObject
+@interface PBScene : NSObject
 
 @property (nonatomic, strong) NSString* word;
 @property (nonatomic, strong) NSString* note;

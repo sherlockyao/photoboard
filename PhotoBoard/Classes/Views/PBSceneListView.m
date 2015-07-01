@@ -14,7 +14,7 @@ static NSString *const SceneCellReuseIdentifier = @"SceneCell";
 
 @interface PBSceneListView () <UITableViewDataSource, UITableViewDelegate, PBSceneCellDelegate>
 
-@property (readwrite, nonatomic, strong) NSArray* sceneInfos;
+@property (readwrite, nonatomic, strong) NSArray* scenes;
 
 @end
 
@@ -27,17 +27,17 @@ static NSString *const SceneCellReuseIdentifier = @"SceneCell";
 }
 
 - (void)displayUpdatedWord:(NSString *)word forRowIndex:(NSUInteger)index {
-    PBSceneInfo* sceneInfo = self.sceneInfos[index];
-    sceneInfo.word = word;
+    PBScene* scene = self.scenes[index];
+    scene.word = word;
     PBSceneCell* cell = (PBSceneCell *)[self.sceneTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
-    [cell displaySceneInfo:sceneInfo];
+    [cell displaySceneInfo:scene];
 }
 
 - (void)displayUpdatedNote:(NSString *)note forRowIndex:(NSUInteger)index {
-    PBSceneInfo* sceneInfo = self.sceneInfos[index];
-    sceneInfo.note = note;
+    PBScene* scene = self.scenes[index];
+    scene.note = note;
     PBSceneCell* cell = (PBSceneCell *)[self.sceneTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
-    [cell displaySceneInfo:sceneInfo];
+    [cell displaySceneInfo:scene];
 }
 
 - (CGFloat)preferredHeigh {
@@ -48,20 +48,20 @@ static NSString *const SceneCellReuseIdentifier = @"SceneCell";
 
 #pragma mark - PBSceneListInterface
 
-- (void)displaySceneInfos:(NSArray *)sceneInfos {
-    self.sceneInfos = sceneInfos;
+- (void)displayScenes:(NSArray *)scenes {
+    self.scenes = scenes;
     [self.sceneTableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.sceneInfos count];
+    return [self.scenes count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PBSceneCell* cell = [tableView dequeueReusableCellWithIdentifier:SceneCellReuseIdentifier forIndexPath:indexPath];
-    [cell displaySceneInfo:self.sceneInfos[indexPath.row]];
+    [cell displaySceneInfo:self.scenes[indexPath.row]];
     cell.delegate = self;
     return cell;
 }
@@ -85,7 +85,7 @@ static NSString *const SceneCellReuseIdentifier = @"SceneCell";
 #pragma mark - Configuration
 
 - (void)configureProperties {
-    self.sceneInfos = @[];
+    self.scenes = @[];
 }
 
 - (void)configureViewComponents {

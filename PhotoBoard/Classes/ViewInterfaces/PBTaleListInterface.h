@@ -10,6 +10,6 @@
 
 @protocol PBTaleListInterface <NSObject>
 
-- (void)displayTaleInfos:(NSArray *)taleInfos;
+- (void)displayTales:(NSArray *)tales;
 
 @end

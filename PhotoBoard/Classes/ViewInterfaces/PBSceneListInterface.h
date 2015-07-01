@@ -10,6 +10,6 @@
 
 @protocol PBSceneListInterface <NSObject>
 
-- (void)displaySceneInfos:(NSArray *)sceneInfos;
+- (void)displayScenes:(NSArray *)scenes;
 
 @end

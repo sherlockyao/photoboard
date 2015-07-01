@@ -15,7 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *sceneTableView;
 
-@property (readonly, nonatomic, strong) NSArray* sceneInfos;
+@property (readonly, nonatomic, strong) NSArray* scenes;
 @property (nonatomic, weak) id<PBSceneListViewDelegate> delegate;
 
 - (void)displayUpdatedWord:(NSString *)word forRowIndex:(NSUInteger)index;

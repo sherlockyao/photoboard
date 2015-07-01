@@ -7,12 +7,12 @@
 //
 
 #import "PBTaleModel.h"
-#import "PBTaleInfo.h"
+#import "PBTale.h"
 
 @interface PBTaleModel (Utility)
 
-+ (NSArray *)taleInfosForTales:(NSArray *)tales;
++ (NSArray *)dataForTaleModels:(NSArray *)taleModels;
 
-- (PBTaleInfo *)taleInfo;
+- (PBTale *)data;
 
 @end

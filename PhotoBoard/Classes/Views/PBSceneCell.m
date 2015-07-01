@@ -17,7 +17,7 @@
     self.wordButton.layer.borderColor = [UIColor blackColor].CGColor;
 }
 
-- (void)displaySceneInfo:(PBSceneInfo *)sceneInfo {
+- (void)displaySceneInfo:(PBScene *)sceneInfo {
     self.wordLabel.text = sceneInfo.word ?: @"连接词";
     self.noteLabel.text = sceneInfo.note ?: @"...";
     [self updateWordLabelForProperFont];

@@ -7,20 +7,20 @@
 //
 
 #import "PBDataManager.h"
-#import "PBTale+Utility.h"
-#import "PBScene+Utility.h"
+#import "PBTaleModel+Utility.h"
+#import "PBSceneModel+Utility.h"
 #import "CoreData+MagicalRecord.h"
 
 @implementation PBDataManager
 
-+ (void)createTaleWithSceneInfos:(NSArray *)sceneInfos completion:(void(^)(BOOL success, NSError *error))completion {
++ (void)createTaleModelWithScenes:(NSArray *)scenes completion:(void(^)(BOOL success, NSError *error))completion {
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *context) {
         PBTaleModel* taleModel = [PBTaleModel MR_createInContext:context];
         taleModel.timestamp = [NSDate date];
         NSInteger order = 0;
-        for (PBSceneInfo* sceneInfo in sceneInfos) {
+        for (PBScene* scene in scenes) {
             PBSceneModel* sceneModel = [PBSceneModel MR_createInContext:context];
-            [sceneModel updateFromSceneInfo:sceneInfo];
+            [sceneModel updateFromData:scene];
             sceneModel.order = @(order++);
             sceneModel.tale = taleModel;
         }

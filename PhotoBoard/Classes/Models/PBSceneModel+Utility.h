@@ -7,11 +7,11 @@
 //
 
 #import "PBSceneModel.h"
-#import "PBSceneInfo.h"
+#import "PBScene.h"
 
 @interface PBSceneModel (Utility)
 
-- (PBSceneInfo *)sceneInfo;
-- (void)updateFromSceneInfo:(PBSceneInfo *)sceneInfo;
+- (PBScene *)data;
+- (void)updateFromData:(PBScene *)scene;
 
 @end

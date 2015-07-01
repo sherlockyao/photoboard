@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PBSceneInfo.h"
+#import "PBScene.h"
 
 @protocol PBSceneCellDelegate;
 
@@ -21,7 +21,7 @@
 
 @property (nonatomic, weak) id<PBSceneCellDelegate> delegate;
 
-- (void)displaySceneInfo:(PBSceneInfo *)sceneInfo;
+- (void)displaySceneInfo:(PBScene *)sceneInfo;
 
 @end
 

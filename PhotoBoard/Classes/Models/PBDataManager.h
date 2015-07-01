@@ -10,6 +10,6 @@
 
 @interface PBDataManager : NSObject
 
-+ (void)createTaleWithSceneInfos:(NSArray *)sceneInfos completion:(void(^)(BOOL success, NSError *error))completion;
++ (void)createTaleModelWithScenes:(NSArray *)scenes completion:(void(^)(BOOL success, NSError *error))completion;
 
 @end

@@ -6,16 +6,16 @@
 //  Copyright (c) 2015 Jaret. All rights reserved.
 //
 
-#import "PBTaleInfo.h"
-#import "PBSceneInfo.h"
+#import "PBTale.h"
+#import "PBScene.h"
 
-@implementation PBTaleInfo
+@implementation PBTale
 
 - (NSURL *)coverAssetURL {
-    if (0 == [self.sceneInfos count]) {
+    if (0 == [self.scenes count]) {
         return nil;
     }
-    return ((PBSceneInfo *)self.sceneInfos[0]).assetURL;
+    return ((PBScene *)self.scenes[0]).assetURL;
 }
 
 @end
