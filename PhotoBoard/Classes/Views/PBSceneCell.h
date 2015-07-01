@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *wordButton;
 @property (weak, nonatomic) IBOutlet UIButton *noteButton;
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *photoImageViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *photoImageViewWidthConstraint;
 
 @property (nonatomic, weak) id<PBSceneCellDelegate> delegate;
 

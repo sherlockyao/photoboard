@@ -7,7 +7,6 @@
 //
 
 #import "PBSceneCell.h"
-#import "PBAssetsLibraryUtil.h"
 
 @implementation PBSceneCell
 
@@ -21,9 +20,7 @@
     self.wordLabel.text = scene.word ?: @"连接词";
     self.noteLabel.text = scene.note ?: @"...";
     [self updateWordLabelForProperFont];
-    [[PBAssetsLibraryUtil assetsLibrary] assetForURL:scene.assetURL resultBlock:^(ALAsset *asset) {
-        self.photoImageView.image = [[UIImage alloc] initWithCGImage:[asset thumbnail]];
-    } failureBlock:nil];
+    self.photoImageView.image = [[UIImage alloc] initWithCGImage:[scene.asset thumbnail]];
 }
 
 #pragma mark - IB Actions
