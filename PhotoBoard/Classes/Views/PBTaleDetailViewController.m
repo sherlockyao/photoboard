@@ -29,8 +29,7 @@
     [self configureProperties];
     [self configureViewComponents];
     // load data
-    [self loadSceneInfos];
-    [self loadWords];
+    [self loadDisplayingData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -94,7 +93,12 @@
 
 #pragma mark - Logic
 
-- (void)loadSceneInfos {
+- (void)loadDisplayingData {
+    [self loadScenes];
+    [self loadWords];
+}
+
+- (void)loadScenes {
     [self.sceneGroupPresenter loadScenes];
 }
 
@@ -154,7 +158,7 @@
 }
 
 - (IBAction)shareButtonTouchUpInside:(id)sender {
-    [self.sharePresenter shareSceneInfos:self.sceneListView.scenes from:self];
+    [self.sharePresenter shareScenes:self.sceneListView.scenes from:self];
 }
 
 #pragma mark - Animations

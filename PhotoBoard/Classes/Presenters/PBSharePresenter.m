@@ -19,8 +19,8 @@
 
 @implementation PBSharePresenter
 
-- (void)shareSceneInfos:(NSArray *)sceneInfos from:(UIViewController *)viewController {
-    [self.templateView generateSnapshotForSceneInfos:sceneInfos result:^(UIImage *snapshot) {
+- (void)shareScenes:(NSArray *)scenes from:(UIViewController *)viewController {
+    [self.templateView generateSnapshotForScenes:scenes result:^(UIImage *snapshot) {
         UIActivityViewController* activityViewController = [self activityViewControllerForActivityItems:@[snapshot] thumbnail:nil];
         [viewController presentViewController:activityViewController animated:YES completion:nil];
     }];

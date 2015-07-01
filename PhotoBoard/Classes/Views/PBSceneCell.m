@@ -17,11 +17,11 @@
     self.wordButton.layer.borderColor = [UIColor blackColor].CGColor;
 }
 
-- (void)displaySceneInfo:(PBScene *)sceneInfo {
-    self.wordLabel.text = sceneInfo.word ?: @"连接词";
-    self.noteLabel.text = sceneInfo.note ?: @"...";
+- (void)displayScene:(PBScene *)scene {
+    self.wordLabel.text = scene.word ?: @"连接词";
+    self.noteLabel.text = scene.note ?: @"...";
     [self updateWordLabelForProperFont];
-    [[PBAssetsLibraryUtil assetsLibrary] assetForURL:sceneInfo.assetURL resultBlock:^(ALAsset *asset) {
+    [[PBAssetsLibraryUtil assetsLibrary] assetForURL:scene.assetURL resultBlock:^(ALAsset *asset) {
         self.photoImageView.image = [[UIImage alloc] initWithCGImage:[asset thumbnail]];
     } failureBlock:nil];
 }

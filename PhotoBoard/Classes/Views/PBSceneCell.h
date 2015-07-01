@@ -21,7 +21,7 @@
 
 @property (nonatomic, weak) id<PBSceneCellDelegate> delegate;
 
-- (void)displaySceneInfo:(PBScene *)sceneInfo;
+- (void)displayScene:(PBScene *)scene;
 
 @end
 

@@ -10,6 +10,6 @@
 
 @interface PBSharePresenter : NSObject
 
-- (void)shareSceneInfos:(NSArray *)sceneInfos from:(UIViewController *)viewController;
+- (void)shareScenes:(NSArray *)scenes from:(UIViewController *)viewController;
 
 @end

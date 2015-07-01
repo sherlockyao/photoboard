@@ -14,9 +14,9 @@
 @implementation PBTaleMaintainPresenter
 
 - (void)checkMaintainState:(void(^)(BOOL isMaintainable))result {
-    PBTale* taleInfo = [self.params objectForKey:ParamKeyTale];
+    PBTale* tale = [self.params objectForKey:ParamKeyTale];
     if (result) {
-        result((nil == taleInfo));
+        result((nil == tale));
     }
 }
 

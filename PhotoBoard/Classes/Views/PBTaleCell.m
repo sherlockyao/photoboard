@@ -35,9 +35,9 @@
     self.photoGradientLayer.frame = gradientFrame;
 }
 
-- (void)displayTaleInfo:(PBTale *)taleInfo {
-    self.titleLabel.text = [self titleStringFromDate:taleInfo.timestamp];
-    [[PBAssetsLibraryUtil assetsLibrary] assetForURL:[taleInfo coverAssetURL] resultBlock:^(ALAsset *asset) {
+- (void)displayTale:(PBTale *)tale {
+    self.titleLabel.text = [self titleStringFromDate:tale.timestamp];
+    [[PBAssetsLibraryUtil assetsLibrary] assetForURL:[tale coverAssetURL] resultBlock:^(ALAsset *asset) {
         self.photoImageView.image = [[UIImage alloc] initWithCGImage:[asset thumbnail]];
     } failureBlock:nil];
 }

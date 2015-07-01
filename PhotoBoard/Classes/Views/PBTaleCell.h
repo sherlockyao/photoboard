@@ -19,7 +19,7 @@
 
 @property (nonatomic, weak) id<PBTaleCellDelegate> delegate;
 
-- (void)displayTaleInfo:(PBTale *)taleInfo;
+- (void)displayTale:(PBTale *)tale;
 
 @end
 

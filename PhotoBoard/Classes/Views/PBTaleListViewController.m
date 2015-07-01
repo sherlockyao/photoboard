@@ -64,7 +64,7 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PBTaleCell* cell = [tableView dequeueReusableCellWithIdentifier:TaleCellReuseIdentifier forIndexPath:indexPath];
-    [cell displayTaleInfo:self.tales[indexPath.row]];
+    [cell displayTale:self.tales[indexPath.row]];
     cell.delegate = self;
     return cell;
 }
@@ -105,13 +105,13 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
     if (0 == [info count]) {
         return; // quit if no photo is selected
     }
-    NSMutableArray* sceneInfos = [NSMutableArray arrayWithCapacity:[info count]];
+    NSMutableArray* scenes = [NSMutableArray arrayWithCapacity:[info count]];
     for (NSDictionary* map in info) {
-        PBScene* sceneInfo = [PBScene new];
-        sceneInfo.assetURL = [map objectForKey:UIImagePickerControllerReferenceURL];
-        [sceneInfos addObject:sceneInfo];
+        PBScene* scene = [PBScene new];
+        scene.assetURL = [map objectForKey:UIImagePickerControllerReferenceURL];
+        [scenes addObject:scene];
     }
-    NSDictionary* params = @{ ParamKeySceneList : sceneInfos };
+    NSDictionary* params = @{ ParamKeySceneList : scenes };
     [PBWireframe moveToTaleDetailViewControllerFrom:self withParams:params];
 }
 
