@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PBSceneListInterface.h"
+#import "PBTaleDisplayInterfaces.h"
 
 @interface PBSceneGroupPresenter : NSObject
 

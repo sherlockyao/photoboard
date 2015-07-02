@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PBTaleListInterface.h"
+#import "PBTaleDisplayInterfaces.h"
 
 @interface PBTaleGroupPresenter : NSObject
 

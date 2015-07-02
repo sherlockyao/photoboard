@@ -113,6 +113,7 @@
 		36008A2D1B365FDA005FCCA4 /* PBWeChatMomentActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBWeChatMomentActivity.m; path = Classes/Presenters/PBWeChatMomentActivity.m; sourceTree = "<group>"; };
 		3621FE381B44D28700279C39 /* UIView+Positioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Positioning.h"; path = "Classes/Utilities/UIView+Positioning.h"; sourceTree = "<group>"; };
 		3621FE391B44D28700279C39 /* UIView+Positioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Positioning.m"; path = "Classes/Utilities/UIView+Positioning.m"; sourceTree = "<group>"; };
+		3621FE3B1B44D95F00279C39 /* PBTaleDisplayInterfaces.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBTaleDisplayInterfaces.h; path = Classes/ViewInterfaces/PBTaleDisplayInterfaces.h; sourceTree = "<group>"; };
 		36306F871B3A367B00DEDBCE /* PBTaleShareTemplateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBTaleShareTemplateView.h; path = Classes/Views/PBTaleShareTemplateView.h; sourceTree = "<group>"; };
 		36306F881B3A367B00DEDBCE /* PBTaleShareTemplateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBTaleShareTemplateView.m; path = Classes/Views/PBTaleShareTemplateView.m; sourceTree = "<group>"; };
 		36306F8A1B3A368D00DEDBCE /* PBTaleShareTemplateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PBTaleShareTemplateView.xib; path = XIBs/PBTaleShareTemplateView.xib; sourceTree = "<group>"; };
@@ -124,7 +125,6 @@
 		3637B89B1B3B8EEC00B1A538 /* PBWordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PBWordCell.xib; path = XIBs/PBWordCell.xib; sourceTree = "<group>"; };
 		3637B89D1B3B8FCF00B1A538 /* PBWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBWord.h; path = Classes/DTOs/PBWord.h; sourceTree = "<group>"; };
 		3637B89E1B3B8FCF00B1A538 /* PBWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBWord.m; path = Classes/DTOs/PBWord.m; sourceTree = "<group>"; };
-		3637B8A01B3B941D00B1A538 /* PBWordListInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBWordListInterface.h; path = Classes/ViewInterfaces/PBWordListInterface.h; sourceTree = "<group>"; };
 		3637B8A11B3B961800B1A538 /* PBWordGroupPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBWordGroupPresenter.h; path = Classes/Presenters/PBWordGroupPresenter.h; sourceTree = "<group>"; };
 		3637B8A21B3B961800B1A538 /* PBWordGroupPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBWordGroupPresenter.m; path = Classes/Presenters/PBWordGroupPresenter.m; sourceTree = "<group>"; };
 		3637B8A41B3B975700B1A538 /* UIColor+PBUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+PBUtil.h"; path = "Classes/Utilities/UIColor+PBUtil.h"; sourceTree = "<group>"; };
@@ -209,8 +209,6 @@
 		36B89D021B35438300EC78AB /* PBSceneGroupPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBSceneGroupPresenter.m; path = Classes/Presenters/PBSceneGroupPresenter.m; sourceTree = "<group>"; };
 		36B89D041B35447800EC78AB /* PBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBConstants.h; path = Classes/Application/PBConstants.h; sourceTree = "<group>"; };
 		36B89D051B35447800EC78AB /* PBConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBConstants.m; path = Classes/Application/PBConstants.m; sourceTree = "<group>"; };
-		36B89D091B35453900EC78AB /* PBTaleListInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBTaleListInterface.h; path = Classes/ViewInterfaces/PBTaleListInterface.h; sourceTree = "<group>"; };
-		36B89D0A1B35454C00EC78AB /* PBSceneListInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBSceneListInterface.h; path = Classes/ViewInterfaces/PBSceneListInterface.h; sourceTree = "<group>"; };
 		36B89D0C1B3555D000EC78AB /* PBSceneModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBSceneModel.h; path = Classes/Models/PBSceneModel.h; sourceTree = "<group>"; };
 		36B89D0D1B3555D000EC78AB /* PBSceneModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBSceneModel.m; path = Classes/Models/PBSceneModel.m; sourceTree = "<group>"; };
 		36B89D0E1B3555D000EC78AB /* PBTaleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBTaleModel.h; path = Classes/Models/PBTaleModel.h; sourceTree = "<group>"; };
@@ -670,9 +668,7 @@
 		36B89D081B35450F00EC78AB /* Tale */ = {
 			isa = PBXGroup;
 			children = (
-				36B89D091B35453900EC78AB /* PBTaleListInterface.h */,
-				36B89D0A1B35454C00EC78AB /* PBSceneListInterface.h */,
-				3637B8A01B3B941D00B1A538 /* PBWordListInterface.h */,
+				3621FE3B1B44D95F00279C39 /* PBTaleDisplayInterfaces.h */,
 			);
 			name = Tale;
 			sourceTree = "<group>";

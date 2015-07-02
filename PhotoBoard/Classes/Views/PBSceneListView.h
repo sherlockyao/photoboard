@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PBSceneListInterface.h"
+#import "PBTaleDisplayInterfaces.h"
 
 @protocol PBSceneListViewDelegate;
 

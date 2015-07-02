@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PBWord.h"
-#import "PBWordListInterface.h"
+#import "PBTaleDisplayInterfaces.h"
 
 @protocol PBWordSelectorViewDelegate;
 

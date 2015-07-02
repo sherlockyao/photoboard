@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PBWordListInterface.h"
+#import "PBTaleDisplayInterfaces.h"
 
 @interface PBWordGroupPresenter : NSObject
 
