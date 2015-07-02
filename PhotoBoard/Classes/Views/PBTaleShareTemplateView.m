@@ -27,7 +27,7 @@
 - (void)generateSnapshotForScenes:(NSArray *)scenes result:(void(^)(UIImage* snapshot))result {
     [self.sceneListView displayScenes:scenes];
     [self updateLayoutToProperSize];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_async(dispatch_get_main_queue(), ^{
         if (result) {
             result([self snapshotTemplateView]);
         }

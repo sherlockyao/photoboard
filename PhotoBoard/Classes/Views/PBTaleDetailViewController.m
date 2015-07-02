@@ -9,8 +9,9 @@
 #import "PBTaleDetailViewController.h"
 #import "UIBarButtonItem+PBUtil.h"
 #import "Masonry.h"
+#import "MBProgressHUD.h"
 
-@interface PBTaleDetailViewController () <PBSceneListViewDelegate, PBWordSelectorViewDelegate>
+@interface PBTaleDetailViewController () <PBSceneListViewDelegate, PBWordSelectorViewDelegate, PBProcessHUDInterface>
 
 @property (nonatomic, assign) BOOL isEditable;
 @property (nonatomic, assign) NSUInteger currentEditIndex;
@@ -89,6 +90,16 @@
     [self.wordSelectorView animateHideSelectorWithCompletion:^{
         self.wordSelectorView.hidden = YES;
     }];
+}
+
+#pragma mark - PBProcessHUDInterface
+
+- (void)beginProcess:(PBProcessHUDTag)tag {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+}
+
+- (void)endProcess:(PBProcessHUDTag)tag {
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 }
 
 #pragma mark - Logic
@@ -242,6 +253,8 @@
     // wire up view interfaces
     self.sceneGroupPresenter.sceneList = self.sceneListView;
     self.wordGroupPresenter.wordList = self.wordSelectorView;
+    self.sharePresenter.processHUD = self;
+    self.sceneGroupPresenter.processHUD = self;
 }
 
 @end

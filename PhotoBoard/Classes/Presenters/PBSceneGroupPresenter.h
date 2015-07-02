@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "PBTaleDisplayInterfaces.h"
+#import "PBTaggedDisplayInterfaces.h"
 
 @interface PBSceneGroupPresenter : NSObject
 
 @property (nonatomic, strong) NSDictionary* params;
+
 @property (nonatomic, weak) id<PBSceneListInterface> sceneList;
+@property (nonatomic, weak) id<PBProcessHUDInterface> processHUD;
 
 - (void)loadScenes;
 

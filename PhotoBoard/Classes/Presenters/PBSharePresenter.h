@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PBTaggedDisplayInterfaces.h"
 
 @interface PBSharePresenter : NSObject
+
+@property (nonatomic, weak) id<PBProcessHUDInterface> processHUD;
 
 - (void)shareScenes:(NSArray *)scenes from:(UIViewController *)viewController;
 

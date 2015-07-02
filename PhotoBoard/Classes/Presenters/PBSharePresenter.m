@@ -20,7 +20,9 @@
 @implementation PBSharePresenter
 
 - (void)shareScenes:(NSArray *)scenes from:(UIViewController *)viewController {
+    [self.processHUD beginProcess:PBProcessHUDTagShare];
     [self.templateView generateSnapshotForScenes:scenes result:^(UIImage *snapshot) {
+        [self.processHUD endProcess:PBProcessHUDTagShare];
         UIActivityViewController* activityViewController = [self activityViewControllerForActivityItems:@[snapshot] thumbnail:nil];
         [viewController presentViewController:activityViewController animated:YES completion:nil];
     }];

@@ -16,6 +16,7 @@
 @implementation PBSceneGroupPresenter
 
 - (void)loadScenes {
+    [self.processHUD beginProcess:PBProcessHUDTagSceneGroup];
     NSArray* scenes = [self.params objectForKey:ParamKeySceneList];
     if (!scenes) {
         PBTale* tale = [self.params objectForKey:ParamKeyTale];
@@ -24,6 +25,7 @@
     @weakify(self)
     [self preloadAssetsForScenes:scenes completion:^(NSArray *scenes) {
         @strongify(self)
+        [self.processHUD endProcess:PBProcessHUDTagSceneGroup];
         [self.sceneList displayScenes:scenes];
     }];
 }

@@ -114,6 +114,7 @@
 		3621FE381B44D28700279C39 /* UIView+Positioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Positioning.h"; path = "Classes/Utilities/UIView+Positioning.h"; sourceTree = "<group>"; };
 		3621FE391B44D28700279C39 /* UIView+Positioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Positioning.m"; path = "Classes/Utilities/UIView+Positioning.m"; sourceTree = "<group>"; };
 		3621FE3B1B44D95F00279C39 /* PBTaleDisplayInterfaces.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBTaleDisplayInterfaces.h; path = Classes/ViewInterfaces/PBTaleDisplayInterfaces.h; sourceTree = "<group>"; };
+		3621FE3D1B44DC8E00279C39 /* PBTaggedDisplayInterfaces.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBTaggedDisplayInterfaces.h; path = Classes/ViewInterfaces/PBTaggedDisplayInterfaces.h; sourceTree = "<group>"; };
 		36306F871B3A367B00DEDBCE /* PBTaleShareTemplateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBTaleShareTemplateView.h; path = Classes/Views/PBTaleShareTemplateView.h; sourceTree = "<group>"; };
 		36306F881B3A367B00DEDBCE /* PBTaleShareTemplateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBTaleShareTemplateView.m; path = Classes/Views/PBTaleShareTemplateView.m; sourceTree = "<group>"; };
 		36306F8A1B3A368D00DEDBCE /* PBTaleShareTemplateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PBTaleShareTemplateView.xib; path = XIBs/PBTaleShareTemplateView.xib; sourceTree = "<group>"; };
@@ -318,6 +319,14 @@
 				36008A2D1B365FDA005FCCA4 /* PBWeChatMomentActivity.m */,
 			);
 			name = "WeChat Activities";
+			sourceTree = "<group>";
+		};
+		3621FE3C1B44DAAF00279C39 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				3621FE3D1B44DC8E00279C39 /* PBTaggedDisplayInterfaces.h */,
+			);
+			name = General;
 			sourceTree = "<group>";
 		};
 		36306F861B3A360900DEDBCE /* Share Template */ = {
@@ -660,6 +669,7 @@
 		36B89D071B35450800EC78AB /* View Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				3621FE3C1B44DAAF00279C39 /* General */,
 				36B89D081B35450F00EC78AB /* Tale */,
 			);
 			name = "View Interfaces";
