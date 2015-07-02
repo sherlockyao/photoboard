@@ -11,6 +11,12 @@
 
 static CGFloat const PhotoHorizontalPadding = 16;
 
+@interface PBSceneCell ()
+
+@property (nonatomic, strong) ALAsset* displayedAsset;
+
+@end
+
 @implementation PBSceneCell
 
 - (void)awakeFromNib {
@@ -20,11 +26,17 @@ static CGFloat const PhotoHorizontalPadding = 16;
 }
 
 - (void)displayScene:(PBScene *)scene {
+    // display text content
     self.wordLabel.text = scene.word ?: @"连接词";
     self.noteLabel.text = scene.note ?: @"...";
     [self updateWordLabelForProperFont];
-    [self updateImageViewSizeToFitPhotoSize:[[scene.asset defaultRepresentation] dimensions]];
-    self.photoImageView.image = [[UIImage alloc] initWithCGImage:[[scene.asset defaultRepresentation] fullScreenImage]];
+    
+    // display asset
+    if (![scene.asset isEqual:self.displayedAsset]) {
+        self.displayedAsset = scene.asset;
+        [self updateImageViewSizeToFitPhotoSize:[[scene.asset defaultRepresentation] dimensions]];
+        self.photoImageView.image = [[UIImage alloc] initWithCGImage:[[scene.asset defaultRepresentation] fullScreenImage]];
+    }
 }
 
 - (CGFloat)preferredHeightForScene:(PBScene *)scene {
