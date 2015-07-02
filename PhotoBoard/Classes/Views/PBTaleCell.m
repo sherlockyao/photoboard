@@ -8,10 +8,13 @@
 
 #import "PBTaleCell.h"
 #import "PBAssetsLibraryUtil.h"
+#import "ALAsset+PBUtil.h"
+#import "UIView+Positioning.h"
 
 @interface PBTaleCell ()
 
 @property (nonatomic, strong) CAGradientLayer *photoGradientLayer;
+@property (nonatomic, strong) ALAsset* displayedAsset;
 
 @end
 
@@ -37,9 +40,18 @@
 
 - (void)displayTale:(PBTale *)tale {
     self.titleLabel.text = [self titleStringFromDate:tale.timestamp];
-    [[PBAssetsLibraryUtil assetsLibrary] assetForURL:[tale coverAssetURL] resultBlock:^(ALAsset *asset) {
-        self.photoImageView.image = [[UIImage alloc] initWithCGImage:[asset thumbnail]];
-    } failureBlock:nil];
+    if (![[tale coverAssetURL] isEqual:[self.displayedAsset url]]) {
+        [[PBAssetsLibraryUtil assetsLibrary] assetForURL:[tale coverAssetURL] resultBlock:^(ALAsset *asset) {
+            self.displayedAsset = asset;
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                NSUInteger size = [self.photoImageView width] * [[UIScreen mainScreen] scale];
+                UIImage* image = [asset thumbnailForPixelSize:size];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    self.photoImageView.image = image;
+                });
+            });
+        } failureBlock:nil];
+    }
 }
 
 #pragma mark - IB Actions
@@ -56,7 +68,7 @@
     static NSDateFormatter *dateFormatter;
     if (!dateFormatter) {
         dateFormatter = [NSDateFormatter new];
-        [dateFormatter setDateFormat:@"hh:mm  MMM dd"];
+        [dateFormatter setDateFormat:@"MM-dd hh:mm"];
     }
     return [dateFormatter stringFromDate:date];
 }
