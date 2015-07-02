@@ -93,7 +93,8 @@ static NSString *const SceneCellReuseIdentifier = @"SceneCell";
     self.sceneTableView.delegate = self;
     self.sceneTableView.dataSource = self;
     [self.sceneTableView registerNib:[UINib nibWithNibName:@"PBSceneCell" bundle:nil] forCellReuseIdentifier:SceneCellReuseIdentifier];
-    self.sceneTableView.rowHeight = 212;
+    self.sceneTableView.estimatedRowHeight = 212;
+    self.sceneTableView.rowHeight = UITableViewAutomaticDimension;
     self.sceneTableView.contentInset = UIEdgeInsetsMake(8, 0, 16, 0);
 }
 

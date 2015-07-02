@@ -59,11 +59,11 @@
                             <action selector="noteButtonTouchUpInside:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NLm-XR-AtP"/>
                         </connections>
                     </button>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cop-U2-7xL" userLabel="Photo Image View">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cop-U2-7xL" userLabel="Photo Image View">
                         <rect key="frame" x="8" y="72" width="304" height="158"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="158" id="E3G-mV-o30"/>
-                            <constraint firstAttribute="width" constant="304" id="aU2-AS-sfc"/>
+                            <constraint firstAttribute="width" priority="900" constant="304" id="kDf-tC-uNg"/>
+                            <constraint firstAttribute="height" priority="900" constant="158" id="quR-pj-p82"/>
                         </constraints>
                     </imageView>
                 </subviews>
@@ -87,8 +87,8 @@
                 <outlet property="noteButton" destination="GFf-Gs-fih" id="IMh-Q9-lPn"/>
                 <outlet property="noteLabel" destination="Zk0-Ix-LrX" id="ng8-VU-mCN"/>
                 <outlet property="photoImageView" destination="Cop-U2-7xL" id="YBp-X0-Muw"/>
-                <outlet property="photoImageViewHeightConstraint" destination="E3G-mV-o30" id="aIo-1k-rUs"/>
-                <outlet property="photoImageViewWidthConstraint" destination="aU2-AS-sfc" id="G4V-R8-CwN"/>
+                <outlet property="photoImageViewHeightConstraint" destination="quR-pj-p82" id="wfz-PP-6O5"/>
+                <outlet property="photoImageViewWidthConstraint" destination="kDf-tC-uNg" id="5BN-Lc-VOb"/>
                 <outlet property="wordButton" destination="LWM-h1-zac" id="cZj-I0-hvl"/>
                 <outlet property="wordLabel" destination="uc9-K4-TZA" id="jB0-IR-MTe"/>
             </connections>

@@ -8,6 +8,8 @@
 
 #import "PBSceneCell.h"
 
+static CGFloat const PhotoHorizontalPadding = 16;
+
 @implementation PBSceneCell
 
 - (void)awakeFromNib {
@@ -20,7 +22,8 @@
     self.wordLabel.text = scene.word ?: @"连接词";
     self.noteLabel.text = scene.note ?: @"...";
     [self updateWordLabelForProperFont];
-    self.photoImageView.image = [[UIImage alloc] initWithCGImage:[scene.asset thumbnail]];
+    [self updatePhotoImageViewSizeToFit:[[scene.asset defaultRepresentation] dimensions]];
+    self.photoImageView.image = [[UIImage alloc] initWithCGImage:[[scene.asset defaultRepresentation] fullScreenImage]];
 }
 
 #pragma mark - IB Actions
@@ -42,6 +45,23 @@
 - (void)updateWordLabelForProperFont {
     BOOL useBigFont = (3 > [self.wordLabel.text length]);
     self.wordLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:(useBigFont ? 14 : 12)];
+}
+
+- (void)updatePhotoImageViewSizeToFit:(CGSize)size {
+    static CGFloat totalWidth = 0;
+    if (0 == totalWidth) {
+        totalWidth = [[UIScreen mainScreen] bounds].size.width - PhotoHorizontalPadding;
+    }
+    CGFloat photoWidth = 0;
+    if (size.height > size.width) {
+        // portrait layout
+        photoWidth = totalWidth * 4 / 5;
+    } else {
+        // landscape layout
+        photoWidth = totalWidth;
+    }
+    self.photoImageViewWidthConstraint.constant = photoWidth;
+    self.photoImageViewHeightConstraint.constant = floor(photoWidth * size.height / size.width);
 }
 
 @end
