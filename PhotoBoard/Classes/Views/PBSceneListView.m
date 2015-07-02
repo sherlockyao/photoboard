@@ -41,7 +41,17 @@ static NSString *const SceneCellReuseIdentifier = @"SceneCell";
 }
 
 - (CGFloat)preferredHeigh {
-    CGFloat contentHeight = self.sceneTableView.contentSize.height;
+    // create cell instance
+    static PBSceneCell* sceneCell = nil;
+    static dispatch_once_t oneceToken;
+    dispatch_once(&oneceToken,^{
+        sceneCell = [self.sceneTableView dequeueReusableCellWithIdentifier:SceneCellReuseIdentifier];
+    });
+    // calculate
+    CGFloat contentHeight = 0;
+    for (PBScene* scene in self.scenes) {
+        contentHeight += [sceneCell preferredHeightForScene:scene];
+    }
     CGFloat verticalPadding = self.sceneTableView.contentInset.top + self.sceneTableView.contentInset.bottom;
     return  verticalPadding + contentHeight;
 }

@@ -24,6 +24,7 @@
 @property (nonatomic, weak) id<PBSceneCellDelegate> delegate;
 
 - (void)displayScene:(PBScene *)scene;
+- (CGFloat)preferredHeightForScene:(PBScene *)scene;
 
 @end
 

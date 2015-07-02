@@ -19,6 +19,7 @@
 		36008A281B365F6F005FCCA4 /* PBWeChatActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 36008A271B365F6F005FCCA4 /* PBWeChatActivity.m */; };
 		36008A2B1B365FC7005FCCA4 /* PBWeChatMessageActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 36008A2A1B365FC7005FCCA4 /* PBWeChatMessageActivity.m */; };
 		36008A2E1B365FDA005FCCA4 /* PBWeChatMomentActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 36008A2D1B365FDA005FCCA4 /* PBWeChatMomentActivity.m */; };
+		3621FE3A1B44D28700279C39 /* UIView+Positioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 3621FE391B44D28700279C39 /* UIView+Positioning.m */; };
 		36306F891B3A367B00DEDBCE /* PBTaleShareTemplateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36306F881B3A367B00DEDBCE /* PBTaleShareTemplateView.m */; };
 		36306F8B1B3A368E00DEDBCE /* PBTaleShareTemplateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36306F8A1B3A368D00DEDBCE /* PBTaleShareTemplateView.xib */; };
 		3637B8921B3B8B0300B1A538 /* PBWordSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3637B8911B3B8B0300B1A538 /* PBWordSelectorView.m */; };
@@ -110,6 +111,8 @@
 		36008A2A1B365FC7005FCCA4 /* PBWeChatMessageActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBWeChatMessageActivity.m; path = Classes/Presenters/PBWeChatMessageActivity.m; sourceTree = "<group>"; };
 		36008A2C1B365FDA005FCCA4 /* PBWeChatMomentActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBWeChatMomentActivity.h; path = Classes/Presenters/PBWeChatMomentActivity.h; sourceTree = "<group>"; };
 		36008A2D1B365FDA005FCCA4 /* PBWeChatMomentActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBWeChatMomentActivity.m; path = Classes/Presenters/PBWeChatMomentActivity.m; sourceTree = "<group>"; };
+		3621FE381B44D28700279C39 /* UIView+Positioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Positioning.h"; path = "Classes/Utilities/UIView+Positioning.h"; sourceTree = "<group>"; };
+		3621FE391B44D28700279C39 /* UIView+Positioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Positioning.m"; path = "Classes/Utilities/UIView+Positioning.m"; sourceTree = "<group>"; };
 		36306F871B3A367B00DEDBCE /* PBTaleShareTemplateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBTaleShareTemplateView.h; path = Classes/Views/PBTaleShareTemplateView.h; sourceTree = "<group>"; };
 		36306F881B3A367B00DEDBCE /* PBTaleShareTemplateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBTaleShareTemplateView.m; path = Classes/Views/PBTaleShareTemplateView.m; sourceTree = "<group>"; };
 		36306F8A1B3A368D00DEDBCE /* PBTaleShareTemplateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PBTaleShareTemplateView.xib; path = XIBs/PBTaleShareTemplateView.xib; sourceTree = "<group>"; };
@@ -275,6 +278,8 @@
 		36008A0D1B36355A005FCCA4 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				3621FE381B44D28700279C39 /* UIView+Positioning.h */,
+				3621FE391B44D28700279C39 /* UIView+Positioning.m */,
 				36008A111B3654C6005FCCA4 /* UIBarButtonItem+PBUtil.h */,
 				36008A121B3654C6005FCCA4 /* UIBarButtonItem+PBUtil.m */,
 				3637B8A41B3B975700B1A538 /* UIColor+PBUtil.h */,
@@ -867,6 +872,7 @@
 				36B89CF71B35407100EC78AB /* MASViewAttribute.m in Sources */,
 				36B89CF51B35407100EC78AB /* MASConstraintMaker.m in Sources */,
 				36B89CA81B351FB500EC78AB /* ELCAssetCell.m in Sources */,
+				3621FE3A1B44D28700279C39 /* UIView+Positioning.m in Sources */,
 				3637B8A31B3B961800B1A538 /* PBWordGroupPresenter.m in Sources */,
 				36B89CAC1B351FB500EC78AB /* ELCOverlayImageView.m in Sources */,
 				36B89CA61B351FB500EC78AB /* ELCAlbumPickerController.m in Sources */,
