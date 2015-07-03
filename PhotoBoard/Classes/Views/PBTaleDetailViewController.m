@@ -44,6 +44,10 @@
                                              selector:@selector(keyboardWillHide:)
                                                  name:UIKeyboardWillHideNotification
                                                object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(textFieldTextDidChange:)
+                                                 name:UITextFieldTextDidChangeNotification
+                                               object:nil];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -149,6 +153,28 @@
     [self animateHideEditView];
 }
 
+#pragma mark - Text Field
+
+- (void)textFieldTextDidChange:(NSNotification *)notification {
+    if (0 != self.currentEditMode) {
+        return;
+    }
+    NSString* text = self.editTextField.text;
+    NSString* language = [self.editTextField.textInputMode primaryLanguage];
+    if ([language isEqualToString:@"zh-Hans"]) {
+        UITextRange* selectedRange = [self.editTextField markedTextRange];
+        UITextPosition* position = [self.editTextField positionFromPosition:selectedRange.start offset:0];
+        if (!position) {
+            if (text.length > 3) {
+                self.editTextField.text = [text substringToIndex:3];
+            }
+        }
+    } else {
+        if (text.length > 3) {
+            self.editTextField.text = [text substringToIndex:3];
+        }
+    }
+}
 
 #pragma mark - IB Actions
 
