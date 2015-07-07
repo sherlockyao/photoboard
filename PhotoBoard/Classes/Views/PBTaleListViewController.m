@@ -43,7 +43,7 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
     ELCImagePickerController *imagePicker = [[ELCImagePickerController alloc] initImagePicker];
     imagePicker.imagePickerDelegate = self;
     imagePicker.returnsImage = NO;
-    imagePicker.maximumImagesCount = 5;
+    imagePicker.maximumImagesCount = 9;
     imagePicker.onOrder = YES;
     imagePicker.mediaTypes = @[(NSString *)kUTTypeImage];
     [self presentViewController:imagePicker animated:YES completion:nil];
