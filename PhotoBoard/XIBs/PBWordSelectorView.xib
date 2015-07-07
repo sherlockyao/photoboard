@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -15,10 +15,10 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q8o-DL-MJF" userLabel="Panel View">
-                    <rect key="frame" x="0.0" y="200" width="600" height="400"/>
+                    <rect key="frame" x="0.0" y="150" width="600" height="450"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qBv-Rq-Cmd" userLabel="Action View">
-                            <rect key="frame" x="0.0" y="354" width="600" height="46"/>
+                            <rect key="frame" x="0.0" y="404" width="600" height="46"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QCo-YI-N9t" userLabel="Separator View">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
@@ -71,7 +71,7 @@
                             </constraints>
                         </view>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yIJ-rQ-nAi" userLabel="Word Table View">
-                            <rect key="frame" x="0.0" y="8" width="600" height="338"/>
+                            <rect key="frame" x="0.0" y="8" width="600" height="388"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </tableView>
                     </subviews>
@@ -80,7 +80,7 @@
                         <constraint firstAttribute="trailing" secondItem="qBv-Rq-Cmd" secondAttribute="trailing" id="HfJ-I7-9WE"/>
                         <constraint firstAttribute="bottom" secondItem="qBv-Rq-Cmd" secondAttribute="bottom" id="N1L-V7-EdL"/>
                         <constraint firstItem="qBv-Rq-Cmd" firstAttribute="leading" secondItem="Q8o-DL-MJF" secondAttribute="leading" id="U3e-yb-ghn"/>
-                        <constraint firstAttribute="height" constant="400" id="hVO-HH-NBw"/>
+                        <constraint firstAttribute="height" constant="450" id="hVO-HH-NBw"/>
                         <constraint firstItem="yIJ-rQ-nAi" firstAttribute="leading" secondItem="Q8o-DL-MJF" secondAttribute="leading" id="lqN-li-j0X"/>
                         <constraint firstItem="yIJ-rQ-nAi" firstAttribute="top" secondItem="Q8o-DL-MJF" secondAttribute="top" constant="8" id="ofy-OO-15G"/>
                         <constraint firstItem="qBv-Rq-Cmd" firstAttribute="top" secondItem="yIJ-rQ-nAi" secondAttribute="bottom" constant="8" id="qDd-qa-KjM"/>
