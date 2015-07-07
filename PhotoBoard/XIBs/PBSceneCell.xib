@@ -39,10 +39,10 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zk0-Ix-LrX" userLabel="Note Label">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zk0-Ix-LrX" userLabel="Note Label">
                         <rect key="frame" x="64" y="21" width="248" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="nPC-cS-GG3"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="nPC-cS-GG3"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -78,7 +78,7 @@
                     <constraint firstAttribute="bottom" secondItem="Cop-U2-7xL" secondAttribute="bottom" id="Rte-Ns-rPc"/>
                     <constraint firstItem="GFf-Gs-fih" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21" id="YLR-e5-s54"/>
                     <constraint firstAttribute="trailing" secondItem="GFf-Gs-fih" secondAttribute="trailing" constant="8" id="dE7-w9-Z4X"/>
-                    <constraint firstItem="Cop-U2-7xL" firstAttribute="top" secondItem="LWM-h1-zac" secondAttribute="bottom" constant="16" id="lQd-v3-4Cs"/>
+                    <constraint firstItem="Cop-U2-7xL" firstAttribute="top" secondItem="Zk0-Ix-LrX" secondAttribute="bottom" constant="21" id="mZS-PA-1oW"/>
                     <constraint firstItem="GFf-Gs-fih" firstAttribute="leading" secondItem="LWM-h1-zac" secondAttribute="trailing" constant="16" id="sZ8-U5-uzp"/>
                     <constraint firstItem="uc9-K4-TZA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="sdM-1e-dkh"/>
                     <constraint firstAttribute="trailing" secondItem="Zk0-Ix-LrX" secondAttribute="trailing" constant="8" id="xkX-TP-Zwe"/>
