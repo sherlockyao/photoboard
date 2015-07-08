@@ -36,8 +36,7 @@ static NSString *const SceneCellReuseIdentifier = @"SceneCell";
 - (void)displayUpdatedNote:(NSString *)note forRowIndex:(NSUInteger)index {
     PBScene* scene = self.scenes[index];
     scene.note = note;
-    PBSceneCell* cell = (PBSceneCell *)[self.sceneTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
-    [cell displayScene:scene];
+    [self.sceneTableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 - (CGFloat)preferredHeigh {
