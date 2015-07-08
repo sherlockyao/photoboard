@@ -101,6 +101,7 @@
             <connections>
                 <outlet property="maskView" destination="KSP-rn-puU" id="Ddr-6B-IPY"/>
                 <outlet property="panelViewBottomConstraint" destination="Ymm-H9-lit" id="VcZ-6q-IFo"/>
+                <outlet property="panelViewHeightConstraint" destination="hVO-HH-NBw" id="4eJ-zR-LZD"/>
                 <outlet property="wordTableView" destination="yIJ-rQ-nAi" id="tSf-iZ-nPS"/>
             </connections>
             <point key="canvasLocation" x="416" y="351"/>

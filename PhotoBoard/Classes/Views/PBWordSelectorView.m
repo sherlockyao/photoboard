@@ -8,6 +8,7 @@
 
 #import "PBWordSelectorView.h"
 #import "PBWordCell.h"
+#import "UIScreen+PBUtil.h"
 
 static NSString *const WordCellReuseIdentifier = @"WordCell";
 
@@ -15,6 +16,7 @@ static NSString *const WordCellReuseIdentifier = @"WordCell";
 @interface PBWordSelectorView () <UITableViewDataSource, UITableViewDelegate>
 
 @property (readwrite, nonatomic, strong) NSArray* sectionedWords;
+@property (nonatomic, assign) CGFloat panelHeight;
 
 @end
 
@@ -70,7 +72,7 @@ static NSString *const WordCellReuseIdentifier = @"WordCell";
 
 - (void)animateShowSelectorWithCompletion:(void (^)(void))completion {
     self.maskView.alpha = 0;
-    [UIView animateWithDuration:0.2 animations:^{
+    [UIView animateWithDuration:0.17 animations:^{
         self.maskView.alpha = 0.2;
         self.panelViewBottomConstraint.constant = 0;
         [self layoutIfNeeded];
@@ -82,9 +84,9 @@ static NSString *const WordCellReuseIdentifier = @"WordCell";
 }
 
 - (void)animateHideSelectorWithCompletion:(void (^)(void))completion {
-    [UIView animateWithDuration:0.2 animations:^{
+    [UIView animateWithDuration:0.17 animations:^{
         self.maskView.alpha = 0;
-        self.panelViewBottomConstraint.constant = -450;
+        self.panelViewBottomConstraint.constant = -self.panelHeight;
         [self layoutIfNeeded];
     } completion:^(BOOL finished) {
         if (completion) {
@@ -141,12 +143,23 @@ static NSString *const WordCellReuseIdentifier = @"WordCell";
 #pragma mark - Configuration
 
 - (void)configureProperties {
+    self.panelHeight = 450;
+    if ([UIScreen is3_5InchScreen]) {
+        self.panelHeight = 400;
+    } else if ([UIScreen is4InchScreen]) {
+        self.panelHeight = 450;
+    } else if ([UIScreen is4_7InchScreen]) {
+        self.panelHeight = 520;
+    } else {
+        self.panelHeight = 600;
+    }
     self.sectionedWords = [self localizedSectionedArrayForWords:@[]];
 }
 
 - (void)configureViewComponents {
     // panel view
-    self.panelViewBottomConstraint.constant = -450;
+    self.panelViewHeightConstraint.constant = self.panelHeight;
+    self.panelViewBottomConstraint.constant = -self.panelHeight;
     
     // table view
     self.wordTableView.delegate = self;

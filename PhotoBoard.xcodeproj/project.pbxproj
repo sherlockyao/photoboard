@@ -32,6 +32,7 @@
 		3637B8A31B3B961800B1A538 /* PBWordGroupPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3637B8A21B3B961800B1A538 /* PBWordGroupPresenter.m */; };
 		3637B8A61B3B975700B1A538 /* UIColor+PBUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3637B8A51B3B975700B1A538 /* UIColor+PBUtil.m */; };
 		368A4D041B4BC1B300F1BF9A /* NSArray+PBUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 368A4D031B4BC1B300F1BF9A /* NSArray+PBUtil.m */; };
+		368B838B1B4D18370002C92D /* UIScreen+PBUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 368B838A1B4D18370002C92D /* UIScreen+PBUtil.m */; };
 		36B89C651B351A3C00EC78AB /* PBTale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C631B351A3C00EC78AB /* PBTale.storyboard */; };
 		36B89C671B351A3C00EC78AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C661B351A3C00EC78AB /* Images.xcassets */; };
 		36B89C6A1B351A3C00EC78AB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C681B351A3C00EC78AB /* LaunchScreen.xib */; };
@@ -138,6 +139,8 @@
 		3637B8A51B3B975700B1A538 /* UIColor+PBUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+PBUtil.m"; path = "Classes/Utilities/UIColor+PBUtil.m"; sourceTree = "<group>"; };
 		368A4D021B4BC1B300F1BF9A /* NSArray+PBUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+PBUtil.h"; path = "Classes/Utilities/NSArray+PBUtil.h"; sourceTree = "<group>"; };
 		368A4D031B4BC1B300F1BF9A /* NSArray+PBUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PBUtil.m"; path = "Classes/Utilities/NSArray+PBUtil.m"; sourceTree = "<group>"; };
+		368B83891B4D18370002C92D /* UIScreen+PBUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScreen+PBUtil.h"; path = "Classes/Utilities/UIScreen+PBUtil.h"; sourceTree = "<group>"; };
+		368B838A1B4D18370002C92D /* UIScreen+PBUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScreen+PBUtil.m"; path = "Classes/Utilities/UIScreen+PBUtil.m"; sourceTree = "<group>"; };
 		36B89C561B351A3C00EC78AB /* PhotoBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B89C641B351A3C00EC78AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PBTale.storyboard; sourceTree = "<group>"; };
 		36B89C661B351A3C00EC78AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -296,6 +299,8 @@
 				3621FE3F1B4506A100279C39 /* ALAsset+PBUtil.m */,
 				368A4D021B4BC1B300F1BF9A /* NSArray+PBUtil.h */,
 				368A4D031B4BC1B300F1BF9A /* NSArray+PBUtil.m */,
+				368B83891B4D18370002C92D /* UIScreen+PBUtil.h */,
+				368B838A1B4D18370002C92D /* UIScreen+PBUtil.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -898,6 +903,7 @@
 				36B89CA61B351FB500EC78AB /* ELCAlbumPickerController.m in Sources */,
 				36B89CDA1B35388B00EC78AB /* PBAssetsLibraryUtil.m in Sources */,
 				36008A091B363171005FCCA4 /* PBTaleCell.m in Sources */,
+				368B838B1B4D18370002C92D /* UIScreen+PBUtil.m in Sources */,
 				3621FE401B4506A100279C39 /* ALAsset+PBUtil.m in Sources */,
 				36B89D061B35447800EC78AB /* PBConstants.m in Sources */,
 				3637B8991B3B8ED600B1A538 /* PBWordCell.m in Sources */,

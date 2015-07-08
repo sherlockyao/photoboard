@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIView *maskView;
 @property (weak, nonatomic) IBOutlet UITableView *wordTableView;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *panelViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *panelViewBottomConstraint;
 
 @property (nonatomic, weak) id<PBWordSelectorViewDelegate> delegate;
