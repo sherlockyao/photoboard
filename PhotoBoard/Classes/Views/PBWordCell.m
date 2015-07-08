@@ -11,12 +11,17 @@
 @implementation PBWordCell
 
 - (void)awakeFromNib {
-    self.dotView.layer.borderWidth = 1;
-    self.dotView.layer.cornerRadius = 23;
+    self.dotView.layer.borderWidth = 2;
+    self.dotView.layer.cornerRadius = 32;
 }
 
 - (void)displayWord:(PBWord *)word {
     self.titleLabel.text = word.text;
+    if (2 >= [word.text length]) {
+        self.titleLabel.font = [UIFont systemFontOfSize:18];
+    } else {
+        self.titleLabel.font = [UIFont systemFontOfSize:16];
+    }
     self.dotView.layer.borderColor = word.color.CGColor;
 }
 

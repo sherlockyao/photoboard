@@ -107,6 +107,14 @@ static NSString *const WordCellReuseIdentifier = @"WordCell";
     }
 }
 
+#pragma mark - Gesture Actions
+
+- (void)singleTapMaskViewGestureAction:(UITapGestureRecognizer *)gesture {
+    if ([self.delegate respondsToSelector:@selector(wordSelectorViewDidClickCancel:)]) {
+        [self.delegate wordSelectorViewDidClickCancel:self];
+    }
+}
+
 #pragma mark - Helper Methods
 
 - (NSArray *)localizedSectionedArrayForWords:(NSArray *)words {
@@ -144,7 +152,12 @@ static NSString *const WordCellReuseIdentifier = @"WordCell";
     self.wordTableView.delegate = self;
     self.wordTableView.dataSource = self;
     [self.wordTableView registerNib:[UINib nibWithNibName:@"PBWordCell" bundle:nil] forCellReuseIdentifier:WordCellReuseIdentifier];
-    self.wordTableView.rowHeight = 50;
+    self.wordTableView.rowHeight = 88;
+    self.wordTableView.contentInset = UIEdgeInsetsMake(12, 0, 12, 0);
+    
+    // mask view
+    UITapGestureRecognizer *tapMaskViewRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapMaskViewGestureAction:)];
+    [self.maskView addGestureRecognizer:tapMaskViewRecognizer];
 }
 
 
