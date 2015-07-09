@@ -73,7 +73,7 @@ static NSString *const WordCellReuseIdentifier = @"WordCell";
 - (void)animateShowSelectorWithCompletion:(void (^)(void))completion {
     self.maskView.alpha = 0;
     [UIView animateWithDuration:0.17 animations:^{
-        self.maskView.alpha = 0.2;
+        self.maskView.alpha = 0.54;
         self.panelViewBottomConstraint.constant = 0;
         [self layoutIfNeeded];
     } completion:^(BOOL finished) {

@@ -14,4 +14,6 @@
 
 + (void)moveToTaleDetailViewControllerFrom:(UIViewController *)sourceViewController withParams:(NSDictionary *)params;
 
++ (void)presentWordSelectorViewControllerFrom:(UIViewController *)sourceViewController;
+
 @end

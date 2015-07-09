@@ -33,6 +33,7 @@
 		3637B8A61B3B975700B1A538 /* UIColor+PBUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3637B8A51B3B975700B1A538 /* UIColor+PBUtil.m */; };
 		368A4D041B4BC1B300F1BF9A /* NSArray+PBUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 368A4D031B4BC1B300F1BF9A /* NSArray+PBUtil.m */; };
 		368B838B1B4D18370002C92D /* UIScreen+PBUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 368B838A1B4D18370002C92D /* UIScreen+PBUtil.m */; };
+		368D30701B4E638000FB5BC1 /* PBWordSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368D306F1B4E638000FB5BC1 /* PBWordSelectorViewController.m */; };
 		36B89C651B351A3C00EC78AB /* PBTale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C631B351A3C00EC78AB /* PBTale.storyboard */; };
 		36B89C671B351A3C00EC78AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C661B351A3C00EC78AB /* Images.xcassets */; };
 		36B89C6A1B351A3C00EC78AB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C681B351A3C00EC78AB /* LaunchScreen.xib */; };
@@ -141,6 +142,8 @@
 		368A4D031B4BC1B300F1BF9A /* NSArray+PBUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PBUtil.m"; path = "Classes/Utilities/NSArray+PBUtil.m"; sourceTree = "<group>"; };
 		368B83891B4D18370002C92D /* UIScreen+PBUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScreen+PBUtil.h"; path = "Classes/Utilities/UIScreen+PBUtil.h"; sourceTree = "<group>"; };
 		368B838A1B4D18370002C92D /* UIScreen+PBUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScreen+PBUtil.m"; path = "Classes/Utilities/UIScreen+PBUtil.m"; sourceTree = "<group>"; };
+		368D306E1B4E638000FB5BC1 /* PBWordSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBWordSelectorViewController.h; path = Classes/Views/PBWordSelectorViewController.h; sourceTree = "<group>"; };
+		368D306F1B4E638000FB5BC1 /* PBWordSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBWordSelectorViewController.m; path = Classes/Views/PBWordSelectorViewController.m; sourceTree = "<group>"; };
 		36B89C561B351A3C00EC78AB /* PhotoBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B89C641B351A3C00EC78AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PBTale.storyboard; sourceTree = "<group>"; };
 		36B89C661B351A3C00EC78AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -378,6 +381,15 @@
 			name = "Word Cell";
 			sourceTree = "<group>";
 		};
+		368D306D1B4E635500FB5BC1 /* Selector */ = {
+			isa = PBXGroup;
+			children = (
+				368D306E1B4E638000FB5BC1 /* PBWordSelectorViewController.h */,
+				368D306F1B4E638000FB5BC1 /* PBWordSelectorViewController.m */,
+			);
+			name = Selector;
+			sourceTree = "<group>";
+		};
 		36B89C4D1B351A3B00EC78AB = {
 			isa = PBXGroup;
 			children = (
@@ -543,6 +555,7 @@
 				36B89C631B351A3C00EC78AB /* PBTale.storyboard */,
 				36B89CBB1B35211F00EC78AB /* List */,
 				36B89CBC1B35217700EC78AB /* Detail */,
+				368D306D1B4E635500FB5BC1 /* Selector */,
 				36B89CC41B352FF400EC78AB /* Components */,
 			);
 			name = Tale;
@@ -946,6 +959,7 @@
 				36B89D101B3555D000EC78AB /* PBSceneModel.m in Sources */,
 				36B89C851B351B7C00EC78AB /* AppDelegate.m in Sources */,
 				36B89D7E1B35616400EC78AB /* PBTale.m in Sources */,
+				368D30701B4E638000FB5BC1 /* PBWordSelectorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

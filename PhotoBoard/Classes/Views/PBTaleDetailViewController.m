@@ -7,11 +7,13 @@
 //
 
 #import "PBTaleDetailViewController.h"
+#import "PBWordSelectorViewController.h"
 #import "UIBarButtonItem+PBUtil.h"
 #import "Masonry.h"
 #import "MBProgressHUD.h"
+#import "PBWireframe.h"
 
-@interface PBTaleDetailViewController () <PBSceneListViewDelegate, PBWordSelectorViewDelegate, PBProcessHUDInterface>
+@interface PBTaleDetailViewController () <PBSceneListViewDelegate, PBWordSelectorViewDelegate, PBProcessHUDInterface, PBWordSelectorViewControllerDelegate>
 
 @property (nonatomic, assign) BOOL isEditable;
 @property (nonatomic, assign) NSUInteger currentEditIndex;
@@ -63,8 +65,9 @@
     if (self.isEditable) {
         self.currentEditIndex = index;
         self.currentEditMode = 0;
-        self.wordSelectorView.hidden = NO;
-        [self.wordSelectorView animateShowSelectorWithCompletion:nil];
+        [PBWireframe presentWordSelectorViewControllerFrom:self];
+//        self.wordSelectorView.hidden = NO;
+//        [self.wordSelectorView animateShowSelectorWithCompletion:nil];
     }
 }
 
@@ -74,6 +77,16 @@
         self.currentEditMode = 1;
         [self startEditingText];
     }
+}
+
+#pragma mark - PBWordSelectorViewControllerDelegate
+
+- (void)wordSelectorViewController:(PBWordSelectorViewController *)wordSelectorViewController didSelectWord:(PBWord *)word {
+    [self finishEditingWithText:word.text];
+}
+
+- (void)wordSelectorViewControllerDidClickCustomize:(PBWordSelectorViewController *)wordSelectorViewController {
+     [self startEditingText];
 }
 
 #pragma mark - PBWordSelectorViewDelegate

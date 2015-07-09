@@ -9,6 +9,7 @@
 #import "PBWireframe.h"
 #import "PBTaleListViewController.h"
 #import "PBTaleDetailViewController.h"
+#import "PBWordSelectorViewController.h"
 
 @implementation PBWireframe
 
@@ -39,6 +40,18 @@
     viewController.wordGroupPresenter = [PBWordGroupPresenter new];
     
     [sourceViewController.navigationController pushViewController:viewController animated:YES];
+}
+
++ (void)presentWordSelectorViewControllerFrom:(UIViewController *)sourceViewController {
+    PBWordSelectorViewController* viewController = [[UIStoryboard storyboardWithName:@"PBTale" bundle:nil] instantiateViewControllerWithIdentifier:@"WordSelector"];
+    viewController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    viewController.delegate = (id<PBWordSelectorViewControllerDelegate>)sourceViewController;
+    
+    // presenters
+    viewController.wordGroupPresenter = [PBWordGroupPresenter new];
+    
+//    sourceViewController.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
+    [sourceViewController.navigationController presentViewController:viewController animated:NO completion:nil];
 }
 
 @end
