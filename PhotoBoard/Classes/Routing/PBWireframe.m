@@ -37,7 +37,6 @@
     viewController.taleMaintainPresenter = taleMaintainPresenter;
     
     viewController.sharePresenter = [PBSharePresenter new];
-    viewController.wordGroupPresenter = [PBWordGroupPresenter new];
     
     [sourceViewController.navigationController pushViewController:viewController animated:YES];
 }

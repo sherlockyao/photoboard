@@ -13,7 +13,7 @@
 #import "MBProgressHUD.h"
 #import "PBWireframe.h"
 
-@interface PBTaleDetailViewController () <PBSceneListViewDelegate, PBWordSelectorViewDelegate, PBProcessHUDInterface, PBWordSelectorViewControllerDelegate>
+@interface PBTaleDetailViewController () <PBSceneListViewDelegate, PBProcessHUDInterface, PBWordSelectorViewControllerDelegate>
 
 @property (nonatomic, assign) BOOL isEditable;
 @property (nonatomic, assign) NSUInteger currentEditIndex;
@@ -29,7 +29,6 @@
     [super viewDidLoad];
     // add other views
     [self loadSceneListView];
-    [self loadWordSelectorView];
     // configure
     [self configureProperties];
     [self configureViewComponents];
@@ -66,8 +65,6 @@
         self.currentEditIndex = index;
         self.currentEditMode = 0;
         [PBWireframe presentWordSelectorViewControllerFrom:self];
-//        self.wordSelectorView.hidden = NO;
-//        [self.wordSelectorView animateShowSelectorWithCompletion:nil];
     }
 }
 
@@ -89,28 +86,6 @@
      [self startEditingText];
 }
 
-#pragma mark - PBWordSelectorViewDelegate
-
-- (void)wordSelectorView:(PBWordSelectorView *)wordSelectorView didSelectWord:(PBWord *)word {
-    [self finishEditingWithText:word.text];
-    [self.wordSelectorView animateHideSelectorWithCompletion:^{
-        self.wordSelectorView.hidden = YES;
-    }];
-}
-
-- (void)wordSelectorViewDidClickCustomize:(PBWordSelectorView *)wordSelectorView {
-    [self.wordSelectorView animateHideSelectorWithCompletion:^{
-        self.wordSelectorView.hidden = YES;
-        [self startEditingText];
-    }];
-}
-
-- (void)wordSelectorViewDidClickCancel:(PBWordSelectorView *)wordSelectorView {
-    [self.wordSelectorView animateHideSelectorWithCompletion:^{
-        self.wordSelectorView.hidden = YES;
-    }];
-}
-
 #pragma mark - PBProcessHUDInterface
 
 - (void)beginProcess:(PBProcessHUDTag)tag {
@@ -124,16 +99,7 @@
 #pragma mark - Logic
 
 - (void)loadDisplayingData {
-    [self loadScenes];
-    [self loadWords];
-}
-
-- (void)loadScenes {
     [self.sceneGroupPresenter loadScenes];
-}
-
-- (void)loadWords {
-    [self.wordGroupPresenter loadWords];
 }
 
 - (void)startEditingText {
@@ -272,21 +238,6 @@
     }];
 }
 
-- (void)loadWordSelectorView {
-    self.wordSelectorView = [[[NSBundle mainBundle] loadNibNamed:@"PBWordSelectorView" owner:nil options:nil] lastObject];
-    self.wordSelectorView.translatesAutoresizingMaskIntoConstraints = NO;
-    self.wordSelectorView.delegate = self;
-    [self.view addSubview:self.wordSelectorView];
-    self.wordSelectorView.hidden = YES;
-    
-    [self.wordSelectorView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top);
-        make.bottom.equalTo(self.view.mas_bottom);
-        make.left.equalTo(self.view.mas_left);
-        make.right.equalTo(self.view.mas_right);
-    }];
-}
-
 - (void)configureProperties {
     [self.taleMaintainPresenter checkMaintainState:^(BOOL isMaintainable) {
         self.isEditable = isMaintainable;
@@ -305,7 +256,6 @@
     
     // wire up view interfaces
     self.sceneGroupPresenter.sceneList = self.sceneListView;
-    self.wordGroupPresenter.wordList = self.wordSelectorView;
     self.sharePresenter.processHUD = self;
     self.sceneGroupPresenter.processHUD = self;
 }

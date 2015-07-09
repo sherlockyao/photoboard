@@ -8,16 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "PBSceneListView.h"
-#import "PBWordSelectorView.h"
 #import "PBSceneGroupPresenter.h"
-#import "PBWordGroupPresenter.h"
 #import "PBTaleMaintainPresenter.h"
 #import "PBSharePresenter.h"
 
 @interface PBTaleDetailViewController : UIViewController
 
 @property (nonatomic, strong) PBSceneListView* sceneListView;
-@property (nonatomic, strong) PBWordSelectorView* wordSelectorView;
 
 @property (weak, nonatomic) IBOutlet UIView *maskView;
 @property (weak, nonatomic) IBOutlet UIView *editView;
@@ -27,7 +24,6 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *editViewBottomConstraint;
 
 @property (nonatomic, strong) PBSceneGroupPresenter* sceneGroupPresenter;
-@property (nonatomic, strong) PBWordGroupPresenter* wordGroupPresenter;
 @property (nonatomic, strong) PBTaleMaintainPresenter* taleMaintainPresenter;
 @property (nonatomic, strong) PBSharePresenter* sharePresenter;
 
