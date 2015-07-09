@@ -16,6 +16,8 @@
 @property (nonatomic, assign) BOOL isEditable;
 @property (nonatomic, assign) NSUInteger currentEditIndex;
 @property (nonatomic, assign) NSUInteger currentEditMode; // 0: edit word, 1: edit note
+@property (nonatomic, strong) NSString* previousEditWord;
+@property (nonatomic, strong) NSString* previousEditNote;
 
 @end
 
@@ -122,11 +124,12 @@
 }
 
 - (void)startEditingText {
-    self.editTextField.text = nil;
     if (0 == self.currentEditMode) {
+        self.editTextField.text = self.previousEditWord;
         self.editTextField.placeholder = @"关联词";
         self.editTextField.textAlignment = NSTextAlignmentCenter;
     } else {
+        self.editTextField.text = self.previousEditNote;
         self.editTextField.placeholder = @"描述";
         self.editTextField.textAlignment = NSTextAlignmentLeft;
     }
@@ -180,11 +183,22 @@
 
 - (IBAction)editDoneButtonTouchUpInside:(id)sender {
     NSString* text = self.editTextField.text;
+    if (0 == self.currentEditMode) {
+        self.previousEditWord = text;
+    } else {
+        self.previousEditNote = text;
+    }
     [self finishEditingWithText:text];
     [self.editTextField resignFirstResponder];
 }
 
 - (IBAction)editCancelButtonTouchUpInside:(id)sender {
+    NSString* text = self.editTextField.text;
+    if (0 == self.currentEditMode) {
+        self.previousEditWord = text;
+    } else {
+        self.previousEditNote = text;
+    }
     [self.editTextField resignFirstResponder];
 }
 

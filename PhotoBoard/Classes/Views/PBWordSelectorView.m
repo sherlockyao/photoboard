@@ -143,7 +143,7 @@ static NSString *const WordCellReuseIdentifier = @"WordCell";
 #pragma mark - Configuration
 
 - (void)configureProperties {
-    self.panelHeight = 450;
+    self.panelHeight = 470;
     if ([UIScreen is3_5InchScreen]) {
         self.panelHeight = 400;
     } else if ([UIScreen is4InchScreen]) {
