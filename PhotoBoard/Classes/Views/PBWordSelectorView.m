@@ -147,11 +147,11 @@ static NSString *const WordCellReuseIdentifier = @"WordCell";
     if ([UIScreen is3_5InchScreen]) {
         self.panelHeight = 400;
     } else if ([UIScreen is4InchScreen]) {
-        self.panelHeight = 450;
+        self.panelHeight = 470;
     } else if ([UIScreen is4_7InchScreen]) {
         self.panelHeight = 520;
     } else {
-        self.panelHeight = 600;
+        self.panelHeight = 580;
     }
     self.sectionedWords = [self localizedSectionedArrayForWords:@[]];
 }
