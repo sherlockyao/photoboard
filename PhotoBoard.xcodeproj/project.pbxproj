@@ -82,6 +82,7 @@
 		36B89D7B1B3560D300EC78AB /* PBTale+DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89D7A1B3560D300EC78AB /* PBTale+DataManager.m */; };
 		36B89D7E1B35616400EC78AB /* PBTale.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89D7D1B35616400EC78AB /* PBTale.m */; };
 		36B89D811B35662D00EC78AB /* PBTaleMaintainPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B89D801B35662D00EC78AB /* PBTaleMaintainPresenter.m */; };
+		36C9FAB51B4F76F0006C1A5B /* PBDescriptionEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36C9FAB41B4F76F0006C1A5B /* PBDescriptionEditorViewController.m */; };
 		39999594F5D8C92FB4FF417B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8FE003769036AEB2E25705 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -240,6 +241,8 @@
 		36B89D7D1B35616400EC78AB /* PBTale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBTale.m; path = Classes/DTOs/PBTale.m; sourceTree = "<group>"; };
 		36B89D7F1B35662D00EC78AB /* PBTaleMaintainPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBTaleMaintainPresenter.h; path = Classes/Presenters/PBTaleMaintainPresenter.h; sourceTree = "<group>"; };
 		36B89D801B35662D00EC78AB /* PBTaleMaintainPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBTaleMaintainPresenter.m; path = Classes/Presenters/PBTaleMaintainPresenter.m; sourceTree = "<group>"; };
+		36C9FAB31B4F76F0006C1A5B /* PBDescriptionEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBDescriptionEditorViewController.h; path = Classes/Views/PBDescriptionEditorViewController.h; sourceTree = "<group>"; };
+		36C9FAB41B4F76F0006C1A5B /* PBDescriptionEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBDescriptionEditorViewController.m; path = Classes/Views/PBDescriptionEditorViewController.m; sourceTree = "<group>"; };
 		3B36DF2B9E1E20B34001075A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7B8FE003769036AEB2E25705 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D5366B08B1DC22AE534C5C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -381,13 +384,13 @@
 			name = "Word Cell";
 			sourceTree = "<group>";
 		};
-		368D306D1B4E635500FB5BC1 /* Selector */ = {
+		368D306D1B4E635500FB5BC1 /* Word Selector */ = {
 			isa = PBXGroup;
 			children = (
 				368D306E1B4E638000FB5BC1 /* PBWordSelectorViewController.h */,
 				368D306F1B4E638000FB5BC1 /* PBWordSelectorViewController.m */,
 			);
-			name = Selector;
+			name = "Word Selector";
 			sourceTree = "<group>";
 		};
 		36B89C4D1B351A3B00EC78AB = {
@@ -555,7 +558,7 @@
 				36B89C631B351A3C00EC78AB /* PBTale.storyboard */,
 				36B89CBB1B35211F00EC78AB /* List */,
 				36B89CBC1B35217700EC78AB /* Detail */,
-				368D306D1B4E635500FB5BC1 /* Selector */,
+				36C9FAB11B4F7643006C1A5B /* Modals */,
 				36B89CC41B352FF400EC78AB /* Components */,
 			);
 			name = Tale;
@@ -745,6 +748,24 @@
 				36B89D771B355F6B00EC78AB /* PBSceneModel+Utility.m */,
 			);
 			name = Utility;
+			sourceTree = "<group>";
+		};
+		36C9FAB11B4F7643006C1A5B /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				368D306D1B4E635500FB5BC1 /* Word Selector */,
+				36C9FAB21B4F767F006C1A5B /* Description Editor */,
+			);
+			name = Modals;
+			sourceTree = "<group>";
+		};
+		36C9FAB21B4F767F006C1A5B /* Description Editor */ = {
+			isa = PBXGroup;
+			children = (
+				36C9FAB31B4F76F0006C1A5B /* PBDescriptionEditorViewController.h */,
+				36C9FAB41B4F76F0006C1A5B /* PBDescriptionEditorViewController.m */,
+			);
+			name = "Description Editor";
 			sourceTree = "<group>";
 		};
 		DBA997023C2FB3B8D1D567D8 /* Frameworks */ = {
@@ -959,6 +980,7 @@
 				36B89D101B3555D000EC78AB /* PBSceneModel.m in Sources */,
 				36B89C851B351B7C00EC78AB /* AppDelegate.m in Sources */,
 				36B89D7E1B35616400EC78AB /* PBTale.m in Sources */,
+				36C9FAB51B4F76F0006C1A5B /* PBDescriptionEditorViewController.m in Sources */,
 				368D30701B4E638000FB5BC1 /* PBWordSelectorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

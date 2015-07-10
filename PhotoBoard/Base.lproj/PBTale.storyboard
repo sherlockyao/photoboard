@@ -147,7 +147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aol-1v-qlB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1085" y="337"/>
+            <point key="canvasLocation" x="1023" y="337"/>
         </scene>
         <!--Word Selector View Controller-->
         <scene sceneID="9pz-sT-S6o">
@@ -165,6 +165,112 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzE-p7-VNi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="323" y="997"/>
+        </scene>
+        <!--Description Editor View Controller-->
+        <scene sceneID="05Q-A5-xn1">
+            <objects>
+                <viewController storyboardIdentifier="DescriptionEditor" id="ewF-rc-Z45" customClass="PBDescriptionEditorViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xg4-2N-n02"/>
+                        <viewControllerLayoutGuide type="bottom" id="0yd-1z-CcH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SDn-44-h1F">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="14w-Rs-YvQ" userLabel="Dimming Mask View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eW4-xV-JmN" userLabel="Editor View">
+                                <rect key="frame" x="0.0" y="450" width="600" height="150"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="连接词" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fFi-h6-6eV" userLabel="Word Text Field">
+                                        <rect key="frame" x="8" y="28" width="584" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="HLN-6Z-HBM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QeN-PL-vWL" userLabel="Note Text View">
+                                        <rect key="frame" x="16" y="2" width="568" height="101"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ff2-no-fJB" userLabel="Done Button">
+                                        <rect key="frame" x="532" y="105" width="60" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="7pT-yu-AiM"/>
+                                            <constraint firstAttribute="width" constant="60" id="ItV-hb-79D"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="确定">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doneButtonTouchUpInside:" destination="ewF-rc-Z45" eventType="touchUpInside" id="3Cw-Ue-k3E"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fW0-aj-bnp" userLabel="Cancel Button">
+                                        <rect key="frame" x="464" y="105" width="60" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="mq8-1x-t6P"/>
+                                            <constraint firstAttribute="height" constant="45" id="wh4-4i-HG1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="取消">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButtonTouchUpInside:" destination="ewF-rc-Z45" eventType="touchUpInside" id="XQk-CC-V3i"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ff2-no-fJB" firstAttribute="leading" secondItem="fW0-aj-bnp" secondAttribute="trailing" constant="8" id="2L2-oV-Srt"/>
+                                    <constraint firstAttribute="trailing" secondItem="ff2-no-fJB" secondAttribute="trailing" constant="8" id="4Oh-xv-JaR"/>
+                                    <constraint firstItem="QeN-PL-vWL" firstAttribute="leading" secondItem="eW4-xV-JmN" secondAttribute="leading" constant="16" id="5Zh-zn-CTS"/>
+                                    <constraint firstAttribute="height" constant="150" id="DQf-Av-uuL"/>
+                                    <constraint firstAttribute="trailing" secondItem="fFi-h6-6eV" secondAttribute="trailing" constant="8" id="H2H-Nq-0GA"/>
+                                    <constraint firstItem="fFi-h6-6eV" firstAttribute="leading" secondItem="eW4-xV-JmN" secondAttribute="leading" constant="8" id="Tum-8p-iTq"/>
+                                    <constraint firstAttribute="bottom" secondItem="fW0-aj-bnp" secondAttribute="bottom" id="a9s-u6-NS7"/>
+                                    <constraint firstAttribute="trailing" secondItem="QeN-PL-vWL" secondAttribute="trailing" constant="16" id="dLp-dj-eE1"/>
+                                    <constraint firstItem="QeN-PL-vWL" firstAttribute="top" secondItem="eW4-xV-JmN" secondAttribute="top" constant="2" id="f49-P7-54E"/>
+                                    <constraint firstAttribute="bottom" secondItem="ff2-no-fJB" secondAttribute="bottom" id="nqP-Sk-dXp"/>
+                                    <constraint firstItem="fW0-aj-bnp" firstAttribute="top" secondItem="QeN-PL-vWL" secondAttribute="bottom" constant="2" id="rgT-Wf-5Y1"/>
+                                    <constraint firstItem="fFi-h6-6eV" firstAttribute="top" secondItem="eW4-xV-JmN" secondAttribute="top" constant="28" id="zux-Uh-hgE"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="14w-Rs-YvQ" secondAttribute="trailing" id="6TU-U9-Yaw"/>
+                            <constraint firstAttribute="trailing" secondItem="eW4-xV-JmN" secondAttribute="trailing" id="FOo-od-dhj"/>
+                            <constraint firstItem="0yd-1z-CcH" firstAttribute="top" secondItem="14w-Rs-YvQ" secondAttribute="bottom" id="Mqs-h5-Ysm"/>
+                            <constraint firstItem="14w-Rs-YvQ" firstAttribute="leading" secondItem="SDn-44-h1F" secondAttribute="leading" id="U8m-yE-peT"/>
+                            <constraint firstItem="0yd-1z-CcH" firstAttribute="top" secondItem="eW4-xV-JmN" secondAttribute="bottom" id="Yr1-3b-v7Q"/>
+                            <constraint firstItem="eW4-xV-JmN" firstAttribute="leading" secondItem="SDn-44-h1F" secondAttribute="leading" id="a5x-ou-lFj"/>
+                            <constraint firstItem="14w-Rs-YvQ" firstAttribute="top" secondItem="SDn-44-h1F" secondAttribute="top" id="nOH-Vm-4w8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="fW0-aj-bnp" id="iSe-7z-op4"/>
+                        <outlet property="dimmingMaskView" destination="14w-Rs-YvQ" id="e2z-2t-qpX"/>
+                        <outlet property="doneButton" destination="ff2-no-fJB" id="NbR-7h-7KJ"/>
+                        <outlet property="editorView" destination="eW4-xV-JmN" id="pV6-Ne-eKU"/>
+                        <outlet property="editorViewBottomConstraint" destination="Yr1-3b-v7Q" id="D0c-I1-wQb"/>
+                        <outlet property="noteTextView" destination="QeN-PL-vWL" id="cIk-ss-Lmi"/>
+                        <outlet property="wordTextField" destination="fFi-h6-6eV" id="ugD-6c-HvU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ym7-VE-Caa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1023" y="997"/>
         </scene>
     </scenes>
 </document>
