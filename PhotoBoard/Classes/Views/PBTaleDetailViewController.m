@@ -108,6 +108,10 @@
 
 #pragma mark - IB Actions
 
+- (IBAction)backButtonTouchUpInside:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (IBAction)createButtonTouchUpInside:(id)sender {
     [self.taleMaintainPresenter createTaleWithScenes:self.sceneListView.scenes completion:^{
         [self.navigationController popViewControllerAnimated:YES];
@@ -142,6 +146,17 @@
 
 - (void)configureViewComponents {
     // navigation
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    backButton.bounds = CGRectMake(0, 0, 120, 40);
+    backButton.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
+    backButton.titleEdgeInsets = UIEdgeInsetsMake(0, 32, 0, 0);
+    backButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    [backButton setTitle:@"串照片" forState:UIControlStateNormal];
+    backButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:19];
+    [backButton setTitleColor:[UIColor colorWithWhite:0 alpha:0.87] forState:UIControlStateNormal];
+    [backButton setImage:[UIImage imageNamed:@"general_back"] forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(backButtonTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     if (self.isEditable) {
         UIBarButtonItem* createItem = [[UIBarButtonItem alloc] initWithTitle:@"创建" style:UIBarButtonItemStylePlain target:self action:@selector(createButtonTouchUpInside:)];
         self.navigationItem.rightBarButtonItems = @[createItem];

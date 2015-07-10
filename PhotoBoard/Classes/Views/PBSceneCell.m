@@ -35,7 +35,7 @@ static CGFloat const PhotoHorizontalPadding = 16;
     self.topStickView.hidden = isFirstScene;
     
     // display text content
-    self.wordLabel.text = scene.word ?: @"连接词";
+    self.wordLabel.text = scene.word ?: @"关联词";
     self.noteLabel.text = scene.note ?: @"...";
     if (scene.word) {
         self.wordLabel.textColor = [UIColor whiteColor];

@@ -127,7 +127,7 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
 
 - (void)configureViewComponents {
     // navigation
-    self.navigationItem.title = @"PhotoBoard";
+    self.navigationItem.title = @"串照片";
     
     // create button
     self.createButton.layer.cornerRadius = 30;
