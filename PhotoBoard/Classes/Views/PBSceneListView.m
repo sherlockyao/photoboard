@@ -30,7 +30,7 @@ static NSString *const SceneCellReuseIdentifier = @"SceneCell";
     PBScene* scene = self.scenes[index];
     scene.word = word;
     PBSceneCell* cell = (PBSceneCell *)[self.sceneTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
-    [cell displayScene:scene];
+    [cell displayScene:scene isFirstScene:(0 == index)];
 }
 
 - (void)displayUpdatedNote:(NSString *)note forRowIndex:(NSUInteger)index {
@@ -70,7 +70,7 @@ static NSString *const SceneCellReuseIdentifier = @"SceneCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PBSceneCell* cell = [tableView dequeueReusableCellWithIdentifier:SceneCellReuseIdentifier forIndexPath:indexPath];
-    [cell displayScene:self.scenes[indexPath.row]];
+    [cell displayScene:self.scenes[indexPath.row] isFirstScene:(0 == indexPath.row)];
     cell.delegate = self;
     return cell;
 }

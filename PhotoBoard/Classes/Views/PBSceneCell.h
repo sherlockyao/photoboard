@@ -13,6 +13,7 @@
 
 @interface PBSceneCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIView *topStickView;
 @property (weak, nonatomic) IBOutlet UILabel *wordLabel;
 @property (weak, nonatomic) IBOutlet UILabel *noteLabel;
 @property (weak, nonatomic) IBOutlet UIButton *wordButton;
@@ -23,7 +24,7 @@
 
 @property (nonatomic, weak) id<PBSceneCellDelegate> delegate;
 
-- (void)displayScene:(PBScene *)scene;
+- (void)displayScene:(PBScene *)scene isFirstScene:(BOOL)isFirstScene;
 - (CGFloat)preferredHeightForScene:(PBScene *)scene;
 
 @end

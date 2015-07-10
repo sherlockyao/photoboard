@@ -21,12 +21,19 @@ static CGFloat const PhotoHorizontalPadding = 16;
 @implementation PBSceneCell
 
 - (void)awakeFromNib {
-    self.wordButton.layer.cornerRadius = 20;
+    self.wordButton.layer.cornerRadius = 32;
     self.wordButton.layer.borderWidth = 1;
     self.wordButton.layer.borderColor = [UIColor blackColor].CGColor;
+    self.wordButton.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.wordButton.layer.shadowOffset = CGSizeMake(0, 1.5f);
+    self.wordButton.layer.shadowRadius = 2.0f;
+    self.wordButton.layer.shadowOpacity = 0.4f;
 }
 
-- (void)displayScene:(PBScene *)scene {
+- (void)displayScene:(PBScene *)scene isFirstScene:(BOOL)isFirstScene {
+    // fix layout
+    self.topStickView.hidden = isFirstScene;
+    
     // display text content
     self.wordLabel.text = scene.word ?: @"连接词";
     self.noteLabel.text = scene.note ?: @"...";
@@ -36,7 +43,7 @@ static CGFloat const PhotoHorizontalPadding = 16;
         self.wordButton.layer.borderWidth = 0;
     } else {
         self.wordLabel.textColor = [UIColor blackColor];
-        self.wordButton.backgroundColor = [UIColor clearColor];
+        self.wordButton.backgroundColor = [UIColor whiteColor];
         self.wordButton.layer.borderWidth = 1;
     }
     [self updateWordLabelForProperFont];
@@ -72,8 +79,11 @@ static CGFloat const PhotoHorizontalPadding = 16;
 #pragma mark - Layout
 
 - (void)updateWordLabelForProperFont {
-    BOOL useBigFont = (3 > [self.wordLabel.text length]);
-    self.wordLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:(useBigFont ? 14 : 12)];
+    if (3 > [self.wordLabel.text length]) {
+        self.wordLabel.font = [UIFont systemFontOfSize:18];
+    } else {
+        self.wordLabel.font = [UIFont systemFontOfSize:16];
+    }
 }
 
 - (void)updateImageViewSizeToFitPhotoSize:(CGSize)photoSize {
