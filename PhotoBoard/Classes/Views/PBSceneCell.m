@@ -7,9 +7,8 @@
 //
 
 #import "PBSceneCell.h"
+#import "PBWord.h"
 #import "UIView+Positioning.h"
-#import "PBWordGroupPresenter.h"
-#import "NSArray+PBUtil.h"
 
 static CGFloat const PhotoHorizontalPadding = 16;
 
@@ -32,12 +31,8 @@ static CGFloat const PhotoHorizontalPadding = 16;
     self.wordLabel.text = scene.word ?: @"连接词";
     self.noteLabel.text = scene.note ?: @"...";
     if (scene.word) {
-        UIColor* wordColor = [[PBWordGroupPresenter colorsDictionary] objectForKey:scene.word];
-        if (!wordColor) {
-            wordColor = [[[PBWordGroupPresenter colorsDictionary] allValues] sample];
-        }
         self.wordLabel.textColor = [UIColor whiteColor];
-        self.wordButton.backgroundColor = wordColor;
+        self.wordButton.backgroundColor = [PBWord colorForText:scene.word];
         self.wordButton.layer.borderWidth = 0;
     } else {
         self.wordLabel.textColor = [UIColor blackColor];

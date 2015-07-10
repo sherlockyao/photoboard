@@ -15,6 +15,4 @@
 
 - (void)loadWords;
 
-+ (NSDictionary *)colorsDictionary;
-
 @end
