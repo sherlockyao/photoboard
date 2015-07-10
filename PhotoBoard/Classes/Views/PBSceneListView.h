@@ -29,7 +29,7 @@
 @protocol PBSceneListViewDelegate <NSObject>
 
 @optional
-- (void)sceneListView:(PBSceneListView *)sceneListView didSelectEditWordAtRowIndex:(NSUInteger)index;
-- (void)sceneListView:(PBSceneListView *)sceneListView didSelectEditNoteAtRowIndex:(NSUInteger)index;
+- (void)sceneListView:(PBSceneListView *)sceneListView didSelectEditWord:(NSString *)word atRowIndex:(NSInteger)index;
+- (void)sceneListView:(PBSceneListView *)sceneListView didSelectEditNote:(NSString *)note atRowIndex:(NSInteger)index;
 
 @end

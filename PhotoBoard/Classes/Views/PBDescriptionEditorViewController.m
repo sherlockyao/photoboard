@@ -7,10 +7,11 @@
 //
 
 #import "PBDescriptionEditorViewController.h"
+#import "PBConstants.h"
 
-@interface PBDescriptionEditorViewController ()
+@interface PBDescriptionEditorViewController () <UITextFieldDelegate>
 
-@property (nonatomic, assign) NSUInteger currentEditMode; // 0: edit word, 1: edit note
+@property (nonatomic, assign) PBDescriptionEditorType currentEditorType;
 
 @end
 
@@ -41,6 +42,15 @@
                                                object:nil];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if (PBDescriptionEditorTypeWord == self.currentEditorType) {
+        [self.wordTextField becomeFirstResponder];
+    } else {
+        [self.noteTextView becomeFirstResponder];
+    }
+}
+
 - (void)viewDidDisappear:(BOOL)animated {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [super viewDidDisappear:animated];
@@ -51,11 +61,11 @@
 - (void)keyboardWillShow:(NSNotification *)notification {
     NSDictionary *info = [notification userInfo];
     CGSize size = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
-    [self animateShowEditorViewWithKeyboardHeight:size.height];
+    [self animateShowEditorViewWithDuration:[notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue] keyboardHeight:size.height];
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification {
-    [self animateHideEditorViewWithCompletion:^{
+    [self animateHideEditorViewWithDuration:[notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue] completion:^{
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
 }
@@ -63,7 +73,7 @@
 #pragma mark - Text Field
 
 - (void)textFieldTextDidChange:(NSNotification *)notification {
-    if (0 != self.currentEditMode) {
+    if (PBDescriptionEditorTypeWord != self.currentEditorType) {
         return;
     }
     NSString* text = self.wordTextField.text;
@@ -86,18 +96,60 @@
 #pragma mark - IB Actions
 
 - (IBAction)doneButtonTouchUpInside:(id)sender {
+    if (PBDescriptionEditorTypeWord == self.currentEditorType) {
+        [self submiteWord];
+    } else {
+        [self submiteNote];
+    }
 }
 
 - (IBAction)cancelButtonTouchUpInside:(id)sender {
+    [self closeDescriptionEditor];
+}
+
+#pragma mark - Gesture Actions
+
+- (void)singleTapDimmingViewGestureAction:(UITapGestureRecognizer *)gesture {
+    [self closeDescriptionEditor];
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self submiteWord];
+    return NO;
+}
+
+#pragma mark - Logic Method
+
+- (void)submiteWord {
+    NSString* word = self.wordTextField.text;
+    if ([self.delegate respondsToSelector:@selector(descriptionEditorViewController:didSubmitWord:)]) {
+        [self.delegate descriptionEditorViewController:self didSubmitWord:word];
+    }
+    [self closeDescriptionEditor];
+}
+
+- (void)submiteNote {
+    NSString* note = self.noteTextView.text;
+    if ([self.delegate respondsToSelector:@selector(descriptionEditorViewController:didSubmitNote:)]) {
+        [self.delegate descriptionEditorViewController:self didSubmitNote:note];
+    }
+    [self closeDescriptionEditor];
+}
+
+- (void)closeDescriptionEditor {
+    [self.wordTextField resignFirstResponder];
+    [self.noteTextView resignFirstResponder];
 }
 
 #pragma mark - Animations
 
-- (void)animateShowEditorViewWithKeyboardHeight:(CGFloat)keyboardHeight {
+- (void)animateShowEditorViewWithDuration:(NSTimeInterval)duration keyboardHeight:(CGFloat)keyboardHeight {
     if (keyboardHeight == self.editorViewBottomConstraint.constant) {
         return;
     }
-    [UIView animateWithDuration:0.2 animations:^{
+    [UIView animateWithDuration:0.15 animations:^{
         self.editorView.alpha = 1;
         self.dimmingMaskView.alpha = 0.54;
         self.editorViewBottomConstraint.constant = keyboardHeight;
@@ -105,11 +157,11 @@
     }];
 }
 
-- (void)animateHideEditorViewWithCompletion:(void (^)(void))completion {
+- (void)animateHideEditorViewWithDuration:(NSTimeInterval)duration completion:(void (^)(void))completion {
     if (0 == self.editorViewBottomConstraint.constant) {
         return;
     }
-    [UIView animateWithDuration:0.2 animations:^{
+    [UIView animateWithDuration:0.15 animations:^{
         self.editorView.alpha = 0;
         self.dimmingMaskView.alpha = 0;
         self.editorViewBottomConstraint.constant = 0;
@@ -124,12 +176,36 @@
 #pragma mark - Configuration
 
 - (void)configureProperties {
-
+    NSNumber* type = [self.params objectForKey:PBParamKeyType];
+    if (type) {
+        self.currentEditorType = [type integerValue];
+    } else {
+        self.currentEditorType = PBDescriptionEditorTypeWord;
+    }
 }
 
 - (void)configureViewComponents {
     self.editorView.alpha = 0;
     self.dimmingMaskView.alpha = 0;
+    
+    // dimming view
+    UITapGestureRecognizer *tapDimmingViewRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapDimmingViewGestureAction:)];
+    [self.dimmingMaskView addGestureRecognizer:tapDimmingViewRecognizer];
+    
+    // text field & view
+    self.noteTextView.placeholder = @"描述";
+    self.wordTextField.delegate = self;
+    
+    NSString* text = [self.params objectForKey:PBParamKeyText];
+    if (PBDescriptionEditorTypeWord == self.currentEditorType) {
+        self.wordTextField.text = text;
+        self.wordTextField.hidden = NO;
+        self.noteTextView.hidden = YES;
+    } else {
+        self.noteTextView.text = text;
+        self.noteTextView.hidden = NO;
+        self.wordTextField.hidden = YES;
+    }
 }
 
 @end

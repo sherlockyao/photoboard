@@ -10,6 +10,7 @@
 #import "PBTaleListViewController.h"
 #import "PBTaleDetailViewController.h"
 #import "PBWordSelectorViewController.h"
+#import "PBDescriptionEditorViewController.h"
 
 @implementation PBWireframe
 
@@ -49,8 +50,24 @@
     // presenters
     viewController.wordGroupPresenter = [PBWordGroupPresenter new];
     
-//    sourceViewController.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
-    [sourceViewController.navigationController presentViewController:viewController animated:NO completion:nil];
+    if (sourceViewController.navigationController) {
+        [sourceViewController.navigationController presentViewController:viewController animated:NO completion:nil];
+    } else {
+        [sourceViewController presentViewController:viewController animated:NO completion:nil];
+    }
+}
+
++ (void)presentDescriptionEditorViewControllerFrom:(UIViewController *)sourceViewController withParams:(NSDictionary *)params {
+    PBDescriptionEditorViewController* viewController = [[UIStoryboard storyboardWithName:@"PBTale" bundle:nil] instantiateViewControllerWithIdentifier:@"DescriptionEditor"];
+    viewController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    viewController.delegate = (id<PBDescriptionEditorViewControllerDelegate>)sourceViewController;
+    viewController.params = params;
+    
+    if (sourceViewController.navigationController) {
+        [sourceViewController.navigationController presentViewController:viewController animated:NO completion:nil];
+    } else {
+        [sourceViewController presentViewController:viewController animated:NO completion:nil];
+    }
 }
 
 @end

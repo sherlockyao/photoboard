@@ -73,7 +73,7 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PBTale* tale = self.tales[indexPath.row];
-    NSDictionary* params = @{ ParamKeyTale : tale };
+    NSDictionary* params = @{ PBParamKeyTale : tale };
     [PBWireframe moveToTaleDetailViewControllerFrom:self withParams:params];
 }
 
@@ -111,7 +111,7 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
         scene.assetURL = [map objectForKey:UIImagePickerControllerReferenceURL];
         [scenes addObject:scene];
     }
-    NSDictionary* params = @{ ParamKeySceneList : scenes };
+    NSDictionary* params = @{ PBParamKeySceneList : scenes };
     [PBWireframe moveToTaleDetailViewControllerFrom:self withParams:params];
 }
 

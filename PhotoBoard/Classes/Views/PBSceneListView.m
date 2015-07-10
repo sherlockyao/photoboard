@@ -78,16 +78,18 @@ static NSString *const SceneCellReuseIdentifier = @"SceneCell";
 #pragma mark - PBSceneCellDelegate
 
 - (void)sceneCellDidClickWordButton:(PBSceneCell *)sceneCell {
-    NSIndexPath* indexPath = [self.sceneTableView indexPathForCell:sceneCell];
-    if ([self.delegate respondsToSelector:@selector(sceneListView:didSelectEditWordAtRowIndex:)]) {
-        [self.delegate sceneListView:self didSelectEditWordAtRowIndex:indexPath.row];
+    NSInteger index = [self.sceneTableView indexPathForCell:sceneCell].row;
+    PBScene* scene = self.scenes[index];
+    if ([self.delegate respondsToSelector:@selector(sceneListView:didSelectEditWord:atRowIndex:)]) {
+        [self.delegate sceneListView:self didSelectEditWord:scene.word atRowIndex:index];
     }
 }
 
 - (void)sceneCellDidClickNoteButton:(PBSceneCell *)sceneCell {
-    NSIndexPath* indexPath = [self.sceneTableView indexPathForCell:sceneCell];
-    if ([self.delegate respondsToSelector:@selector(sceneListView:didSelectEditNoteAtRowIndex:)]) {
-        [self.delegate sceneListView:self didSelectEditNoteAtRowIndex:indexPath.row];
+    NSInteger index = [self.sceneTableView indexPathForCell:sceneCell].row;
+    PBScene* scene = self.scenes[index];
+    if ([self.delegate respondsToSelector:@selector(sceneListView:didSelectEditNote:atRowIndex:)]) {
+        [self.delegate sceneListView:self didSelectEditNote:scene.note atRowIndex:index];
     }
 }
 

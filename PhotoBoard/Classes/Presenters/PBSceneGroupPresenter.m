@@ -17,9 +17,9 @@
 
 - (void)loadScenes {
     [self.processHUD beginProcess:PBProcessHUDTagSceneGroup];
-    NSArray* scenes = [self.params objectForKey:ParamKeySceneList];
+    NSArray* scenes = [self.params objectForKey:PBParamKeySceneList];
     if (!scenes) {
-        PBTale* tale = [self.params objectForKey:ParamKeyTale];
+        PBTale* tale = [self.params objectForKey:PBParamKeyTale];
         scenes = tale ? tale.scenes : @[];
     }
     @weakify(self)

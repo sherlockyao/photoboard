@@ -8,18 +8,18 @@
 
 #import "PBTaleDetailViewController.h"
 #import "PBWordSelectorViewController.h"
+#import "PBDescriptionEditorViewController.h"
 #import "UIBarButtonItem+PBUtil.h"
 #import "Masonry.h"
 #import "MBProgressHUD.h"
 #import "PBWireframe.h"
+#import "PBConstants.h"
 
-@interface PBTaleDetailViewController () <PBSceneListViewDelegate, PBProcessHUDInterface, PBWordSelectorViewControllerDelegate>
+@interface PBTaleDetailViewController () <PBSceneListViewDelegate, PBProcessHUDInterface, PBWordSelectorViewControllerDelegate, PBDescriptionEditorViewControllerDelegate>
 
 @property (nonatomic, assign) BOOL isEditable;
-@property (nonatomic, assign) NSUInteger currentEditIndex;
-@property (nonatomic, assign) NSUInteger currentEditMode; // 0: edit word, 1: edit note
-@property (nonatomic, strong) NSString* previousEditWord;
-@property (nonatomic, strong) NSString* previousEditNote;
+@property (nonatomic, assign) NSInteger currentEditIndex;
+@property (nonatomic, assign) NSString* currentEditText;
 
 @end
 
@@ -36,54 +36,42 @@
     [self loadDisplayingData];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    // keyboard
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillShow:)
-                                                 name:UIKeyboardWillShowNotification
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillHide:)
-                                                 name:UIKeyboardWillHideNotification
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(textFieldTextDidChange:)
-                                                 name:UITextFieldTextDidChangeNotification
-                                               object:nil];
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [super viewDidDisappear:animated];
-}
-
 #pragma mark - PBSceneListViewDelegate
 
-- (void)sceneListView:(PBSceneListView *)sceneListView didSelectEditWordAtRowIndex:(NSUInteger)index {
+- (void)sceneListView:(PBSceneListView *)sceneListView didSelectEditWord:(NSString *)word atRowIndex:(NSInteger)index{
     if (self.isEditable) {
         self.currentEditIndex = index;
-        self.currentEditMode = 0;
+        self.currentEditText = word;
         [PBWireframe presentWordSelectorViewControllerFrom:self];
     }
 }
 
-- (void)sceneListView:(PBSceneListView *)sceneListView didSelectEditNoteAtRowIndex:(NSUInteger)index {
+- (void)sceneListView:(PBSceneListView *)sceneListView didSelectEditNote:(NSString *)note atRowIndex:(NSInteger)index {
     if (self.isEditable) {
         self.currentEditIndex = index;
-        self.currentEditMode = 1;
-        [self startEditingText];
+        self.currentEditText = note;
+        [self presentEditorForEditNote];
     }
 }
 
 #pragma mark - PBWordSelectorViewControllerDelegate
 
 - (void)wordSelectorViewController:(PBWordSelectorViewController *)wordSelectorViewController didSelectWord:(PBWord *)word {
-    [self finishEditingWithText:word.text];
+    [self.sceneListView displayUpdatedWord:word.text forRowIndex:self.currentEditIndex];
 }
 
 - (void)wordSelectorViewControllerDidClickCustomize:(PBWordSelectorViewController *)wordSelectorViewController {
-     [self startEditingText];
+     [self presentEditorForEditWord];
+}
+
+#pragma mark - PBDescriptionEditorViewControllerDelegate
+
+- (void)descriptionEditorViewController:(PBDescriptionEditorViewController *)descriptionEditorViewController didSubmitWord:(NSString *)word {
+    [self.sceneListView displayUpdatedWord:word forRowIndex:self.currentEditIndex];
+}
+
+- (void)descriptionEditorViewController:(PBDescriptionEditorViewController *)descriptionEditorViewController didSubmitNote:(NSString *)note {
+    [self.sceneListView displayUpdatedNote:note forRowIndex:self.currentEditIndex];
 }
 
 #pragma mark - PBProcessHUDInterface
@@ -102,84 +90,23 @@
     [self.sceneGroupPresenter loadScenes];
 }
 
-- (void)startEditingText {
-    if (0 == self.currentEditMode) {
-        self.editTextField.text = self.previousEditWord;
-        self.editTextField.placeholder = @"关联词";
-        self.editTextField.textAlignment = NSTextAlignmentCenter;
-    } else {
-        self.editTextField.text = self.previousEditNote;
-        self.editTextField.placeholder = @"描述";
-        self.editTextField.textAlignment = NSTextAlignmentLeft;
-    }
-    [self.editTextField becomeFirstResponder];
+- (void)presentEditorForEditWord {
+    NSDictionary* params = @{
+                             PBParamKeyText : self.currentEditText ?: @"",
+                             PBParamKeyType : @(PBDescriptionEditorTypeWord)
+                             };
+    [PBWireframe presentDescriptionEditorViewControllerFrom:self withParams:params];
 }
 
-- (void)finishEditingWithText:(NSString *)text {
-    if (0 == self.currentEditMode) {
-        [self.sceneListView displayUpdatedWord:text forRowIndex:self.currentEditIndex];
-    } else {
-        [self.sceneListView displayUpdatedNote:text forRowIndex:self.currentEditIndex];
-    }
-}
-
-#pragma mark - Keyboard
-
-- (void)keyboardWillShow:(NSNotification *)notification {
-    NSDictionary *info = [notification userInfo];
-    CGSize size = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
-    [self animateShowEditViewWithKeyboardHeight:size.height];
-}
-
-- (void)keyboardWillHide:(NSNotification *)notification {
-    [self animateHideEditView];
-}
-
-#pragma mark - Text Field
-
-- (void)textFieldTextDidChange:(NSNotification *)notification {
-    if (0 != self.currentEditMode) {
-        return;
-    }
-    NSString* text = self.editTextField.text;
-    NSString* language = [self.editTextField.textInputMode primaryLanguage];
-    if ([language isEqualToString:@"zh-Hans"]) {
-        UITextRange* selectedRange = [self.editTextField markedTextRange];
-        UITextPosition* position = [self.editTextField positionFromPosition:selectedRange.start offset:0];
-        if (!position) {
-            if (text.length > 3) {
-                self.editTextField.text = [text substringToIndex:3];
-            }
-        }
-    } else {
-        if (text.length > 3) {
-            self.editTextField.text = [text substringToIndex:3];
-        }
-    }
+- (void)presentEditorForEditNote {
+    NSDictionary* params = @{
+                             PBParamKeyText : self.currentEditText ?: @"",
+                             PBParamKeyType : @(PBDescriptionEditorTypeNote)
+                             };
+    [PBWireframe presentDescriptionEditorViewControllerFrom:self withParams:params];
 }
 
 #pragma mark - IB Actions
-
-- (IBAction)editDoneButtonTouchUpInside:(id)sender {
-    NSString* text = self.editTextField.text;
-    if (0 == self.currentEditMode) {
-        self.previousEditWord = text;
-    } else {
-        self.previousEditNote = text;
-    }
-    [self finishEditingWithText:text];
-    [self.editTextField resignFirstResponder];
-}
-
-- (IBAction)editCancelButtonTouchUpInside:(id)sender {
-    NSString* text = self.editTextField.text;
-    if (0 == self.currentEditMode) {
-        self.previousEditWord = text;
-    } else {
-        self.previousEditNote = text;
-    }
-    [self.editTextField resignFirstResponder];
-}
 
 - (IBAction)createButtonTouchUpInside:(id)sender {
     [self.taleMaintainPresenter createTaleWithScenes:self.sceneListView.scenes completion:^{
@@ -191,44 +118,13 @@
     [self.sharePresenter shareScenes:self.sceneListView.scenes from:self];
 }
 
-#pragma mark - Animations
-
-- (void)animateShowEditViewWithKeyboardHeight:(CGFloat)keyboardHeight {
-    if (!self.editView.hidden && self.editViewBottomConstraint.constant == keyboardHeight) {
-        return;
-    }
-    self.editView.hidden = NO;
-    self.maskView.hidden = NO;
-    [UIView animateWithDuration:0.2 animations:^{
-        self.editView.alpha = 1;
-        self.maskView.alpha = 0.3;
-        self.editViewBottomConstraint.constant = keyboardHeight;
-        [self.view layoutIfNeeded];
-    }];
-}
-
-- (void)animateHideEditView {
-    if (self.editView.hidden) {
-        return;
-    }
-    [UIView animateWithDuration:0.2 animations:^{
-        self.editView.alpha = 0;
-        self.maskView.alpha = 0;
-        self.editViewBottomConstraint.constant = 0;
-        [self.view layoutIfNeeded];
-    } completion:^(BOOL finished) {
-        self.editView.hidden = YES;
-        self.maskView.hidden = YES;
-    }];
-}
-
 #pragma mark - Configuration
 
 - (void)loadSceneListView {
     self.sceneListView = [[[NSBundle mainBundle] loadNibNamed:@"PBSceneListView" owner:nil options:nil] lastObject];
     self.sceneListView.translatesAutoresizingMaskIntoConstraints = NO;
     self.sceneListView.delegate = self;
-    [self.view insertSubview:self.sceneListView belowSubview:self.maskView];
+    [self.view addSubview:self.sceneListView];
     
     [self.sceneListView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view.mas_top);

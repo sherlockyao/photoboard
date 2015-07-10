@@ -33,20 +33,22 @@
 #pragma mark - PBWordSelectorViewDelegate
 
 - (void)wordSelectorView:(PBWordSelectorView *)wordSelectorView didSelectWord:(PBWord *)word {
-    if ([self.delegate respondsToSelector:@selector(wordSelectorViewController:didSelectWord:)]) {
-        [self.delegate wordSelectorViewController:self didSelectWord:word];
-    }
     [self.wordSelectorView animateHideSelectorWithCompletion:^{
-        [self dismissViewControllerAnimated:NO completion:nil];
+        [self dismissViewControllerAnimated:NO completion:^{
+            if ([self.delegate respondsToSelector:@selector(wordSelectorViewController:didSelectWord:)]) {
+                [self.delegate wordSelectorViewController:self didSelectWord:word];
+            }
+        }];
     }];
 }
 
 - (void)wordSelectorViewDidClickCustomize:(PBWordSelectorView *)wordSelectorView {
-    if ([self.delegate respondsToSelector:@selector(wordSelectorViewControllerDidClickCustomize:)]) {
-        [self.delegate wordSelectorViewControllerDidClickCustomize:self];
-    }
     [self.wordSelectorView animateHideSelectorWithCompletion:^{
-        [self dismissViewControllerAnimated:NO completion:nil];
+        [self dismissViewControllerAnimated:NO completion:^{
+            if ([self.delegate respondsToSelector:@selector(wordSelectorViewControllerDidClickCustomize:)]) {
+                [self.delegate wordSelectorViewControllerDidClickCustomize:self];
+            }
+        }];
     }];
 }
 

@@ -34,6 +34,7 @@
 		368A4D041B4BC1B300F1BF9A /* NSArray+PBUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 368A4D031B4BC1B300F1BF9A /* NSArray+PBUtil.m */; };
 		368B838B1B4D18370002C92D /* UIScreen+PBUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 368B838A1B4D18370002C92D /* UIScreen+PBUtil.m */; };
 		368D30701B4E638000FB5BC1 /* PBWordSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368D306F1B4E638000FB5BC1 /* PBWordSelectorViewController.m */; };
+		36B61D411B4FB05600EE87B2 /* SZTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B61D401B4FB05600EE87B2 /* SZTextView.m */; };
 		36B89C651B351A3C00EC78AB /* PBTale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C631B351A3C00EC78AB /* PBTale.storyboard */; };
 		36B89C671B351A3C00EC78AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C661B351A3C00EC78AB /* Images.xcassets */; };
 		36B89C6A1B351A3C00EC78AB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C681B351A3C00EC78AB /* LaunchScreen.xib */; };
@@ -145,6 +146,8 @@
 		368B838A1B4D18370002C92D /* UIScreen+PBUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScreen+PBUtil.m"; path = "Classes/Utilities/UIScreen+PBUtil.m"; sourceTree = "<group>"; };
 		368D306E1B4E638000FB5BC1 /* PBWordSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBWordSelectorViewController.h; path = Classes/Views/PBWordSelectorViewController.h; sourceTree = "<group>"; };
 		368D306F1B4E638000FB5BC1 /* PBWordSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBWordSelectorViewController.m; path = Classes/Views/PBWordSelectorViewController.m; sourceTree = "<group>"; };
+		36B61D3F1B4FB05600EE87B2 /* SZTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SZTextView.h; path = Classes/ThirdParty/SZTextView/SZTextView.h; sourceTree = "<group>"; };
+		36B61D401B4FB05600EE87B2 /* SZTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SZTextView.m; path = Classes/ThirdParty/SZTextView/SZTextView.m; sourceTree = "<group>"; };
 		36B89C561B351A3C00EC78AB /* PhotoBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36B89C641B351A3C00EC78AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PBTale.storyboard; sourceTree = "<group>"; };
 		36B89C661B351A3C00EC78AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -393,6 +396,23 @@
 			name = "Word Selector";
 			sourceTree = "<group>";
 		};
+		36B61D3D1B4FB04000EE87B2 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				36B61D3E1B4FB04900EE87B2 /* SZTextView */,
+			);
+			name = General;
+			sourceTree = "<group>";
+		};
+		36B61D3E1B4FB04900EE87B2 /* SZTextView */ = {
+			isa = PBXGroup;
+			children = (
+				36B61D3F1B4FB05600EE87B2 /* SZTextView.h */,
+				36B61D401B4FB05600EE87B2 /* SZTextView.m */,
+			);
+			name = SZTextView;
+			sourceTree = "<group>";
+		};
 		36B89C4D1B351A3B00EC78AB = {
 			isa = PBXGroup;
 			children = (
@@ -480,6 +500,7 @@
 		36B89C811B351A8300EC78AB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				36B61D3D1B4FB04000EE87B2 /* General */,
 				36B89CBA1B35211300EC78AB /* Tale */,
 			);
 			name = Views;
@@ -931,6 +952,7 @@
 				36B89CF71B35407100EC78AB /* MASViewAttribute.m in Sources */,
 				36B89CF51B35407100EC78AB /* MASConstraintMaker.m in Sources */,
 				36B89CA81B351FB500EC78AB /* ELCAssetCell.m in Sources */,
+				36B61D411B4FB05600EE87B2 /* SZTextView.m in Sources */,
 				3621FE3A1B44D28700279C39 /* UIView+Positioning.m in Sources */,
 				3637B8A31B3B961800B1A538 /* PBWordGroupPresenter.m in Sources */,
 				36B89CAC1B351FB500EC78AB /* ELCOverlayImageView.m in Sources */,
