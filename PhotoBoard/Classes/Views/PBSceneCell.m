@@ -102,7 +102,8 @@ static CGFloat const PhotoHorizontalPadding = 16;
     CGFloat imageViewWidth = 0;
     if (photoSize.height > photoSize.width) {
         // portrait layout
-        imageViewWidth = totalWidth * 4 / 5;
+        imageViewWidth = totalWidth; // make portrait layout also full width
+//        imageViewWidth = totalWidth * 4 / 5;
     } else {
         // landscape layout
         imageViewWidth = totalWidth;
