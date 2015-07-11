@@ -33,6 +33,7 @@ static CGFloat const PhotoHorizontalPadding = 16;
 - (void)displayScene:(PBScene *)scene isFirstScene:(BOOL)isFirstScene {
     // fix layout
     self.topStickView.hidden = isFirstScene;
+    self.topStickViewHeightConstraint.constant = isFirstScene ? 20 : 56;
     
     // display text content
     self.wordLabel.text = scene.word ?: @"关联词";

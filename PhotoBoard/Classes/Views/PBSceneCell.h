@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *photoImageViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *photoImageViewWidthConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topStickViewHeightConstraint;
 
 @property (nonatomic, weak) id<PBSceneCellDelegate> delegate;
 
