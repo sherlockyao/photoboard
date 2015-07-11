@@ -31,5 +31,6 @@
 @optional
 - (void)sceneListView:(PBSceneListView *)sceneListView didSelectEditWord:(NSString *)word atRowIndex:(NSInteger)index;
 - (void)sceneListView:(PBSceneListView *)sceneListView didSelectEditNote:(NSString *)note atRowIndex:(NSInteger)index;
+- (void)sceneListView:(PBSceneListView *)sceneListView didToggleTopOffScreenState:(BOOL)isScrollOffTop;
 
 @end

@@ -36,6 +36,11 @@
     [self loadDisplayingData];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+}
+
 #pragma mark - PBSceneListViewDelegate
 
 - (void)sceneListView:(PBSceneListView *)sceneListView didSelectEditWord:(NSString *)word atRowIndex:(NSInteger)index{
@@ -52,6 +57,10 @@
         self.currentEditText = note;
         [self presentEditorForEditNote];
     }
+}
+
+- (void)sceneListView:(PBSceneListView *)sceneListView didToggleTopOffScreenState:(BOOL)isScrollOffTop {
+    self.navigationShadowView.hidden = !isScrollOffTop;
 }
 
 #pragma mark - PBWordSelectorViewControllerDelegate
@@ -112,14 +121,14 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)createButtonTouchUpInside:(id)sender {
-    [self.taleMaintainPresenter createTaleWithScenes:self.sceneListView.scenes completion:^{
-        [self.navigationController popViewControllerAnimated:YES];
-    }];
-}
-
-- (IBAction)shareButtonTouchUpInside:(id)sender {
-    [self.sharePresenter shareScenes:self.sceneListView.scenes from:self];
+- (IBAction)functionButtonTouchUpInside:(id)sender {
+    if (self.isEditable) {
+        [self.taleMaintainPresenter createTaleWithScenes:self.sceneListView.scenes completion:^{
+            [self.navigationController popViewControllerAnimated:YES];
+        }];
+    } else {
+       [self.sharePresenter shareScenes:self.sceneListView.scenes from:self];
+    }
 }
 
 #pragma mark - Configuration
@@ -128,10 +137,10 @@
     self.sceneListView = [[[NSBundle mainBundle] loadNibNamed:@"PBSceneListView" owner:nil options:nil] lastObject];
     self.sceneListView.translatesAutoresizingMaskIntoConstraints = NO;
     self.sceneListView.delegate = self;
-    [self.view addSubview:self.sceneListView];
+    [self.view insertSubview:self.sceneListView belowSubview:self.navigationShadowView];
     
     [self.sceneListView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top);
+        make.top.equalTo(self.navigationView.mas_bottom);
         make.bottom.equalTo(self.view.mas_bottom);
         make.left.equalTo(self.view.mas_left);
         make.right.equalTo(self.view.mas_right);
@@ -146,24 +155,16 @@
 
 - (void)configureViewComponents {
     // navigation
-    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    backButton.bounds = CGRectMake(0, 0, 120, 40);
-    backButton.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
-    backButton.titleEdgeInsets = UIEdgeInsetsMake(0, 32, 0, 0);
-    backButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-    [backButton setTitle:@"串照片" forState:UIControlStateNormal];
-    backButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:19];
-    [backButton setTitleColor:[UIColor colorWithWhite:0 alpha:0.87] forState:UIControlStateNormal];
-    [backButton setImage:[UIImage imageNamed:@"general_back"] forState:UIControlStateNormal];
-    [backButton addTarget:self action:@selector(backButtonTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     if (self.isEditable) {
-        UIBarButtonItem* createItem = [[UIBarButtonItem alloc] initWithTitle:@"创建" style:UIBarButtonItemStylePlain target:self action:@selector(createButtonTouchUpInside:)];
-        self.navigationItem.rightBarButtonItems = @[createItem];
+        [self.functionButton setTitle:@"创建" forState:UIControlStateNormal];
     } else {
-        UIBarButtonItem* shareItem = [[UIBarButtonItem alloc] initWithTitle:@"分享" style:UIBarButtonItemStylePlain target:self action:@selector(shareButtonTouchUpInside:)];
-        self.navigationItem.rightBarButtonItems = @[shareItem];
+        [self.functionButton setTitle:@"分享" forState:UIControlStateNormal];
     }
+    self.navigationShadowView.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.navigationShadowView.layer.shadowOffset = CGSizeMake(0, 1);
+    self.navigationShadowView.layer.shadowRadius = 2;
+    self.navigationShadowView.layer.shadowOpacity = 0.26f;
+    self.navigationShadowView.hidden = YES;
     
     // wire up view interfaces
     self.sceneGroupPresenter.sceneList = self.sceneListView;

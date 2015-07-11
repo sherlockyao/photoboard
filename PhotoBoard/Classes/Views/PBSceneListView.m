@@ -15,6 +15,7 @@ static NSString *const SceneCellReuseIdentifier = @"SceneCell";
 @interface PBSceneListView () <UITableViewDataSource, UITableViewDelegate, PBSceneCellDelegate>
 
 @property (readwrite, nonatomic, strong) NSArray* scenes;
+@property (nonatomic, assign) BOOL isScrollOffTop;
 
 @end
 
@@ -75,6 +76,18 @@ static NSString *const SceneCellReuseIdentifier = @"SceneCell";
     return cell;
 }
 
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    BOOL isScrollOffTop = (self.sceneTableView.contentInset.top < scrollView.contentOffset.y);
+    if (self.isScrollOffTop != isScrollOffTop) {
+        self.isScrollOffTop = isScrollOffTop;
+        if ([self.delegate respondsToSelector:@selector(sceneListView:didToggleTopOffScreenState:)]) {
+            [self.delegate sceneListView:self didToggleTopOffScreenState:self.isScrollOffTop];
+        }
+    }
+}
+
 #pragma mark - PBSceneCellDelegate
 
 - (void)sceneCellDidClickWordButton:(PBSceneCell *)sceneCell {
@@ -97,6 +110,7 @@ static NSString *const SceneCellReuseIdentifier = @"SceneCell";
 
 - (void)configureProperties {
     self.scenes = @[];
+    self.isScrollOffTop = NO;
 }
 
 - (void)configureViewComponents {

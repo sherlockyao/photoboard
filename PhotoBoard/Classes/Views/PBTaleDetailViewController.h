@@ -14,6 +14,10 @@
 
 @interface PBTaleDetailViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIView *navigationView;
+@property (weak, nonatomic) IBOutlet UIView *navigationShadowView;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UIButton *functionButton;
 @property (nonatomic, strong) PBSceneListView* sceneListView;
 
 @property (nonatomic, strong) PBSceneGroupPresenter* sceneGroupPresenter;

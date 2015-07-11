@@ -34,6 +34,7 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
     [self.taleGroupPresenter loadTales];
 }
 
