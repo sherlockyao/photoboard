@@ -8,6 +8,7 @@
 
 #import "PBWordSelectorViewController.h"
 #import "Masonry.h"
+#import "PBWireframe.h"
 
 @interface PBWordSelectorViewController () <PBWordSelectorViewDelegate>
 
@@ -34,7 +35,7 @@
 
 - (void)wordSelectorView:(PBWordSelectorView *)wordSelectorView didSelectWord:(PBWord *)word {
     [self.wordSelectorView animateHideSelectorWithCompletion:^{
-        [self dismissViewControllerAnimated:NO completion:^{
+        [[PBWireframe defaultWireframe] navigateToPort:PBWireframePortBack withParams:nil from:self completion:^{
             if ([self.delegate respondsToSelector:@selector(wordSelectorViewController:didSelectWord:)]) {
                 [self.delegate wordSelectorViewController:self didSelectWord:word];
             }
@@ -44,7 +45,7 @@
 
 - (void)wordSelectorViewDidClickCustomize:(PBWordSelectorView *)wordSelectorView {
     [self.wordSelectorView animateHideSelectorWithCompletion:^{
-        [self dismissViewControllerAnimated:NO completion:^{
+        [[PBWireframe defaultWireframe] navigateToPort:PBWireframePortBack withParams:nil from:self completion:^{
             if ([self.delegate respondsToSelector:@selector(wordSelectorViewControllerDidClickCustomize:)]) {
                 [self.delegate wordSelectorViewControllerDidClickCustomize:self];
             }
@@ -54,7 +55,7 @@
 
 - (void)wordSelectorViewDidClickCancel:(PBWordSelectorView *)wordSelectorView {
     [self.wordSelectorView animateHideSelectorWithCompletion:^{
-        [self dismissViewControllerAnimated:NO completion:nil];
+        [[PBWireframe defaultWireframe] navigateToPort:PBWireframePortBack from:self];
     }];
 }
 

@@ -13,7 +13,6 @@ typedef NS_ENUM(NSInteger, PBWireframePort) {
     // General Ports
     PBWireframePortRoot = 1,
     PBWireframePortBack = 2,
-    PBWireframePortDismiss = 3,
     
     // Content Ports
     PBWireframePortList = 201,

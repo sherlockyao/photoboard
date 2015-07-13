@@ -8,6 +8,7 @@
 
 #import "PBDescriptionEditorViewController.h"
 #import "PBConstants.h"
+#import "PBWireframe.h"
 
 @interface PBDescriptionEditorViewController () <UITextFieldDelegate>
 
@@ -66,7 +67,7 @@
 
 - (void)keyboardWillHide:(NSNotification *)notification {
     [self animateHideEditorViewWithDuration:[notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue] completion:^{
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [[PBWireframe defaultWireframe] navigateToPort:PBWireframePortBack from:self];
     }];
 }
 

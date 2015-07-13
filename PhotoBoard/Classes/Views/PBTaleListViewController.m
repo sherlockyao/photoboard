@@ -93,7 +93,7 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
 #pragma mark - ELCImagePickerControllerDelegate
 
 - (void)elcImagePickerController:(ELCImagePickerController *)picker didFinishPickingMediaWithInfo:(NSArray *)info {
-    [picker dismissViewControllerAnimated:YES completion:nil];
+    [[PBWireframe defaultWireframe] navigateToPort:PBWireframePortBack from:picker];
     
     if (0 == [info count]) {
         return; // quit if no photo is selected
@@ -109,7 +109,7 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
 }
 
 - (void)elcImagePickerControllerDidCancel:(ELCImagePickerController *)picker {
-    [picker dismissViewControllerAnimated:YES completion:nil];
+    [[PBWireframe defaultWireframe] navigateToPort:PBWireframePortBack from:picker];
 }
 
 #pragma mark - Configuration

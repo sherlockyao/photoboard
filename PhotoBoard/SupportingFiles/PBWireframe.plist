@@ -8,8 +8,6 @@
 		<string>Root</string>
 		<key>2</key>
 		<string>Back</string>
-		<key>3</key>
-		<string>Dismiss</string>
 		<key>201</key>
 		<string>List</string>
 		<key>202</key>
@@ -39,6 +37,8 @@
 		<string>M1</string>
 		<key>PBDescriptionEditorViewController</key>
 		<string>M2</string>
+		<key>ELCImagePickerController</key>
+		<string>O1</string>
 	</dict>
 	<key>Decodes</key>
 	<dict>
@@ -73,7 +73,7 @@
 		<key>O1</key>
 		<dict>
 			<key>selector</key>
-            <string>buildELCImagePickerControllerWithParams:</string>
+			<string>buildELCImagePickerControllerWithParams:</string>
 		</dict>
 		<key>S1</key>
 		<dict>
@@ -129,6 +129,26 @@
 			<string>S2</string>
 			<key>selector</key>
 			<string>defaultPresentFrom:to:completion:</string>
+		</dict>
+		<key>T2-Back</key>
+		<dict>
+			<key>selector</key>
+			<string>defaultPopFrom:to:completion:</string>
+		</dict>
+		<key>M1-Back</key>
+		<dict>
+			<key>selector</key>
+			<string>defaultDismissFrom:to:completion:</string>
+		</dict>
+		<key>M2-Back</key>
+		<dict>
+			<key>selector</key>
+			<string>defaultDismissFrom:to:completion:</string>
+		</dict>
+		<key>O1-Back</key>
+		<dict>
+			<key>selector</key>
+			<string>defaultDismissFrom:to:completion:</string>
 		</dict>
 	</dict>
 </dict>

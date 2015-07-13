@@ -18,6 +18,9 @@
 @implementation PBWireframe (AssemblingFactory)
 
 - (UIViewController *)buildViewControllerWithCode:(NSString *)code params:(NSDictionary *)params {
+    if (!code) {
+        return [UIViewController new];
+    }
     NSDictionary* context = [self.decodes objectForKey:code];
     if (!context) {
         return [UIViewController new];

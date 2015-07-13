@@ -118,13 +118,13 @@
 #pragma mark - IB Actions
 
 - (IBAction)backButtonTouchUpInside:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    [[PBWireframe defaultWireframe] navigateToPort:PBWireframePortBack from:self];
 }
 
 - (IBAction)functionButtonTouchUpInside:(id)sender {
     if (self.isEditable) {
         [self.taleMaintainPresenter createTaleWithScenes:self.sceneListView.scenes completion:^{
-            [self.navigationController popViewControllerAnimated:YES];
+            [[PBWireframe defaultWireframe] navigateToPort:PBWireframePortBack from:self];
         }];
     } else {
        [self.sharePresenter shareScenes:self.sceneListView.scenes from:self];
