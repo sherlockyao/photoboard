@@ -11,6 +11,8 @@
 #import "PBTaleDetailViewController.h"
 #import "PBWordSelectorViewController.h"
 #import "PBDescriptionEditorViewController.h"
+#import "ELCImagePickerController.h"
+#import <MobileCoreServices/UTCoreTypes.h>
 #import <objc/message.h>
 
 @implementation PBWireframe (AssemblingFactory)
@@ -29,6 +31,15 @@
         NSString* identifier = [context objectForKey:@"id"];
         return [[UIStoryboard storyboardWithName:storyboardName bundle:nil] instantiateViewControllerWithIdentifier:identifier];
     }
+}
+
+- (UIViewController *)buildELCImagePickerController {
+    ELCImagePickerController *imagePicker = [[ELCImagePickerController alloc] initImagePicker];
+    imagePicker.returnsImage = NO;
+    imagePicker.maximumImagesCount = 9;
+    imagePicker.onOrder = YES;
+    imagePicker.mediaTypes = @[(NSString *)kUTTypeImage];
+    return imagePicker;
 }
 
 // Here is the long list for configuring all view classes
@@ -71,6 +82,12 @@
         viewController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
         viewController.delegate = (id<PBDescriptionEditorViewControllerDelegate>)sourceViewController;
         viewController.params = params;
+        
+    } else if ([destinationViewController isKindOfClass:[ELCImagePickerController class]]) {
+        
+        // Description Editor
+        ELCImagePickerController* viewController = (ELCImagePickerController *)destinationViewController;
+        viewController.imagePickerDelegate = (id<ELCImagePickerControllerDelegate>)sourceViewController;
         
     }
 }

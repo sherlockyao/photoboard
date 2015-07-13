@@ -71,7 +71,7 @@
 		<key>O1</key>
 		<dict>
 			<key>selector</key>
-			<string></string>
+			<string>buildELCImagePickerController</string>
 		</dict>
 		<key>O2</key>
 		<dict>
@@ -86,7 +86,7 @@
 			<key>target</key>
 			<string>O1</string>
 			<key>selector</key>
-			<string></string>
+			<string>defaultPresentFrom:to:</string>
 		</dict>
 		<key>T1-Detail</key>
 		<dict>

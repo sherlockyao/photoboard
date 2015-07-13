@@ -8,7 +8,6 @@
 
 #import "PBTaleListViewController.h"
 #import "ELCImagePickerController.h"
-#import <MobileCoreServices/UTCoreTypes.h>
 #import "PBTaleCell.h"
 #import "PBScene.h"
 #import "PBConstants.h"
@@ -41,13 +40,7 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
 #pragma mark - IB Actions
 
 - (IBAction)createButtonTouchUpInside:(id)sender {
-    ELCImagePickerController *imagePicker = [[ELCImagePickerController alloc] initImagePicker];
-    imagePicker.imagePickerDelegate = self;
-    imagePicker.returnsImage = NO;
-    imagePicker.maximumImagesCount = 9;
-    imagePicker.onOrder = YES;
-    imagePicker.mediaTypes = @[(NSString *)kUTTypeImage];
-    [self presentViewController:imagePicker animated:YES completion:nil];
+    [[PBWireframe defaultWireframe] navigateToPort:PBWireframePortPicker from:self];
 }
 
 #pragma mark - PBTaleListInterface

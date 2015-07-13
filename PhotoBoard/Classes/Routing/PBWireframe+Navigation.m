@@ -14,6 +14,14 @@
     [sourceViewController.navigationController pushViewController:destinationViewController animated:YES];
 }
 
+- (void)defaultPresentFrom:(UIViewController *)sourceViewController to:(UIViewController *)destinationViewController {
+    if (sourceViewController.navigationController) {
+        [sourceViewController.navigationController presentViewController:destinationViewController animated:YES completion:nil];
+    } else {
+        [sourceViewController presentViewController:destinationViewController animated:YES completion:nil];
+    }
+}
+
 - (void)overlayPresentFrom:(UIViewController *)sourceViewController to:(UIViewController *)destinationViewController {
     if (sourceViewController.navigationController) {
         [sourceViewController.navigationController presentViewController:destinationViewController animated:NO completion:nil];
