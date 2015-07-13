@@ -138,7 +138,7 @@
 		<key>M1-Back</key>
 		<dict>
 			<key>selector</key>
-			<string>defaultDismissFrom:to:completion:</string>
+			<string>quickDismissFrom:to:completion:</string>
 		</dict>
 		<key>M2-Back</key>
 		<dict>

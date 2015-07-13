@@ -21,6 +21,10 @@
     [sourceViewController dismissViewControllerAnimated:YES completion:completion];
 }
 
+- (void)quickDismissFrom:(UIViewController *)sourceViewController to:(UIViewController *)destinationViewController completion:(PBWireframeCompletionBlock)completion {
+    [sourceViewController dismissViewControllerAnimated:NO completion:completion];
+}
+
 - (void)defaultPushFrom:(UIViewController *)sourceViewController to:(UIViewController *)destinationViewController completion:(PBWireframeCompletionBlock)completion {
     [sourceViewController.navigationController pushViewController:destinationViewController animated:YES];
     if (completion) {
