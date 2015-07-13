@@ -26,6 +26,8 @@
 		<string>Editor</string>
 		<key>803</key>
 		<string>Share</string>
+		<key>804</key>
+		<string>Alert</string>
 	</dict>
 	<key>Codes</key>
 	<dict>
@@ -71,12 +73,17 @@
 		<key>O1</key>
 		<dict>
 			<key>selector</key>
-			<string>buildELCImagePickerController</string>
+			<string>buildELCImagePickerControllerWithParams</string>
 		</dict>
-		<key>O2</key>
+		<key>S1</key>
 		<dict>
 			<key>selector</key>
 			<string></string>
+		</dict>
+		<key>S2</key>
+		<dict>
+			<key>selector</key>
+			<string>buildActivityViewControllerWithParams:</string>
 		</dict>
 	</dict>
 	<key>Destinations</key>
@@ -85,6 +92,13 @@
 		<dict>
 			<key>target</key>
 			<string>O1</string>
+			<key>selector</key>
+			<string>defaultPresentFrom:to:</string>
+		</dict>
+		<key>T1-Alert</key>
+		<dict>
+			<key>target</key>
+			<string>S1</string>
 			<key>selector</key>
 			<string>defaultPresentFrom:to:</string>
 		</dict>
@@ -112,9 +126,9 @@
 		<key>T2-Share</key>
 		<dict>
 			<key>target</key>
-			<string>O2</string>
+			<string>S2</string>
 			<key>selector</key>
-			<string></string>
+			<string>defaultPresentFrom:to:</string>
 		</dict>
 	</dict>
 </dict>

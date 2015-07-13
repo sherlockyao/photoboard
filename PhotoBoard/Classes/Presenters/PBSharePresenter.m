@@ -10,6 +10,7 @@
 #import "PBWeChatMessageActivity.h"
 #import "PBWeChatMomentActivity.h"
 #import "PBTaleShareTemplateView.h"
+#import "PBWireframe.h"
 
 @interface PBSharePresenter ()
 
@@ -23,24 +24,24 @@
     [self.processHUD beginProcess:PBProcessHUDTagShare];
     [self.templateView generateSnapshotForScenes:scenes result:^(UIImage *snapshot) {
         [self.processHUD endProcess:PBProcessHUDTagShare];
-        UIActivityViewController* activityViewController = [self activityViewControllerForActivityItems:@[snapshot] thumbnail:nil];
-        [viewController presentViewController:activityViewController animated:YES completion:nil];
+        NSDictionary* params = [self shareParamsForActivityItems:@[snapshot] thumbnail:nil];
+        [[PBWireframe defaultWireframe] navigateToPort:PBWireframePortShare withParams:params from:viewController];
     }];
 }
 
 #pragma mark - Share Methods
 
-- (UIActivityViewController *)activityViewControllerForActivityItems:(NSArray *)activityItems thumbnail:(UIImage *)thumbnail {
+- (NSDictionary *)shareParamsForActivityItems:(NSArray *)activityItems thumbnail:(UIImage *)thumbnail {
     // add wechat activities
     PBWeChatMessageActivity* weChatMessageActivity = [PBWeChatMessageActivity new];
     PBWeChatMomentActivity* weChatMomentActivity = [PBWeChatMomentActivity new];
     weChatMessageActivity.thumbnail = thumbnail;
     weChatMomentActivity.thumbnail = thumbnail;
     
-    UIActivityViewController* activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:@[ weChatMessageActivity, weChatMomentActivity ]];
-    activityViewController.excludedActivityTypes = @[UIActivityTypeCopyToPasteboard, UIActivityTypeSaveToCameraRoll];
-    
-    return activityViewController;
+    return @{
+             @"activityItems" : activityItems,
+             @"applicationActivities" : @[ weChatMessageActivity, weChatMomentActivity ]
+             };
 }
 
 #pragma mark - Getts & Setts

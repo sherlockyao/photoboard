@@ -17,7 +17,7 @@
 
 @implementation PBWireframe (AssemblingFactory)
 
-- (UIViewController *)buildViewControllerWithCode:(NSString *)code {
+- (UIViewController *)buildViewControllerWithCode:(NSString *)code params:(NSDictionary *)params {
     NSDictionary* context = [self.decodes objectForKey:code];
     if (!context) {
         return [UIViewController new];
@@ -25,7 +25,7 @@
     NSString* selectorName = [context objectForKey:@"selector"];
     if (selectorName) {
         SEL selector = NSSelectorFromString(selectorName);
-        return ((id (*)(id, SEL))objc_msgSend)(self, selector);
+        return ((id (*)(id, SEL, id))objc_msgSend)(self, selector, params);
     } else {
         NSString* storyboardName = [context objectForKey:@"storyboard"];
         NSString* identifier = [context objectForKey:@"id"];
@@ -33,13 +33,20 @@
     }
 }
 
-- (UIViewController *)buildELCImagePickerController {
+- (UIViewController *)buildELCImagePickerControllerWithParams:(NSDictionary *)params {
     ELCImagePickerController *imagePicker = [[ELCImagePickerController alloc] initImagePicker];
     imagePicker.returnsImage = NO;
     imagePicker.maximumImagesCount = 9;
     imagePicker.onOrder = YES;
     imagePicker.mediaTypes = @[(NSString *)kUTTypeImage];
     return imagePicker;
+}
+
+- (UIViewController *)buildActivityViewControllerWithParams:(NSDictionary *)params {
+    UIActivityViewController* activityViewController = [[UIActivityViewController alloc] initWithActivityItems:[params objectForKey:@"activityItems"] applicationActivities:[params objectForKey:@"applicationActivities"]];
+    activityViewController.excludedActivityTypes = @[UIActivityTypeCopyToPasteboard, UIActivityTypeSaveToCameraRoll];
+    
+    return activityViewController;
 }
 
 // Here is the long list for configuring all view classes

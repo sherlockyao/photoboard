@@ -46,7 +46,7 @@
 
 
 - (UIViewController *)rootViewController {
-    UIViewController* viewController = [self buildViewControllerWithCode:@"T1"];
+    UIViewController* viewController = [self buildViewControllerWithCode:@"T1" params:nil];
     [self configureDestinationViewController:viewController withParams:nil forSourceViewController:nil];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     return navigationController;
@@ -65,7 +65,7 @@
     NSDictionary* destination = [self.destinations objectForKey:destinationKey];
     if (destination) {
         NSString* targetCode = [destination objectForKey:@"target"];
-        UIViewController* destinationViewController = [self buildViewControllerWithCode:targetCode];
+        UIViewController* destinationViewController = [self buildViewControllerWithCode:targetCode params:params];
         [self configureDestinationViewController:destinationViewController withParams:params forSourceViewController:sourceViewController];
         SEL selector = NSSelectorFromString([destination objectForKey:@"selector"]);
         ((void (*)(id, SEL, id, id))objc_msgSend)(self, selector, sourceViewController, destinationViewController);

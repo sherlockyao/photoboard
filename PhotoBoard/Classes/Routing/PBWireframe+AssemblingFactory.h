@@ -10,8 +10,7 @@
 
 @interface PBWireframe (AssemblingFactory)
 
-- (UIViewController *)buildViewControllerWithCode:(NSString *)code;
-
+- (UIViewController *)buildViewControllerWithCode:(NSString *)code params:(NSDictionary *)params;
 
 - (void)configureDestinationViewController:(UIViewController *)destinationViewController withParams:(NSDictionary *)params forSourceViewController:(UIViewController *)sourceViewController;
 
