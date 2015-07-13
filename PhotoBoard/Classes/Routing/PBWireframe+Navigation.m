@@ -10,23 +10,23 @@
 
 @implementation PBWireframe (Navigation)
 
-- (void)defaultPushFrom:(UIViewController *)sourceViewController to:(UIViewController *)destinationViewController {
+- (void)defaultPushFrom:(UIViewController *)sourceViewController to:(UIViewController *)destinationViewController completion:(PBWireframeCompletionBlock)completion {
     [sourceViewController.navigationController pushViewController:destinationViewController animated:YES];
 }
 
-- (void)defaultPresentFrom:(UIViewController *)sourceViewController to:(UIViewController *)destinationViewController {
+- (void)defaultPresentFrom:(UIViewController *)sourceViewController to:(UIViewController *)destinationViewController completion:(PBWireframeCompletionBlock)completion {
     if (sourceViewController.navigationController) {
-        [sourceViewController.navigationController presentViewController:destinationViewController animated:YES completion:nil];
+        [sourceViewController.navigationController presentViewController:destinationViewController animated:YES completion:completion];
     } else {
-        [sourceViewController presentViewController:destinationViewController animated:YES completion:nil];
+        [sourceViewController presentViewController:destinationViewController animated:YES completion:completion];
     }
 }
 
-- (void)overlayPresentFrom:(UIViewController *)sourceViewController to:(UIViewController *)destinationViewController {
+- (void)overlayPresentFrom:(UIViewController *)sourceViewController to:(UIViewController *)destinationViewController completion:(PBWireframeCompletionBlock)completion {
     if (sourceViewController.navigationController) {
         [sourceViewController.navigationController presentViewController:destinationViewController animated:NO completion:nil];
     } else {
-        [sourceViewController presentViewController:destinationViewController animated:NO completion:nil];
+        [sourceViewController presentViewController:destinationViewController animated:NO completion:completion];
     }
 }
 

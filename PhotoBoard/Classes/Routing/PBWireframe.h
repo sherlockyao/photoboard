@@ -31,6 +31,7 @@ typedef NS_ENUM(NSInteger, PBWireframePort) {
     PBWireframePortAlert = 804
 };
 
+typedef void (^PBWireframeCompletionBlock)();
 
 @interface PBWireframe : NSObject
 
@@ -45,6 +46,7 @@ typedef NS_ENUM(NSInteger, PBWireframePort) {
 
 - (void)navigateToPort:(PBWireframePort)port from:(UIViewController *)sourceViewController;
 - (void)navigateToPort:(PBWireframePort)port withParams:(NSDictionary *)params from:(UIViewController *)sourceViewController;
-- (void)navigateToPort:(PBWireframePort)port withPortSerialNumber:(NSUInteger)serialNumber params:(NSDictionary *)params from:(UIViewController *)sourceViewController;
+- (void)navigateToPort:(PBWireframePort)port withParams:(NSDictionary *)params from:(UIViewController *)sourceViewController completion:(PBWireframeCompletionBlock)completion;
+- (void)navigateToPort:(PBWireframePort)port withPortSerialNumber:(NSUInteger)serialNumber params:(NSDictionary *)params from:(UIViewController *)sourceViewController completion:(PBWireframeCompletionBlock)completion;
 
 @end

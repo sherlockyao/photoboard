@@ -57,10 +57,14 @@
 }
 
 - (void)navigateToPort:(PBWireframePort)port withParams:(NSDictionary *)params from:(UIViewController *)sourceViewController {
-    [self navigateToPort:port withPortSerialNumber:0 params:params from:sourceViewController];
+    [self navigateToPort:port withParams:params from:sourceViewController completion:nil];
 }
 
-- (void)navigateToPort:(PBWireframePort)port withPortSerialNumber:(NSUInteger)serialNumber params:(NSDictionary *)params from:(UIViewController *)sourceViewController {
+- (void)navigateToPort:(PBWireframePort)port withParams:(NSDictionary *)params from:(UIViewController *)sourceViewController completion:(PBWireframeCompletionBlock)completion {
+    [self navigateToPort:port withPortSerialNumber:0 params:params from:sourceViewController completion:completion];
+}
+
+- (void)navigateToPort:(PBWireframePort)port withPortSerialNumber:(NSUInteger)serialNumber params:(NSDictionary *)params from:(UIViewController *)sourceViewController completion:(PBWireframeCompletionBlock)completion {
     NSString* destinationKey = [self destinationKeyForPort:port serialNumber:serialNumber sourceViewController:sourceViewController];
     NSDictionary* destination = [self.destinations objectForKey:destinationKey];
     if (destination) {
@@ -68,7 +72,7 @@
         UIViewController* destinationViewController = [self buildViewControllerWithCode:targetCode params:params];
         [self configureDestinationViewController:destinationViewController withParams:params forSourceViewController:sourceViewController];
         SEL selector = NSSelectorFromString([destination objectForKey:@"selector"]);
-        ((void (*)(id, SEL, id, id))objc_msgSend)(self, selector, sourceViewController, destinationViewController);
+        ((void (*)(id, SEL, id, id, PBWireframeCompletionBlock))objc_msgSend)(self, selector, sourceViewController, destinationViewController, completion);
     }
 }
 

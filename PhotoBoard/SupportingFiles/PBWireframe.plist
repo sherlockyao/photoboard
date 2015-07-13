@@ -73,7 +73,7 @@
 		<key>O1</key>
 		<dict>
 			<key>selector</key>
-			<string>buildELCImagePickerControllerWithParams</string>
+            <string>buildELCImagePickerControllerWithParams:</string>
 		</dict>
 		<key>S1</key>
 		<dict>
@@ -93,42 +93,42 @@
 			<key>target</key>
 			<string>O1</string>
 			<key>selector</key>
-			<string>defaultPresentFrom:to:</string>
+			<string>defaultPresentFrom:to:completion:</string>
 		</dict>
 		<key>T1-Alert</key>
 		<dict>
 			<key>target</key>
 			<string>S1</string>
 			<key>selector</key>
-			<string>defaultPresentFrom:to:</string>
+			<string>defaultPresentFrom:to:completion:</string>
 		</dict>
 		<key>T1-Detail</key>
 		<dict>
 			<key>target</key>
 			<string>T2</string>
 			<key>selector</key>
-			<string>defaultPushFrom:to:</string>
+			<string>defaultPushFrom:to:completion:</string>
 		</dict>
 		<key>T2-Picker</key>
 		<dict>
 			<key>target</key>
 			<string>M1</string>
 			<key>selector</key>
-			<string>overlayPresentFrom:to:</string>
+			<string>overlayPresentFrom:to:completion:</string>
 		</dict>
 		<key>T2-Editor</key>
 		<dict>
 			<key>target</key>
 			<string>M2</string>
 			<key>selector</key>
-			<string>overlayPresentFrom:to:</string>
+			<string>overlayPresentFrom:to:completion:</string>
 		</dict>
 		<key>T2-Share</key>
 		<dict>
 			<key>target</key>
 			<string>S2</string>
 			<key>selector</key>
-			<string>defaultPresentFrom:to:</string>
+			<string>defaultPresentFrom:to:completion:</string>
 		</dict>
 	</dict>
 </dict>
