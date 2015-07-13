@@ -29,7 +29,7 @@
     
     // Main Window Setup
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [self.window setRootViewController:[PBWireframe rootViewController]];
+    [self.window setRootViewController:[[PBWireframe defaultWireframe] rootViewController]];
     [self.window makeKeyAndVisible];
     
     // Register WeChat API

@@ -47,7 +47,7 @@
     if (self.isEditable) {
         self.currentEditIndex = index;
         self.currentEditText = word;
-        [PBWireframe presentWordSelectorViewControllerFrom:self];
+        [[PBWireframe defaultWireframe] navigateToPort:PBWireframePortPicker from:self];
     }
 }
 
@@ -104,7 +104,7 @@
                              PBParamKeyText : self.currentEditText ?: @"",
                              PBParamKeyType : @(PBDescriptionEditorTypeWord)
                              };
-    [PBWireframe presentDescriptionEditorViewControllerFrom:self withParams:params];
+    [[PBWireframe defaultWireframe] navigateToPort:PBWireframePortEditor withParams:params from:self];
 }
 
 - (void)presentEditorForEditNote {
@@ -112,7 +112,7 @@
                              PBParamKeyText : self.currentEditText ?: @"",
                              PBParamKeyType : @(PBDescriptionEditorTypeNote)
                              };
-    [PBWireframe presentDescriptionEditorViewControllerFrom:self withParams:params];
+    [[PBWireframe defaultWireframe] navigateToPort:PBWireframePortEditor withParams:params from:self];
 }
 
 #pragma mark - IB Actions

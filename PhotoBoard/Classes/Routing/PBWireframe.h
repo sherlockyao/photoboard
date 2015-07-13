@@ -8,13 +8,37 @@
 
 #import <UIKit/UIKit.h>
 
+
+typedef NS_ENUM(NSInteger, PBWireframePort) {
+    // General Ports
+    PBWireframePortRoot = 1,
+    PBWireframePortBack = 2,
+    PBWireframePortDismiss = 3,
+    
+    // Content Ports
+    PBWireframePortList = 201,
+    PBWireframePortDetail = 202,
+    
+    // Action Ports
+    PBWireframePortAdd = 401,
+    PBWireframePortEdit = 402,
+    PBWireframePortDelete = 403,
+    
+    // Modal Ports
+    PBWireframePortPicker = 801,
+    PBWireframePortEditor = 802,
+    PBWireframePortShare = 803
+};
+
+
 @interface PBWireframe : NSObject
 
-+ (UIViewController *)rootViewController;
++ (instancetype)defaultWireframe;
 
-+ (void)moveToTaleDetailViewControllerFrom:(UIViewController *)sourceViewController withParams:(NSDictionary *)params;
+- (UIViewController *)rootViewController;
 
-+ (void)presentWordSelectorViewControllerFrom:(UIViewController *)sourceViewController;
-+ (void)presentDescriptionEditorViewControllerFrom:(UIViewController *)sourceViewController withParams:(NSDictionary *)params;
+- (void)navigateToPort:(PBWireframePort)port from:(UIViewController *)sourceViewController;
+- (void)navigateToPort:(PBWireframePort)port withParams:(NSDictionary *)params from:(UIViewController *)sourceViewController;
+- (void)navigateToPort:(PBWireframePort)port withPortSerialNumber:(NSUInteger)serialNumber params:(NSDictionary *)params from:(UIViewController *)sourceViewController;
 
 @end

@@ -75,7 +75,7 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     PBTale* tale = self.tales[indexPath.row];
     NSDictionary* params = @{ PBParamKeyTale : tale };
-    [PBWireframe moveToTaleDetailViewControllerFrom:self withParams:params];
+    [[PBWireframe defaultWireframe] navigateToPort:PBWireframePortDetail withParams:params from:self];
 }
 
 #pragma mark - PBTaleCellDelegate
@@ -113,7 +113,7 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
         [scenes addObject:scene];
     }
     NSDictionary* params = @{ PBParamKeySceneList : scenes };
-    [PBWireframe moveToTaleDetailViewControllerFrom:self withParams:params];
+    [[PBWireframe defaultWireframe] navigateToPort:PBWireframePortDetail withParams:params from:self];
 }
 
 - (void)elcImagePickerControllerDidCancel:(ELCImagePickerController *)picker {

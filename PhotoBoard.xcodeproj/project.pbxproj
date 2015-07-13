@@ -34,6 +34,7 @@
 		368A4D041B4BC1B300F1BF9A /* NSArray+PBUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 368A4D031B4BC1B300F1BF9A /* NSArray+PBUtil.m */; };
 		368B838B1B4D18370002C92D /* UIScreen+PBUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 368B838A1B4D18370002C92D /* UIScreen+PBUtil.m */; };
 		368D30701B4E638000FB5BC1 /* PBWordSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368D306F1B4E638000FB5BC1 /* PBWordSelectorViewController.m */; };
+		36AEEB6F1B53B0F70079870F /* PBWireframe.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36AEEB6E1B53B0F70079870F /* PBWireframe.plist */; };
 		36B61D411B4FB05600EE87B2 /* SZTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B61D401B4FB05600EE87B2 /* SZTextView.m */; };
 		36B89C651B351A3C00EC78AB /* PBTale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C631B351A3C00EC78AB /* PBTale.storyboard */; };
 		36B89C671B351A3C00EC78AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C661B351A3C00EC78AB /* Images.xcassets */; };
@@ -146,6 +147,7 @@
 		368B838A1B4D18370002C92D /* UIScreen+PBUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScreen+PBUtil.m"; path = "Classes/Utilities/UIScreen+PBUtil.m"; sourceTree = "<group>"; };
 		368D306E1B4E638000FB5BC1 /* PBWordSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBWordSelectorViewController.h; path = Classes/Views/PBWordSelectorViewController.h; sourceTree = "<group>"; };
 		368D306F1B4E638000FB5BC1 /* PBWordSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBWordSelectorViewController.m; path = Classes/Views/PBWordSelectorViewController.m; sourceTree = "<group>"; };
+		36AEEB6E1B53B0F70079870F /* PBWireframe.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PBWireframe.plist; path = SupportingFiles/PBWireframe.plist; sourceTree = "<group>"; };
 		36B61D3F1B4FB05600EE87B2 /* SZTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SZTextView.h; path = Classes/ThirdParty/SZTextView/SZTextView.h; sourceTree = "<group>"; };
 		36B61D401B4FB05600EE87B2 /* SZTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SZTextView.m; path = Classes/ThirdParty/SZTextView/SZTextView.m; sourceTree = "<group>"; };
 		36B89C561B351A3C00EC78AB /* PhotoBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -607,6 +609,7 @@
 		36B89CBD1B3525CD00EC78AB /* Routing */ = {
 			isa = PBXGroup;
 			children = (
+				36AEEB6E1B53B0F70079870F /* PBWireframe.plist */,
 				36B89CBE1B3525F200EC78AB /* PBWireframe.h */,
 				36B89CBF1B3525F200EC78AB /* PBWireframe.m */,
 			);
@@ -891,6 +894,7 @@
 				36B89CD21B3531DE00EC78AB /* PBSceneCell.xib in Resources */,
 				36B89CB31B351FCF00EC78AB /* ELCAlbumPickerController.xib in Resources */,
 				36B89CB61B351FCF00EC78AB /* Overlay.png in Resources */,
+				36AEEB6F1B53B0F70079870F /* PBWireframe.plist in Resources */,
 				36306F8B1B3A368E00DEDBCE /* PBTaleShareTemplateView.xib in Resources */,
 				36B89C651B351A3C00EC78AB /* PBTale.storyboard in Resources */,
 				36B89C6A1B351A3C00EC78AB /* LaunchScreen.xib in Resources */,
