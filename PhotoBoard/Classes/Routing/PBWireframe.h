@@ -33,6 +33,11 @@ typedef NS_ENUM(NSInteger, PBWireframePort) {
 
 @interface PBWireframe : NSObject
 
+@property (readonly, nonatomic, strong) NSDictionary* ports;
+@property (readonly, nonatomic, strong) NSDictionary* codes;
+@property (readonly, nonatomic, strong) NSDictionary* decodes;
+@property (readonly, nonatomic, strong) NSDictionary* destinations;
+
 + (instancetype)defaultWireframe;
 
 - (UIViewController *)rootViewController;

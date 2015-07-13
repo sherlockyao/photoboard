@@ -35,6 +35,8 @@
 		368B838B1B4D18370002C92D /* UIScreen+PBUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 368B838A1B4D18370002C92D /* UIScreen+PBUtil.m */; };
 		368D30701B4E638000FB5BC1 /* PBWordSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 368D306F1B4E638000FB5BC1 /* PBWordSelectorViewController.m */; };
 		36AEEB6F1B53B0F70079870F /* PBWireframe.plist in Resources */ = {isa = PBXBuildFile; fileRef = 36AEEB6E1B53B0F70079870F /* PBWireframe.plist */; };
+		36AEEB721B53E8B40079870F /* PBWireframe+AssemblingFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AEEB711B53E8B40079870F /* PBWireframe+AssemblingFactory.m */; };
+		36AEEB751B53E9220079870F /* PBWireframe+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 36AEEB741B53E9220079870F /* PBWireframe+Navigation.m */; };
 		36B61D411B4FB05600EE87B2 /* SZTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36B61D401B4FB05600EE87B2 /* SZTextView.m */; };
 		36B89C651B351A3C00EC78AB /* PBTale.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C631B351A3C00EC78AB /* PBTale.storyboard */; };
 		36B89C671B351A3C00EC78AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36B89C661B351A3C00EC78AB /* Images.xcassets */; };
@@ -148,6 +150,10 @@
 		368D306E1B4E638000FB5BC1 /* PBWordSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PBWordSelectorViewController.h; path = Classes/Views/PBWordSelectorViewController.h; sourceTree = "<group>"; };
 		368D306F1B4E638000FB5BC1 /* PBWordSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PBWordSelectorViewController.m; path = Classes/Views/PBWordSelectorViewController.m; sourceTree = "<group>"; };
 		36AEEB6E1B53B0F70079870F /* PBWireframe.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PBWireframe.plist; path = SupportingFiles/PBWireframe.plist; sourceTree = "<group>"; };
+		36AEEB701B53E8B40079870F /* PBWireframe+AssemblingFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PBWireframe+AssemblingFactory.h"; path = "Classes/Routing/PBWireframe+AssemblingFactory.h"; sourceTree = "<group>"; };
+		36AEEB711B53E8B40079870F /* PBWireframe+AssemblingFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PBWireframe+AssemblingFactory.m"; path = "Classes/Routing/PBWireframe+AssemblingFactory.m"; sourceTree = "<group>"; };
+		36AEEB731B53E9220079870F /* PBWireframe+Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PBWireframe+Navigation.h"; path = "Classes/Routing/PBWireframe+Navigation.h"; sourceTree = "<group>"; };
+		36AEEB741B53E9220079870F /* PBWireframe+Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PBWireframe+Navigation.m"; path = "Classes/Routing/PBWireframe+Navigation.m"; sourceTree = "<group>"; };
 		36B61D3F1B4FB05600EE87B2 /* SZTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SZTextView.h; path = Classes/ThirdParty/SZTextView/SZTextView.h; sourceTree = "<group>"; };
 		36B61D401B4FB05600EE87B2 /* SZTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SZTextView.m; path = Classes/ThirdParty/SZTextView/SZTextView.m; sourceTree = "<group>"; };
 		36B89C561B351A3C00EC78AB /* PhotoBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -612,6 +618,10 @@
 				36AEEB6E1B53B0F70079870F /* PBWireframe.plist */,
 				36B89CBE1B3525F200EC78AB /* PBWireframe.h */,
 				36B89CBF1B3525F200EC78AB /* PBWireframe.m */,
+				36AEEB731B53E9220079870F /* PBWireframe+Navigation.h */,
+				36AEEB741B53E9220079870F /* PBWireframe+Navigation.m */,
+				36AEEB701B53E8B40079870F /* PBWireframe+AssemblingFactory.h */,
+				36AEEB711B53E8B40079870F /* PBWireframe+AssemblingFactory.m */,
 			);
 			name = Routing;
 			sourceTree = "<group>";
@@ -992,6 +1002,7 @@
 				3637B8921B3B8B0300B1A538 /* PBWordSelectorView.m in Sources */,
 				36306F891B3A367B00DEDBCE /* PBTaleShareTemplateView.m in Sources */,
 				36B89CFA1B35407100EC78AB /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				36AEEB751B53E9220079870F /* PBWireframe+Navigation.m in Sources */,
 				36B89CA71B351FB500EC78AB /* ELCAsset.m in Sources */,
 				36B89C881B351B8500EC78AB /* PBTaleListViewController.m in Sources */,
 				3637B89F1B3B8FCF00B1A538 /* PBWord.m in Sources */,
@@ -1004,6 +1015,7 @@
 				36B89C8C1B351B9000EC78AB /* main.m in Sources */,
 				36B89D781B355F6B00EC78AB /* PBSceneModel+Utility.m in Sources */,
 				36B89D101B3555D000EC78AB /* PBSceneModel.m in Sources */,
+				36AEEB721B53E8B40079870F /* PBWireframe+AssemblingFactory.m in Sources */,
 				36B89C851B351B7C00EC78AB /* AppDelegate.m in Sources */,
 				36B89D7E1B35616400EC78AB /* PBTale.m in Sources */,
 				36C9FAB51B4F76F0006C1A5B /* PBDescriptionEditorViewController.m in Sources */,

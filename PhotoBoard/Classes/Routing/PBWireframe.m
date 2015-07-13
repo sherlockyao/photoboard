@@ -7,18 +7,15 @@
 //
 
 #import "PBWireframe.h"
-#import "PBTaleListViewController.h"
-#import "PBTaleDetailViewController.h"
-#import "PBWordSelectorViewController.h"
-#import "PBDescriptionEditorViewController.h"
+#import "PBWireframe+AssemblingFactory.h"
 #import <objc/message.h>
 
 @interface PBWireframe ()
 
-@property (nonatomic, strong) NSDictionary* ports;
-@property (nonatomic, strong) NSDictionary* codes;
-@property (nonatomic, strong) NSDictionary* decodes;
-@property (nonatomic, strong) NSDictionary* destinations;
+@property (readwrite, nonatomic, strong) NSDictionary* ports;
+@property (readwrite, nonatomic, strong) NSDictionary* codes;
+@property (readwrite, nonatomic, strong) NSDictionary* decodes;
+@property (readwrite, nonatomic, strong) NSDictionary* destinations;
 
 @end
 
@@ -75,20 +72,6 @@
     }
 }
 
-#pragma mark - Navigation Methods
-
-- (void)defaultPushFrom:(UIViewController *)sourceViewController to:(UIViewController *)destinationViewController {
-    [sourceViewController.navigationController pushViewController:destinationViewController animated:YES];
-}
-
-- (void)overlayPresentFrom:(UIViewController *)sourceViewController to:(UIViewController *)destinationViewController {
-    if (sourceViewController.navigationController) {
-        [sourceViewController.navigationController presentViewController:destinationViewController animated:NO completion:nil];
-    } else {
-        [sourceViewController presentViewController:destinationViewController animated:NO completion:nil];
-    }
-}
-
 #pragma mark - Helper Methods
 
 - (NSString *)destinationKeyForPort:(PBWireframePort)port serialNumber:(NSUInteger)serialNumber sourceViewController:(UIViewController *)sourceViewController {
@@ -98,65 +81,6 @@
         return [NSString stringWithFormat:@"%@-%@", sourceCode, portName];
     } else {
         return [NSString stringWithFormat:@"%@-%@-%lu", sourceCode, portName, (long)serialNumber];
-    }
-}
-
-- (UIViewController *)buildViewControllerWithCode:(NSString *)code {
-    NSDictionary* context = [self.decodes objectForKey:code];
-    if (!context) {
-        return [UIViewController new];
-    }
-    NSString* selectorName = [context objectForKey:@"selector"];
-    if (selectorName) {
-        SEL selector = NSSelectorFromString(selectorName);
-        return ((id (*)(id, SEL))objc_msgSend)(self, selector);
-    } else {
-        NSString* storyboardName = [context objectForKey:@"storyboard"];
-        NSString* identifier = [context objectForKey:@"id"];
-        return [[UIStoryboard storyboardWithName:storyboardName bundle:nil] instantiateViewControllerWithIdentifier:identifier];
-    }
-}
-
-- (void)configureDestinationViewController:(UIViewController *)destinationViewController withParams:(NSDictionary *)params forSourceViewController:(UIViewController *)sourceViewController {
-    if ([destinationViewController isKindOfClass:[PBTaleListViewController class]]) {
-        
-        // Tale List
-        PBTaleListViewController* viewController = (PBTaleListViewController *)destinationViewController;
-        viewController.taleGroupPresenter = [PBTaleGroupPresenter new];
-        viewController.taleMaintainPresenter = [PBTaleMaintainPresenter new];
-        
-    } else if ([destinationViewController isKindOfClass:[PBTaleDetailViewController class]]) {
-        
-        // Tale Detail
-        PBTaleDetailViewController* viewController = (PBTaleDetailViewController *)destinationViewController;
-        
-        PBSceneGroupPresenter* sceneGroupPresenter = [PBSceneGroupPresenter new];
-        sceneGroupPresenter.params = params;
-        viewController.sceneGroupPresenter = sceneGroupPresenter;
-        
-        PBTaleMaintainPresenter* taleMaintainPresenter = [PBTaleMaintainPresenter new];
-        taleMaintainPresenter.params = params;
-        viewController.taleMaintainPresenter = taleMaintainPresenter;
-        
-        viewController.sharePresenter = [PBSharePresenter new];
-        
-    } else if ([destinationViewController isKindOfClass:[PBWordSelectorViewController class]]) {
-        
-        // Word Selector
-        PBWordSelectorViewController* viewController = (PBWordSelectorViewController *)destinationViewController;
-        viewController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-        viewController.delegate = (id<PBWordSelectorViewControllerDelegate>)sourceViewController;
-        
-        viewController.wordGroupPresenter = [PBWordGroupPresenter new];
-        
-    } else if ([destinationViewController isKindOfClass:[PBDescriptionEditorViewController class]]) {
-        
-        // Description Editor
-        PBDescriptionEditorViewController* viewController = (PBDescriptionEditorViewController *)destinationViewController;
-        viewController.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-        viewController.delegate = (id<PBDescriptionEditorViewControllerDelegate>)sourceViewController;
-        viewController.params = params;
-        
     }
 }
 
