@@ -76,9 +76,6 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
 - (void)taleCellDidClickDeleteButton:(PBTaleCell *)taleCell {
     NSIndexPath* indexPath = [self.taleTableView indexPathForCell:taleCell];
     PBTale* tale = self.tales[indexPath.row];
-    
-    // show alert controller
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"是否要删除故事？" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
     UIAlertAction *otherAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         [self.taleMaintainPresenter deleteTale:tale completion:^{
@@ -86,9 +83,11 @@ static NSString *const TaleCellReuseIdentifier = @"TaleCell";
             [self.taleTableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         }];
     }];
-    [alertController addAction:cancelAction];
-    [alertController addAction:otherAction];
-    [self presentViewController:alertController animated:YES completion:nil];
+    NSDictionary* params = @{
+                             @"message" : @"是否要删除故事？",
+                             @"actions" : @[ cancelAction, otherAction ]
+                             };
+    [[PBWireframe defaultWireframe] navigateToPort:PBWireframePortAlert withParams:params from:self];
 }
 
 #pragma mark - ELCImagePickerControllerDelegate

@@ -49,6 +49,17 @@
     return activityViewController;
 }
 
+- (UIViewController *)buildAlertControllerWithParams:(NSDictionary *)params {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[params objectForKey:@"title"] message:[params objectForKey:@"message"] preferredStyle:UIAlertControllerStyleAlert];
+    NSArray* actions = [params objectForKey:@"actions"];
+    if (actions) {
+        for (UIAlertAction* action in actions) {
+            [alertController addAction:action];
+        }
+    }
+    return alertController;
+}
+
 // Here is the long list for configuring all view classes
 - (void)configureDestinationViewController:(UIViewController *)destinationViewController withParams:(NSDictionary *)params forSourceViewController:(UIViewController *)sourceViewController {
     if ([destinationViewController isKindOfClass:[PBTaleListViewController class]]) {

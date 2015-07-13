@@ -78,7 +78,7 @@
 		<key>S1</key>
 		<dict>
 			<key>selector</key>
-			<string></string>
+			<string>buildAlertControllerWithParams:</string>
 		</dict>
 		<key>S2</key>
 		<dict>
