@@ -8,6 +8,7 @@
 
 #import "PBSceneListView.h"
 #import "PBSceneCell.h"
+#import "UIScreen+PBUtil.h"
 
 static NSString *const SceneCellReuseIdentifier = @"SceneCell";
 
@@ -46,12 +47,17 @@ static NSString *const SceneCellReuseIdentifier = @"SceneCell";
     static dispatch_once_t oneceToken;
     dispatch_once(&oneceToken,^{
         sceneCell = [self.sceneTableView dequeueReusableCellWithIdentifier:SceneCellReuseIdentifier];
+        CGRect bounds = sceneCell.bounds;
+        bounds.size.width = [UIScreen screenWidth];
+        sceneCell.bounds = bounds;
     });
     // calculate
-    CGFloat contentHeight = 0;
-    for (PBScene* scene in self.scenes) {
-        contentHeight += [sceneCell preferredHeightForScene:scene];
-    }
+    __block CGFloat contentHeight = 0;
+    [self.scenes enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        PBScene* scene = obj;
+        CGFloat preferredHeight = [sceneCell preferredHeightForScene:scene isFirstScene:(0 == idx)];
+        contentHeight += preferredHeight;
+    }];
     CGFloat verticalPadding = self.sceneTableView.contentInset.top + self.sceneTableView.contentInset.bottom;
     return  verticalPadding + contentHeight;
 }

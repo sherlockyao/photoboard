@@ -57,10 +57,16 @@ static CGFloat const PhotoHorizontalPadding = 16;
     }
 }
 
-- (CGFloat)preferredHeightForScene:(PBScene *)scene {
+- (CGFloat)preferredHeightForScene:(PBScene *)scene isFirstScene:(BOOL)isFirstScene {
     CGSize photoSize = [[scene.asset defaultRepresentation] dimensions];
     CGSize imageViewSize = [self preferredImageViewSizeForPhotoSize:photoSize];
-    return self.photoImageView.y + imageViewSize.height + 1; // add 1 for row separator height
+    CGFloat textAdjustHeight = 0;
+    if (scene.note) {
+        textAdjustHeight = [scene.note boundingRectWithSize:CGSizeMake(self.noteLabel.width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{ NSFontAttributeName : self.noteLabel.font } context:nil].size.height - self.noteLabel.height;
+    }
+    self.topStickViewHeightConstraint.constant = isFirstScene ? 20 : 56;
+    [self layoutIfNeeded];
+    return self.photoImageView.y + imageViewSize.height + (0 < textAdjustHeight ? textAdjustHeight : 0) + 1; // add 1 for row separator height
 }
 
 #pragma mark - IB Actions
@@ -100,15 +106,7 @@ static CGFloat const PhotoHorizontalPadding = 16;
     if (0 == totalWidth) {
         totalWidth = [[UIScreen mainScreen] bounds].size.width - PhotoHorizontalPadding;
     }
-    CGFloat imageViewWidth = 0;
-    if (photoSize.height > photoSize.width) {
-        // portrait layout
-        imageViewWidth = totalWidth; // make portrait layout also full width
-//        imageViewWidth = totalWidth * 4 / 5;
-    } else {
-        // landscape layout
-        imageViewWidth = totalWidth;
-    }
+    CGFloat imageViewWidth = totalWidth;
     CGFloat imageViewHeight = floor(imageViewWidth * photoSize.height / photoSize.width);
     return CGSizeMake(imageViewWidth, imageViewHeight);
 }
